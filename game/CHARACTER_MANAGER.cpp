@@ -1,0 +1,6 @@
+#include "CHARACTER_MANAGER.hpp"
+namespace libm2{
+LPCHARACTER CHARACTER_MANAGER::Find(DWORD vid){
+    return ((LPCHARACTER(*)(CHARACTER_MANAGER*,DWORD))Addr::CHARACTER_MANAGER::Find__DWORD)(this, vid);
+}
+}
