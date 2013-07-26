@@ -22,4 +22,16 @@ bool CHARACTER::Sync(long x, long y){
 BYTE CHARACTER::GetGMLevel(){
     return ((BYTE(*)(LPCHARACTER))Addr::CHARACTER::GetGMLevel)(this);
 }
+const VID& CHARACTER::GetVID(){
+    return this->m_vid;
+}
+int CHARACTER::GetLevel() const{
+    return m_points.level;
+}
+DWORD CHARACTER::GetPlayerID() const{
+    return m_dwPlayerID;
+}
+void CHARACTER::SpecificEffectPacket(const char* path){
+    ((void(*)(CHARACTER*,const char*))Addr::CHARACTER::SpecificEffectPacket)(this,path);
+};
 }

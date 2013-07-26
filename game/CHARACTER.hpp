@@ -378,7 +378,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider {
     void SaveReal(void);
     void FlushDelayedSaveItem(void);
     const char * GetName(void) const;
-    const VID & GetVID(void) const;
+    const VID & GetVID(void);
     void SetName(const std::string &);
     void SetRace(BYTE);
     bool ChangeSex(void);

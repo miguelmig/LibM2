@@ -1,6 +1,6 @@
 #include "Command.hpp"
 namespace libm2{
-bool ICommand::replace(){
+bool ICommand::isReplaced(){
     return false;
 }
 bool GMCommand::usableFor(LPCHARACTER ch){
