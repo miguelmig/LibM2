@@ -486,6 +486,37 @@ enum class CEntity{
 enum class CInputMain{
     SyncPosition=0x8140870,
 };
+enum class CState {
+	__CState = 0x8052600, // CState::~CState()
+};
+enum class CHorseRider {
+	GetMyHorseVnum = 0x812DBD0, // CHorseRider::GetMyHorseVnum(void)const
+	SetHorseData = 0x812CC70, // CHorseRider::SetHorseData(THorseInfo  const&)
+	EnterHorse = 0x812D360, // CHorseRider::EnterHorse(void)
+	ClearHorseInfo = 0x812DBA0, // CHorseRider::ClearHorseInfo(void)
+	GetHorseGrade = 0x812D030, // CHorseRider::GetHorseGrade(void)
+	Destroy = 0x812CEC0, // CHorseRider::Destroy(void)
+	SendHorseInfo = 0x812DB70, // CHorseRider::SendHorseInfo(void)
+	HorseDie = 0x812CE20, // CHorseRider::HorseDie(void)
+	ReviveHorse = 0x812D2F0, // CHorseRider::ReviveHorse(void)
+	UpdateHorseDataByLogoff = 0x812D080, // CHorseRider::UpdateHorseDataByLogoff(unsigned int)
+	FeedHorse = 0x812D120, // CHorseRider::FeedHorse(void)
+	SetHorseLevel = 0x812CFB0, // CHorseRider::SetHorseLevel(int)
+	StartStaminaRegenEvent = 0x812D190, // CHorseRider::StartStaminaRegenEvent(void)
+	StopRiding = 0x812D2B0, // CHorseRider::StopRiding(void)
+	ResetHorseHealthDropTime = 0x812CF70, // CHorseRider::ResetHorseHealthDropTime(void)
+	Initialize = 0x812DA00, // CHorseRider::Initialize(void)
+	UpdateRideTime = 0x8082BA0, // CHorseRider::UpdateRideTime(int)
+	__CHorseRider = 0x812D6B0, // CHorseRider::~CHorseRider()
+	StartRiding = 0x812D4F0, // CHorseRider::StartRiding(void)
+	UpdateHorseHealth = 0x812CCB0, // CHorseRider::UpdateHorseHealth(int,bool)
+	StartStaminaConsumeEvent = 0x812D3D0, // CHorseRider::StartStaminaConsumeEvent(void)
+	UpdateHorseStamina = 0x812CD70, // CHorseRider::UpdateHorseStamina(int,bool)
+	CHorseRider = 0x812DAF0, // CHorseRider::CHorseRider(void)
+	CheckHorseHealthDropTime = 0x812CF00, // CHorseRider::CheckHorseHealthDropTime(bool)
+	GetHorseMaxStamina = 0x812CC30, // CHorseRider::GetHorseMaxStamina(void)
+	GetHorseMaxHealth = 0x812D0E0, // CHorseRider::GetHorseMaxHealth(void)
+};
 enum class CHARACTER_MANAGER{
     Find__DWORD=0x80AA160,
     singleton=0x86A23EC,
@@ -662,6 +693,16 @@ enum class CItem {
 	IsRideItem = 0x814BAB0, // CItem::IsRideItem(void)
 	GetSocketCount = 0x814B950, // CItem::GetSocketCount(void)
 	OnAfterCreatedItem = 0x814E290, // CItem::OnAfterCreatedItem(void)
+};
+enum class CFSM {
+	BeginStateInitial = 0x8052480, // CFSM::BeginStateInitial(void)
+	IsState = 0x8052300, // CFSM::IsState(CState &)const
+	Update = 0x8052290, // CFSM::Update(void)
+	CFSM = 0x8052410, // CFSM::CFSM(void)
+	StateInitial = 0x80524B0, // CFSM::StateInitial(void)
+	__CFSM = 0x8052720, // CFSM::~CFSM()
+	GotoState = 0x8052340, // CFSM::GotoState(CState &)
+	EndStateInitial = 0x80524E0, // CFSM::EndStateInitial(void)
 };
 namespace quest{
     enum class misc{

@@ -28,8 +28,8 @@ class CEntity {
   public:
     CEntity();
     ~CEntity();
-    virtual void EncodeInsertPacket(LPENTITY);
-    virtual void EncodeRemovePacket(LPENTITY);
+    virtual void EncodeInsertPacket(LPENTITY)=0;
+    virtual void EncodeRemovePacket(LPENTITY)=0;
   protected:
     void Initialize(int);
     void Destroy(void);

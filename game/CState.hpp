@@ -9,9 +9,9 @@ namespace libm2{
 class CState {
   public:
     ~CState();
-    virtual void ExecuteBeginState(void);
-    virtual void ExecuteState(void);
-    virtual void ExecuteEndState(void);
+    virtual void ExecuteBeginState(void)=0;
+    virtual void ExecuteState(void)=0;
+    virtual void ExecuteEndState(void)=0;
 };
 }
 #endif // __LIBM2_GAME_CSTATE_HPP
