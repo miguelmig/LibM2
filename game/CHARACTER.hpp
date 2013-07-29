@@ -183,7 +183,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider {
     LPPARTY m_pkParty;
     DWORD m_dwLastDeadTime;
     LPEVENT m_pkPartyRequestEvent;
-    std::map<unsigned int, boost::intrusive_ptr<event>, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, boost::intrusive_ptr<event> > > > m_PartyInviteEventMap;
+    std::map<unsigned int, boost::intrusive_ptr<event>> m_PartyInviteEventMap;
     LPDUNGEON m_pkDungeon;
     int m_iEventAttr;
     CGuild *m_pGuild;

@@ -9,6 +9,8 @@
 namespace libm2{
 class event;
 typedef event* LPEVENT;
+void intrusive_ptr_add_ref(event *); //0x81107C0
+void intrusive_ptr_release(event *); //0x81108B0
 
 typedef long (*TEVENTFUNC)(LPEVENT);
 

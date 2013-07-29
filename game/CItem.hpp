@@ -8,6 +8,8 @@
 #include "stdInclude.hpp"
 #include "EVENT.hpp"
 #include "SItemTable.hpp"
+#include "PIXEL_POSITION.hpp"
+#include "CEntity.hpp"
 #include "packet.hpp"
 namespace libm2{
 struct TPlayerItemAttribute {
