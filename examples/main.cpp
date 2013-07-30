@@ -16,8 +16,8 @@ void lib_main()
 		std::cout << "**** -> http://github.com/imermcmaps/LibM2 <-" << std::endl;
 		std::cout << "**** Game Revision is " << Revision << std::endl;
 		try{
-			// Adding MyCommand
-			LibM2::addCommand(MyCommand::instance());
+			// Adding MyCommand as "test"
+			LibM2::addCommand("test",new MyCommand());
 		}catch(MologieDetours::DetourException &e){
 			std::cout << std::endl << "Error when hooking function: " << e.what() << std::endl << std::endl;
 		}

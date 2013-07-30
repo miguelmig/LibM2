@@ -30,6 +30,7 @@
 #include "SPlayerTable.hpp"
 #include "packet.hpp"
 #include "../addr.hpp"
+#include "TAffectFlag.hpp"
 
 namespace libm2{
 struct character_point {
@@ -72,16 +73,7 @@ struct character_point_instant {
 typedef std::list<CHARACTER*, std::allocator<CHARACTER*> > CHARACTER_LIST;
 
 
-class TAffectFlag {
-    DWORD bits[2];
-  public:
-    TAffectFlag();
-    TAffectFlag(DWORD, DWORD);
-    bool IsSet(int) const;
-    void Set(int);
-    void Reset(int);
-    TAffectFlag & operator=(const TAffectFlag &);
-};
+
 
 
 class TSkillUseInfo {

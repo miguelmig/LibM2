@@ -13,14 +13,14 @@ class VID {
     DWORD m_crc;
 
   public:
-    VID(void);
+    VID();
     VID(DWORD, DWORD);
-    VID(const VID &);
+//    VID(const VID &);
     const VID & operator=(const VID &);
     bool operator==(const VID &) const;
     bool operator!=(const VID &) const;
-    operator DWORD(void) const;
-    void Reset(void);
+    operator DWORD();
+    void Reset();
 };
 }
 #endif // __LIBM2_GAME_VID_HPP
