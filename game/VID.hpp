@@ -19,7 +19,7 @@ class VID {
     const VID & operator=(const VID &);
     bool operator==(const VID &) const;
     bool operator!=(const VID &) const;
-    operator DWORD();
+    operator DWORD() const;
     void Reset();
 };
 }

@@ -5,7 +5,7 @@ VID::VID(DWORD id, DWORD crc){
     m_id=id;
     m_crc=crc;
 }
-VID::operator DWORD(){
+VID::operator DWORD() const{
     return m_id;
 };
  //   const VID & operator=(const VID &);
