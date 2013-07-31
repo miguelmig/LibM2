@@ -31,7 +31,7 @@
 #include "packet.hpp"
 #include "../addr.hpp"
 #include "TAffectFlag.hpp"
-
+#include "enums.hpp"
 namespace libm2{
 struct character_point {
     long points[255];
