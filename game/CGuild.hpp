@@ -68,7 +68,21 @@ struct SPacketDGGuildMember {
     DWORD dwOffer;
     char szName[25];
 } typedef TPacketDGGuildMember;
-
+struct SGuildReserve {
+    DWORD dwID;
+    DWORD dwGuildFrom;
+    DWORD dwGuildTo;
+    DWORD dwTime;
+    BYTE bType;
+    long lWarPrice;
+    long lInitialScore;
+    bool bStarted;
+    DWORD dwBetFrom;
+    DWORD dwBetTo;
+    long lPowerFrom;
+    long lPowerTo;
+    long lHandicap;
+} typedef TGuildwarReserve;
 class CGuild {
     public:
  enum GuildJoinErrCode {GERR_NONE,

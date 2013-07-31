@@ -7,6 +7,16 @@
 #define __LIBM2_GAME_MISC_HPP
 namespace libm2{
 enum e_overtime {OT_NONE, OT_3HOUR, OT_5HOUR};
+enum eFileUpdatedOptions {
+    e_FileUpdate_None = -1,
+    e_FileUpdate_Error,
+    e_FileUpdate_Deleted,
+    e_FileUpdate_Modified,
+    e_FileUpdate_AttrModified,
+    e_FileUpdate_Linked,
+    e_FileUpdate_Renamed,
+    e_FileUpdate_Revoked
+};
 int get_global_time();
 const char* locale_find(const char*);
 }

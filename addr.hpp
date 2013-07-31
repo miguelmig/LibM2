@@ -796,6 +796,37 @@ namespace quest{
         PickupItem = 0x81CC110, // quest::CQuestManager::PickupItem(unsigned int,CItem *)
     };
 }
+enum class DESC_MANAGER{
+    singleton=0x86A36B4,
+	SendClientPackageCryptKey = 0x80FF220, // DESC_MANAGER::SendClientPackageCryptKey(DESC *)
+	FindByHandle = 0x80FE8D0, // DESC_MANAGER::FindByHandle(unsigned int)
+	UpdateLocalUserCount = 0x80FF730, // DESC_MANAGER::UpdateLocalUserCount(void)
+	AcceptP2PDesc = 0x80FF5F0, // DESC_MANAGER::AcceptP2PDesc(fdwatch *,int)
+	Destroy = 0x80FFB00, // DESC_MANAGER::Destroy(void)
+	__DESC_MANAGER = 0x8100DA0, // DESC_MANAGER::~DESC_MANAGER()
+	ConnectAccount = 0x81011C0, // DESC_MANAGER::ConnectAccount(std::string  const&,DESC *)
+	CreateLoginKey = 0x80FF040, // DESC_MANAGER::CreateLoginKey(DESC *)
+	SendClientPackageSDBToLoadMap = 0x80FF4D0, // DESC_MANAGER::SendClientPackageSDBToLoadMap(DESC *,char  const*)
+	FindByLoginKey = 0x80FED20, // DESC_MANAGER::FindByLoginKey(unsigned int)
+	Initialize = 0x80FEAB0, // DESC_MANAGER::Initialize(void)
+	DestroyDesc = 0x80FF330, // DESC_MANAGER::DestroyDesc(DESC *,bool)
+	CreateConnectionDesc = 0x8100440, // DESC_MANAGER::CreateConnectionDesc(fdwatch *,char  const*,unsigned short,int,bool)
+	FindByLoginName = 0x80FFAB0, // DESC_MANAGER::FindByLoginName(std::string  const&)
+	TryConnect = 0x80FF420, // DESC_MANAGER::TryConnect(void)
+	DisconnectAccount = 0x81013C0, // DESC_MANAGER::DisconnectAccount(std::string  const&)
+	MakeRandomKey = 0x80FEA50, // DESC_MANAGER::MakeRandomKey(unsigned int)
+	GetUserCount = 0x80FEC70, // DESC_MANAGER::GetUserCount(int &,int **,int &)
+	DestroyClosed = 0x80FF990, // DESC_MANAGER::DestroyClosed(void)
+	FindByHandshake = 0x80FF110, // DESC_MANAGER::FindByHandshake(unsigned int)
+	LoadClientPackageCryptInfo = 0x80FE980, // DESC_MANAGER::LoadClientPackageCryptInfo(char  const*)
+	AcceptDesc = 0x80FEE20, // DESC_MANAGER::AcceptDesc(fdwatch *,int)
+	FindByCharacterName = 0x80FF8E0, // DESC_MANAGER::FindByCharacterName(char  const*)
+	GetClientSet = 0x80FE8A0, // DESC_MANAGER::GetClientSet(void)
+	IsP2PDescExist = 0x80FF160, // DESC_MANAGER::IsP2PDescExist(char  const*,unsigned short)
+	DESC_MANAGER = 0x80FFD00, // DESC_MANAGER::DESC_MANAGER(void)
+	CreateHandshake = 0x80FEB20, // DESC_MANAGER::CreateHandshake(void)
+	ProcessExpiredLoginKey = 0x80FED80, // DESC_MANAGER::ProcessExpiredLoginKey(void)
+};
 }
 }
 #endif // __LIBM2_ADDR_HPP

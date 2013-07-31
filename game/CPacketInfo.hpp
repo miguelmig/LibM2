@@ -40,5 +40,10 @@ class CPacketInfoCG : public CPacketInfo {
     CPacketInfoCG();
     ~CPacketInfoCG();
 };
+class CPacketInfoGG : public CPacketInfo {
+  public:
+    CPacketInfoGG(void);
+    ~CPacketInfoGG();
+};
 }
 #endif // __LIBM2_GAME_CPACKETINFO_HPP
