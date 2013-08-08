@@ -57,7 +57,7 @@ void LibM2::addQuestFunction(std::string table,std::string name,lua_CFunction fu
 };
 void LibM2::addQuestTable(std::string tablename, tQuestTable table) {
     LibM2* self=instance();
-    // Merge if already exists - overriding already existing functions
+    // Merge if already exists - overwriting already existing functions
     if (self->m_map_quest.find(tablename)!=self->m_map_quest.end()) {
         tQuestTable to = self->m_map_quest.at(tablename);
         for (tQuestTable::iterator it=table.begin(); it!=table.end(); it++) {
