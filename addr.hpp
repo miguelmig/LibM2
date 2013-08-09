@@ -878,6 +878,9 @@ enum class DESC_MANAGER{
 	CreateHandshake = 0x80FEB20, // DESC_MANAGER::CreateHandshake(void)
 	ProcessExpiredLoginKey = 0x80FED80, // DESC_MANAGER::ProcessExpiredLoginKey(void)
 };
+enum class ITEM_MANAGER{
+    singleton=0x86A36B8,
+};
 }
 }
 #endif // __LIBM2_ADDR_HPP
