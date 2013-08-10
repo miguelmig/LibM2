@@ -13,6 +13,7 @@ enum class misc{
     main=0x8233C40,
     interpret_command=0x80CCF80,
     locale_find=0x8163460,
+    Metin2Server_Check=0x82328F0,
 };
 enum class CHARACTER{
 	GoHome = 0x80706B0, // CHARACTER::GoHome(void)
@@ -483,9 +484,6 @@ enum class CEntity{
 	ViewInsert = 0x810F910, // CEntity::ViewInsert(CEntity*,bool)
 	SetType = 0x810F020, // CEntity::SetType(int)
 };
-enum class CInputMain{
-    SyncPosition=0x8140870,
-};
 enum class CState {
 	__CState = 0x8052600, // CState::~CState()
 };
@@ -880,7 +878,134 @@ enum class DESC_MANAGER{
 };
 enum class ITEM_MANAGER{
     singleton=0x86A36B8,
+	GetMaskVnum = 0x8152830, // ITEM_MANAGER::GetMaskVnum(unsigned int)
+	ITEM_MANAGER = 0x8154C80, // ITEM_MANAGER::ITEM_MANAGER(void)
+	GetRefineFromVnum = 0x8151D00, // ITEM_MANAGER::GetRefineFromVnum(unsigned int)
+	CreateItem = 0x8152CD0, // ITEM_MANAGER::CreateItem(unsigned int,unsigned int,unsigned int,bool,int,bool)
+	Destroy = 0x8151FE0, // ITEM_MANAGER::Destroy(void)
+	CreateDropItem = 0x8157C80, // ITEM_MANAGER::CreateDropItem(CHARACTER *,CHARACTER *,std::vector<CItem *,std::allocator<CItem *>> &)
+	SetMaxItemID = 0x8162F40, // ITEM_MANAGER::SetMaxItemID(tItemIDRange)
+	FindByVID = 0x81527E0, // ITEM_MANAGER::FindByVID(unsigned int)
+	ReadCommonDropItemFile = 0x8154760, // ITEM_MANAGER::ReadCommonDropItemFile(char  const*)
+	GetSpecialItemGroup = 0x8151D50, // ITEM_MANAGER::GetSpecialItemGroup(unsigned int)
+	Update = 0x8153BF0, // ITEM_MANAGER::Update(void)
+	GetVnumByOriginalName = 0x8152060, // ITEM_MANAGER::GetVnumByOriginalName(char  const*,unsigned int &)
+	ReadMonsterDropItemGroup = 0x815B8A0, // ITEM_MANAGER::ReadMonsterDropItemGroup(char  const*)
+	GetVnum = 0x81523D0, // ITEM_MANAGER::GetVnum(char  const*,unsigned int &)
+	Initialize = 0x8152890, // ITEM_MANAGER::Initialize(SItemTable *,int)
+	ReadDropItemGroup = 0x815E360, // ITEM_MANAGER::ReadDropItemGroup(char  const*)
+	SaveSingleItem = 0x8152110, // ITEM_MANAGER::SaveSingleItem(CItem *)
+	__ITEM_MANAGER = 0x81553C0, // ITEM_MANAGER::~ITEM_MANAGER()
+	RealNumber = 0x8151BE0, // ITEM_MANAGER::RealNumber(unsigned int)
+	CreateQuestDropItem = 0x8155FB0, // ITEM_MANAGER::CreateQuestDropItem(CHARACTER *,CHARACTER *,std::vector<CItem *,std::allocator<CItem *>> &,int,int)
+	ReadSpecialDropItemFile = 0x815A0E0, // ITEM_MANAGER::ReadSpecialDropItemFile(char  const*)
+	FlushDelayedSave = 0x8152740, // ITEM_MANAGER::FlushDelayedSave(CItem *)
+	ConvSpecialDropItemFile = 0x81590E0, // ITEM_MANAGER::ConvSpecialDropItemFile(void)
+	ReadItemVnumMaskTable = 0x8151F40, // ITEM_MANAGER::ReadItemVnumMaskTable(char  const*)
+	GetNewID = 0x8163000, // ITEM_MANAGER::GetNewID(void)
+	GetSpecialAttrGroup = 0x8151DB0, // ITEM_MANAGER::GetSpecialAttrGroup(unsigned int)
+	DestroyItem = 0x8153840, // ITEM_MANAGER::DestroyItem(CItem *)
+	DelayedSave = 0x8152480, // ITEM_MANAGER::DelayedSave(CItem *)
+	GracefulShutdown = 0x8152320, // ITEM_MANAGER::GracefulShutdown(void)
+	ReadEtcDropItemFile = 0x81524E0, // ITEM_MANAGER::ReadEtcDropItemFile(char  const*)
+	SetMaxSpareItemID = 0x8162E20, // ITEM_MANAGER::SetMaxSpareItemID(tItemIDRange)
+	RemoveItem = 0x8153AC0, // ITEM_MANAGER::RemoveItem(CItem *,char  const*)
+	GetTable = 0x8151C60, // ITEM_MANAGER::GetTable(unsigned int)
+	Find = 0x81537E0, // ITEM_MANAGER::Find(unsigned int)
 };
+enum class CInputLogin {
+    GetType=0x813D340, // CInputLogin::GetType(CInputLogin * const)
+	ChangeName = 0x813B480, // CInputLogin::ChangeName(DESC *,char  const*)
+	CharacterDelete = 0x813B2C0, // CInputLogin::CharacterDelete(DESC *,char  const*)
+	GuildMarkUpload = 0x813AC30, // CInputLogin::GuildMarkUpload(DESC *,char  const*)
+	Entergame = 0x813C360, // CInputLogin::Entergame(DESC *,char  const*)
+	Login = 0x813B5A0, // CInputLogin::Login(DESC *,char  const*)
+	CharacterCreate = 0x813BED0, // CInputLogin::CharacterCreate(DESC *,char  const*)
+	GuildSymbolUpload = 0x813AEB0, // CInputLogin::GuildSymbolUpload(DESC *,char  const*,unsigned int)
+	LoginByKey = 0x813B730, // CInputLogin::LoginByKey(DESC *,char  const*)
+	GuildMarkIDXList = 0x813AB20, // CInputLogin::GuildMarkIDXList(DESC *,char  const*)
+	Analyze = 0x813D040, // CInputLogin::Analyze(DESC *,unsigned char,char  const*)
+	Empire = 0x813AFF0, // CInputLogin::Empire(DESC *,char  const*)
+	GuildSymbolCRC = 0x813AD60, // CInputLogin::GuildSymbolCRC(DESC *,char  const*)
+	GuildMarkCRCList = 0x813C130, // CInputLogin::GuildMarkCRCList(DESC *,char  const*)
+	CharacterSelect = 0x813B0C0, // CInputLogin::CharacterSelect(DESC *,char  const*)
+};
+enum class CInputProcessor {
+	Handshake = 0x812F030, // CInputProcessor::Handshake(DESC *,char  const*)
+	Version = 0x812F8F0, // CInputProcessor::Version(CHARACTER *,char  const*)
+	CInputProcessor = 0x812EFC0, // CInputProcessor::CInputProcessor(void)
+	__CInputProcessor = 0x8132850, // CInputProcessor::~CInputProcessor()
+	Process = 0x812F120, // CInputProcessor::Process(DESC *,void  const*,int,int &)
+	BindPacketInfo = 0x812ED50, // CInputProcessor::BindPacketInfo(CPacketInfo *)
+	Pong = 0x812FDE0, // CInputProcessor::Pong(DESC *)
+};
+enum class CInputMain {
+	GetType = 0x81455C0, // CInputMain::GetType(void)
+	PartyInvite = 0x813E0F0, // CInputMain::PartyInvite(CHARACTER *,char  const*)
+	ScriptButton = 0x813EA70, // CInputMain::ScriptButton(CHARACTER *,void  const*)
+	QuickslotSwap = 0x81404C0, // CInputMain::QuickslotSwap(CHARACTER *,char  const*)
+	ScriptAnswer = 0x813E9C0, // CInputMain::ScriptAnswer(CHARACTER *,void  const*)
+	Attack = 0x813EC40, // CInputMain::Attack(CHARACTER *,unsigned char,char  const*)
+	MyShop = 0x813D5C0, // CInputMain::MyShop(CHARACTER *,char  const*,unsigned int)
+	PartyRemove = 0x813DBE0, // CInputMain::PartyRemove(CHARACTER *,char  const*)
+	SafeboxCheckin = 0x813E4C0, // CInputMain::SafeboxCheckin(CHARACTER *,char  const*)
+	Analyze = 0x8144CA0, // CInputMain::Analyze(DESC *,unsigned char,char  const*)
+	PartyInviteAnswer = 0x813E000, // CInputMain::PartyInviteAnswer(CHARACTER *,char  const*)
+	QuestInputString = 0x813E8B0, // CInputMain::QuestInputString(CHARACTER *,void  const*)
+	ItemUse = 0x8140780, // CInputMain::ItemUse(CHARACTER *,char  const*)
+	PartySetState = 0x813DE30, // CInputMain::PartySetState(CHARACTER *,char  const*)
+	Exchange = 0x813FB90, // CInputMain::Exchange(CHARACTER *,char  const*)
+	UseSkill = 0x813EB80, // CInputMain::UseSkill(CHARACTER *,char  const*)
+	Warp = 0x813E6D0, // CInputMain::Warp(CHARACTER *,char  const*)
+	Messenger = 0x8141010, // CInputMain::Messenger(CHARACTER *,char  const*,unsigned int)
+	ItemGive = 0x813D7C0, // CInputMain::ItemGive(CHARACTER *,char  const*)
+	ScriptSelectItem = 0x813E940, // CInputMain::ScriptSelectItem(CHARACTER *,void  const*)
+	AnswerMakeGuild = 0x81426A0, // CInputMain::AnswerMakeGuild(CHARACTER *,char  const*)
+	Refine = 0x81415B0, // CInputMain::Refine(CHARACTER *,char  const*)
+	PartyUseSkill = 0x813D910, // CInputMain::PartyUseSkill(CHARACTER *,char  const*)
+	Guild = 0x8141AB0, // CInputMain::Guild(CHARACTER *,char  const*,unsigned int)
+	Target = 0x813E700, // CInputMain::Target(CHARACTER *,char  const*)
+	ItemDrop = 0x81406A0, // CInputMain::ItemDrop(CHARACTER *,char  const*)
+	PartyParameter = 0x813D8B0, // CInputMain::PartyParameter(CHARACTER *,char  const*)
+	ItemPickup = 0x8140580, // CInputMain::ItemPickup(CHARACTER *,char  const*)
+	ItemToItem = 0x8140720, // CInputMain::ItemToItem(CHARACTER *,char  const*)
+	QuickslotDelete = 0x8140500, // CInputMain::QuickslotDelete(CHARACTER *,char  const*)
+	Position = 0x813FB00, // CInputMain::Position(CHARACTER *,char  const*)
+	FlyTarget = 0x813EBF0, // CInputMain::FlyTarget(CHARACTER *,char  const*,unsigned char)
+	Shop = 0x8140290, // CInputMain::Shop(CHARACTER *,char  const*,unsigned int)
+	SafeboxCheckout = 0x813E260, // CInputMain::SafeboxCheckout(CHARACTER *,char  const*,bool)
+	QuickslotAdd = 0x8140540, // CInputMain::QuickslotAdd(CHARACTER *,char  const*)
+	Whisper = 0x81442F0, // CInputMain::Whisper(CHARACTER *,char  const*,unsigned int)
+	Move = 0x813F520, // CInputMain::Move(CHARACTER *,char  const*)
+	SafeboxItemMove = 0x813E1C0, // CInputMain::SafeboxItemMove(CHARACTER *,char  const*)
+	Chat = 0x8143BE0, // CInputMain::Chat(CHARACTER *,char  const*,unsigned int)
+	QuestConfirm = 0x813E790, // CInputMain::QuestConfirm(CHARACTER *,void  const*)
+	Fishing = 0x813D860, // CInputMain::Fishing(CHARACTER *,char  const*)
+	OnClick = 0x81401E0, // CInputMain::OnClick(CHARACTER *,char  const*)
+	Hack = 0x813D720, // CInputMain::Hack(CHARACTER *,char  const*)
+	SyncPosition = 0x8140870, // CInputMain::SyncPosition(CHARACTER *,char  const*,unsigned int)
+	ItemMove = 0x81405D0, // CInputMain::ItemMove(CHARACTER *,char  const*)
+	__CInputMain = 0x8145DE0, // CInputMain::~CInputMain()
+	ItemDrop2 = 0x8140620, // CInputMain::ItemDrop2(CHARACTER *,char  const*)
+};
+enum class CInputAuth {
+	GetType = 0x8133EB0, // CInputAuth::GetType(void)
+	PasspodAnswer = 0x81328F0, // CInputAuth::PasspodAnswer(DESC *,char  const*)
+	LoginOpenID = 0x8133650, // CInputAuth::LoginOpenID(DESC *,char  const*)
+	CInputAuth = 0x8132EB0, // CInputAuth::CInputAuth(void)
+	Login = 0x8133070, // CInputAuth::Login(DESC *,char  const*)
+	Analyze = 0x8133CF0, // CInputAuth::Analyze(DESC *,unsigned char,char  const*)
+	auth_OpenID = 0x8132AD0, // CInputAuth::auth_OpenID(char  const*,char  const*,char *)
+};
+enum class CInputClose {
+	Analyze = 0x80FD0A0, // CInputClose::Analyze(DESC *,unsigned char,char  const*)
+	GetType = 0x80FD070, // CInputClose::GetType(void)
+};
+enum class CInputDead {
+	GetType = 0x81455F0, // CInputDead::GetType(void)
+	Analyze = 0x8144B90, // CInputDead::Analyze(DESC *,unsigned char,char  const*)
+};
+
 }
 }
 #endif // __LIBM2_ADDR_HPP

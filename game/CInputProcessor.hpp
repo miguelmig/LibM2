@@ -19,13 +19,13 @@ class CInputProcessor {
     CInputProcessor();
     ~CInputProcessor();
     virtual bool Process(LPDESC, const void *, int, int &);
-    virtual BYTE GetType(void);
+    virtual BYTE GetType(void)=0;
     void BindPacketInfo(CPacketInfo *);
     void Pong(LPDESC);
     void Handshake(LPDESC, const char *);
     void Version(LPCHARACTER, const char *);
   protected:
-    virtual int Analyze(LPDESC, BYTE, const char *);
+    virtual int Analyze(LPDESC, BYTE, const char *)=0;
 };
 }
 #endif // __LIBM2_GAME_CINPUTPROCESSOR_HPP

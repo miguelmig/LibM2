@@ -5,6 +5,7 @@
  */
 #include "DESC.hpp"
 #include "../addr.hpp"
+#include "CInputLogin.hpp"
 namespace libm2{
 void DESC::ChatPacket(BYTE a0, const char * a1, ...) {
 	((void(*)(DESC *, BYTE, const char *, ...))Addr::DESC::ChatPacket)(this, a0, a1);
