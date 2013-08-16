@@ -8,19 +8,8 @@
 #include "stdInclude.hpp"
 #include "regen.hpp"
 #include "CHARACTER.hpp"
+#include "TAreaInfo.hpp"
 namespace libm2{
-class TAreaInfo {
-    int sx;
-    int sy;
-    int ex;
-    int ey;
-    int dir;
-  public:
-    TAreaInfo(int, int, int, int, int);
-};
-
-typedef std::map<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, TAreaInfo, std::less<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::basic_string<char, std::char_traits<char>, std::allocator<char> > const, TAreaInfo> > > TAreaMap;
-
 class CDungeon {
   private:
     uint32_t m_id;

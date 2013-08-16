@@ -1164,6 +1164,57 @@ enum class mysql {
 enum class _SQLMsg {
 	___SQLMsg = 0x8093AF0, // _SQLMsg::~_SQLMsg()
 };
+enum class SECTREE_MANAGER{
+    singleton=0x86A23F4,
+	GetRecallPositionByEmpire = 0x81E7EF0, // SECTREE_MANAGER::GetRecallPositionByEmpire(int,unsigned char,pixel_position_s &)
+	PurgeMonstersInMap = 0x81EC500, // SECTREE_MANAGER::PurgeMonstersInMap(long)
+	LoadSettingFile = 0x81E76B0, // SECTREE_MANAGER::LoadSettingFile(long,char  const*,SSetting &)
+	Get__28899 = 0x81E63A0, // SECTREE_MANAGER::Get(unsigned int,unsigned int,unsigned int)
+	IsMovablePosition = 0x81E7570, // SECTREE_MANAGER::IsMovablePosition(long,long,long)
+	GetCenterPositionOfMap = 0x81E7900, // SECTREE_MANAGER::GetCenterPositionOfMap(unsigned char,pixel_position_s &)
+	SECTREE_MANAGER = 0x81EA180, // SECTREE_MANAGER::SECTREE_MANAGER(void)
+	Build = 0x81EB770, // SECTREE_MANAGER::Build(char  const*,char  const*)
+	GetValidLocation = 0x81E6480, // SECTREE_MANAGER::GetValidLocation(long,long,long,long &,pixel_position_s &,unsigned char)
+	PurgeNPCsInMap = 0x81EC120, // SECTREE_MANAGER::PurgeNPCsInMap(long)
+	SaveAttributeToImage = 0x81E66C0, // SECTREE_MANAGER::SaveAttributeToImage(int,char  const*,SECTREE_MAP *)
+	BuildSectreeFromSetting = 0x81E82F0, // SECTREE_MANAGER::BuildSectreeFromSetting(SSetting &)
+	GetMap = 0x81E62F0, // SECTREE_MANAGER::GetMap(long)
+	GetMapRegion = 0x81E7A60, // SECTREE_MANAGER::GetMapRegion(long)
+	Get = 0x81E6340, // SECTREE_MANAGER::Get(unsigned int,unsigned int)
+	GetMapIndex = 0x81E7990, // SECTREE_MANAGER::GetMapIndex(long,long)
+	__SECTREE_MANAGER = 0x81E9BA0, // SECTREE_MANAGER::~SECTREE_MANAGER()
+	GetSpawnPosition = 0x81E7C50, // SECTREE_MANAGER::GetSpawnPosition(long,long,pixel_position_s &)
+	LoadDungeon = 0x81EA8E0, // SECTREE_MANAGER::LoadDungeon(int,char  const*)
+	GetMonsterCountInMap__21633 = 0x81EBE60, // SECTREE_MANAGER::GetMonsterCountInMap(long)
+	CreatePrivateMap = 0x81E8FD0, // SECTREE_MANAGER::CreatePrivateMap(long)
+	InsertNPCPosition = 0x81E9320, // SECTREE_MANAGER::InsertNPCPosition(long,unsigned char,char  const*,long,long)
+	GetMovablePosition = 0x81E8050, // SECTREE_MANAGER::GetMovablePosition(long,long,long,pixel_position_s &)
+	ForAttrRegionRightAngle = 0x81E71A0, // SECTREE_MANAGER::ForAttrRegionRightAngle(long,long,long,long,long,long,unsigned int,EAttrRegionMode)
+	FindRegionByPartialName = 0x81E7AB0, // SECTREE_MANAGER::FindRegionByPartialName(char  const*)
+	SendNPCPosition = 0x81E93C0, // SECTREE_MANAGER::SendNPCPosition(CHARACTER *)
+	PurgeStonesInMap = 0x81EC310, // SECTREE_MANAGER::PurgeStonesInMap(long)
+	GetRandomLocation = 0x81E7CD0, // SECTREE_MANAGER::GetRandomLocation(long,pixel_position_s &,unsigned int,unsigned int,int)
+	DestroyPrivateMap = 0x81EC6F0, // SECTREE_MANAGER::DestroyPrivateMap(long)
+	LoadMapRegion = 0x81E96E0, // SECTREE_MANAGER::LoadMapRegion(char  const*,SSetting &,char  const*)
+	GetMonsterCountInMap = 0x81EBC60, // SECTREE_MANAGER::GetMonsterCountInMap(long,unsigned int)
+	LoadAttribute = 0x81E8680, // SECTREE_MANAGER::LoadAttribute(SECTREE_MAP *,char  const*,SSetting &)
+	GetDungeonArea = 0x81E9580, // SECTREE_MANAGER::GetDungeonArea(long)
+	GetSpawnPositionByMapIndex = 0x81E7FC0, // SECTREE_MANAGER::GetSpawnPositionByMapIndex(long,pixel_position_s &)
+	ForAttrRegionCell = 0x81E6AB0, // SECTREE_MANAGER::ForAttrRegionCell(long,long,long,unsigned int,EAttrRegionMode)
+	GetEmpireFromMapIndex = 0x81E61A0, // SECTREE_MANAGER::GetEmpireFromMapIndex(long)
+	GetMapBasePositionByMapIndex = 0x81E7BC0, // SECTREE_MANAGER::GetMapBasePositionByMapIndex(long,pixel_position_s &)
+	GetMapBasePosition = 0x81E7B30, // SECTREE_MANAGER::GetMapBasePosition(long,long,pixel_position_s &)
+	ForAttrRegion = 0x81E7340, // SECTREE_MANAGER::ForAttrRegion(long,long,long,long,long,long,unsigned int,EAttrRegionMode)
+	ForAttrRegionFreeAngle = 0x81E6BF0, // SECTREE_MANAGER::ForAttrRegionFreeAngle(long,long,long,long,long,long,unsigned int,EAttrRegionMode)
+};
+enum class SECTREE_MAP {
+	SECTREE_MAP = 0x81E8E80, // SECTREE_MAP::SECTREE_MAP(SECTREE_MAP&)
+	Find__12564 = 0x81E6290, // SECTREE_MAP::Find(unsigned int,unsigned int)
+	__SECTREE_MAP = 0x81E85A0, // SECTREE_MAP::~SECTREE_MAP()
+	Build = 0x81E8AE0, // SECTREE_MAP::Build(void)
+	DumpAllToSysErr = 0x81EE430, // SECTREE_MAP::DumpAllToSysErr(void)
+	Find = 0x81E6240, // SECTREE_MAP::Find(unsigned int)
+};
 }
 }
 #endif // __LIBM2_ADDR_HPP
