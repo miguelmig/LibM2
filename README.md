@@ -8,6 +8,6 @@ We're not certain which exact one.
 
 Also requires a C++11 compatible compiler (e.g. gcc >= 4.8)
 
-
+Requires mysql headers and must be linked against mysql to use any of the mysql_* functions (as I was too lazy to manually implement them)
 
 More documentation comming soon™.

@@ -49,7 +49,6 @@
 #include <boost/algorithm/string/std_containers_traits.hpp>
 #include <typeinfo>
 #include "../utils/lua.hpp"
-#include "../utils/mysql/mysql.h"
 #include <boost/intrusive_ptr.hpp>
 #include <tr1/unordered_set>
 namespace libm2{
