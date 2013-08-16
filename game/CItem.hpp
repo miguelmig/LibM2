@@ -12,22 +12,6 @@
 #include "CEntity.hpp"
 #include "packet.hpp"
 namespace libm2{
-struct TPlayerItemAttribute {
-    BYTE bType;
-    short sValue;
-};
-struct SPlayerItem {
-    DWORD id;
-    BYTE window;
-    WORD pos;
-    DWORD count;
-    DWORD vnum;
-    long alSockets[3];
-    TPlayerItemAttribute aAttr[7];
-    DWORD owner;
-} typedef TPlayerItem;
-
-
 struct CItem : public CEntity {
   private:
     const TItemTable *m_pProto;

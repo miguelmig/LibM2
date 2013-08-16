@@ -10,6 +10,7 @@
 #pragma pack(push, 1)
 #endif
 namespace libm2{
+
 struct SItemLimit {
     BYTE bType;
     long lValue;
@@ -56,7 +57,28 @@ struct SItemTable : public SEntityTable {
 __attribute__((packed))
 #endif
 typedef TItemTable;
-
+struct TPlayerItemAttribute {
+    BYTE bType;
+    short sValue;
+}
+#ifndef __GNUC__
+__attribute__((packed))
+#endif
+;
+struct SPlayerItem {
+    DWORD id;
+    BYTE window;
+    WORD pos;
+    DWORD count;
+    DWORD vnum;
+    long alSockets[3];
+    TPlayerItemAttribute aAttr[7];
+    DWORD owner;
+}
+#ifndef __GNUC__
+__attribute__((packed))
+#endif
+typedef TPlayerItem;
 }
 #ifdef __GNUC__
 #pragma pack(pop)
