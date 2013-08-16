@@ -6,15 +6,26 @@
 #ifndef __LIBM2_GAME_ITEMTABLE_HPP
 #define __LIBM2_GAME_ITEMTABLE_HPP
 #include "SEntityTable.hpp"
+#ifdef __GNUC__
+#pragma pack(push, 1)
+#endif
 namespace libm2{
 struct SItemLimit {
     BYTE bType;
     long lValue;
-} typedef TItemLimit;
+}
+#ifndef __GNUC__
+__attribute__((packed))
+#endif
+typedef TItemLimit;
 struct SItemApply {
     BYTE bType;
     long lValue;
-} typedef TItemApply;
+}
+#ifndef __GNUC__
+__attribute__((packed))
+#endif
+typedef TItemApply;
 struct SItemTable : public SEntityTable {
     char szName[25];
     char szLocaleName[25];
@@ -40,6 +51,14 @@ struct SItemTable : public SEntityTable {
     short sAddonType;
     char cLimitRealTimeFirstUseIndex;
     char cLimitTimerBasedOnWearIndex;
-} typedef TItemTable;
 }
+#ifndef __GNUC__
+__attribute__((packed))
+#endif
+typedef TItemTable;
+
+}
+#ifdef __GNUC__
+#pragma pack(pop)
+#endif
 #endif // __LIBM2_GAME_ITEMTABLE_HPP
