@@ -384,6 +384,16 @@ int CItem::GetSocketCount() {
 bool CItem::OnAfterCreatedItem() {
 	return ((bool(*)(CItem *))Addr::CItem::OnAfterCreatedItem)(this);
 }
-
-
+const TItemTable* CItem::GetProto(){
+    return m_pProto;
+}
+DWORD CItem::GetMaskVnum(){
+    return m_dwMaskVnum;
+}
+long CItem::GetSocket(int pos){
+    if (pos < 3){
+        return m_alSockets[pos];
+    }
+    return 0;
+}
 }
