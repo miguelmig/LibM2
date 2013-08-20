@@ -13,6 +13,7 @@
 #include "game/quest/CQuestManager.hpp"
 #include "utils/lua.hpp"
 #include "IQuest.hpp"
+extern char** environ;
 namespace libm2{
 typedef void(*tInterpretCommand)(LPCHARACTER,const char*, size_t);
 
@@ -30,6 +31,7 @@ class LibM2: public singleton<LibM2>{
     static void addQuestFunction(std::string table,std::string name,lua_CFunction func);
     static void addQuestTable(std::string table, tQuestTable);
     static void addQuestTable(IQuest*);
+    static void removePRELOAD();
 };
 }
 #endif // __LIBM2_LIBM2_HPP
