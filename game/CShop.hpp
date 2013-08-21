@@ -7,15 +7,8 @@
 #define __LIBM2_GAME_CSHOP_HPP
 #include "stdInclude.hpp"
 #include "CGrid.hpp"
+#include "SShopTable.hpp"
 namespace libm2{
-struct SShopItemTable {
-    DWORD vnum;
-    BYTE count;
-    BYTE pos;
-    DWORD price;
-    BYTE display_pos;
-} typedef TShopItemTable;
-
 class CShop {
   public:
     class shop_item {

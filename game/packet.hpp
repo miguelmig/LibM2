@@ -107,6 +107,11 @@ struct tChangeGuildMaster {
     DWORD idFrom;
     DWORD idTo;
 }typedef TPacketChangeGuildMaster;
-
+struct $_63 {
+    DWORD dwWarID;
+    char szLogin[31];
+    DWORD dwGold;
+    DWORD dwGuild;
+} typedef TPacketGDGuildWarBet;
 }
 #endif // __LIBM2_GAME_PACKET_HPP

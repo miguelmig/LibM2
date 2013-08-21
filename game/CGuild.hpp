@@ -5,6 +5,8 @@
  */
 #ifndef __LIBM2_GAME_CGUILD_HPP
 #define __LIBM2_GAME_CGUILD_HPP
+#include "stdInclude.hpp"
+#include "EVENT.hpp"
 namespace libm2{
 struct SGuildGrade {
     char grade_name[9];
@@ -82,7 +84,7 @@ struct SGuildReserve {
     long lPowerFrom;
     long lPowerTo;
     long lHandicap;
-} typedef TGuildwarReserve;
+} typedef TGuildWarReserve;
 class CGuild {
     public:
  enum GuildJoinErrCode {GERR_NONE,

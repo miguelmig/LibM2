@@ -1218,5 +1218,15 @@ enum EWindows {
     MALL,
     GROUND
 };
+enum GOLDBAR_HOW {
+    PERSONAL_SHOP_BUY = 1,
+    PERSONAL_SHOP_SELL,
+    SHOP_BUY,
+    SHOP_SELL,
+    EXCHANGE_TAKE,
+    EXCHANGE_GIVE,
+    QUEST
+};
+
 }
 #endif // __LIBM2_GAME_ENUMS_HPP

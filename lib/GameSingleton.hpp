@@ -5,6 +5,7 @@
  */
 #ifndef __LIBM2_LIB_GAMESINGLETON_HPP
 #define __LIBM2_LIB_GAMESINGLETON_HPP
+#include <cstddef>
 namespace libm2{
 template <typename T, unsigned int TAddr>
 class GameSingleton
