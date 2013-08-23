@@ -113,5 +113,14 @@ struct $_63 {
     DWORD dwGold;
     DWORD dwGuild;
 } typedef TPacketGDGuildWarBet;
+struct SPacketGGLogin {
+    BYTE bHeader;
+    char szName[25];
+    DWORD dwPID;
+    BYTE bEmpire;
+    BYTE bMapIndex;
+    BYTE bChannel;
+} typedef TPacketGGLogin;
+
 }
 #endif // __LIBM2_GAME_PACKET_HPP

@@ -1310,6 +1310,34 @@ enum class LogManager{
 	DragonSlayLog = 0x816A7B0, // LogManager::DragonSlayLog(unsigned int,unsigned int,unsigned int,unsigned int)
 	ItemLog__11367 = 0x816B9E0, // LogManager::ItemLog(CHARACTER *,int,int,char  const*,char  const*)
 };
+enum class P2P_MANAGER{
+    singleton=0x86A3714,
+	UnregisterConnector = 0x817EB60, // P2P_MANAGER::UnregisterConnector(DESC *)
+	RegisterAcceptor = 0x817E3D0, // P2P_MANAGER::RegisterAcceptor(DESC *)
+	RegisterConnector = 0x817E450, // P2P_MANAGER::RegisterConnector(DESC *)
+	EraseUserByDesc = 0x817EAD0, // P2P_MANAGER::EraseUserByDesc(DESC *)
+	FindByPID = 0x817E120, // P2P_MANAGER::FindByPID(unsigned int)
+	UnregisterAcceptor = 0x817EC20, // P2P_MANAGER::UnregisterAcceptor(DESC *)
+	Boot = 0x817E200, // P2P_MANAGER::Boot(DESC *)
+	FlushOutput = 0x817E330, // P2P_MANAGER::FlushOutput(void)
+	Logout__19821 = 0x817EA60, // P2P_MANAGER::Logout(char  const*)
+	P2P_MANAGER = 0x817EC90, // P2P_MANAGER::P2P_MANAGER(void)
+	Logout = 0x817E7E0, // P2P_MANAGER::Logout(_CCI *)
+	Send = 0x817E500, // P2P_MANAGER::Send(void  const*,int,DESC *)
+	__P2P_MANAGER = 0x817EEB0, // P2P_MANAGER::~P2P_MANAGER()
+	GetCount = 0x817E0C0, // P2P_MANAGER::GetCount(void)
+	Login = 0x817F4B0, // P2P_MANAGER::Login(DESC *,SPacketGGLogin  const*)
+	GetEmpireUserCount = 0x817E0F0, // P2P_MANAGER::GetEmpireUserCount(int)
+	Find = 0x817E5C0, // P2P_MANAGER::Find(char  const*)
+};
+enum class TEMP_BUFFER {
+	reset = 0x8064940, // TEMP_BUFFER::reset(void)
+	TEMP_BUFFER = 0x8064A70, // TEMP_BUFFER::TEMP_BUFFER(int,bool)
+	read_peek = 0x80649E0, // TEMP_BUFFER::read_peek(void)
+	write = 0x80649A0, // TEMP_BUFFER::write(void  const*,int)
+	__TEMP_BUFFER = 0x8064A10, // TEMP_BUFFER::~TEMP_BUFFER()
+	size = 0x8064970, // TEMP_BUFFER::size(void)
+};
 }
 }
 #endif // __LIBM2_ADDR_HPP
