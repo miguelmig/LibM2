@@ -16,6 +16,7 @@ namespace libm2 {
 LibM2::LibM2(): singleton::singleton() {
     detour_interpretCommand=simpleHook<tInterpretCommand>((unsigned int)Addr::misc::interpret_command,interpretCommand);
     detour_registerQuestTables=simpleHook<void(*)(void)>((unsigned int)Addr::quest::misc::RegisterAffectFunctionTable,registerQuestTables);
+    //onDeath=new events<CHARACTER*>;
 }
 void LibM2::interpretCommand(LPCHARACTER ch,const char* data, size_t len) {
     LibM2* self=instance();

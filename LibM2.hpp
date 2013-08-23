@@ -13,6 +13,7 @@
 #include "game/quest/CQuestManager.hpp"
 #include "utils/lua.hpp"
 #include "IQuest.hpp"
+#include "lib/event.hpp"
 extern char** environ;
 namespace libm2{
 typedef void(*tInterpretCommand)(LPCHARACTER,const char*, size_t);
@@ -23,6 +24,8 @@ class LibM2: public singleton<LibM2>{
     std::map<std::string,tQuestTable> m_map_quest;
     MologieDetours::Detour<tInterpretCommand>*detour_interpretCommand;
     MologieDetours::Detour<void(*)(void)>*detour_registerQuestTables;
+  public:
+    //events<CHARACTER*>* onDeath;
   public:
     LibM2();
     static void interpretCommand(LPCHARACTER ch,const char* data, size_t len);
