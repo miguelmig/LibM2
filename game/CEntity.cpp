@@ -76,4 +76,7 @@ void CEntity::ViewInsert(LPENTITY a0, bool a1) {
 void CEntity::SetType(int a0) {
 	((void(*)(CEntity *, int))Addr::CEntity::SetType)(this, a0);
 }
+LPDESC CEntity::GetDesc(void) const {
+    return m_lpDesc;
+}
 }
