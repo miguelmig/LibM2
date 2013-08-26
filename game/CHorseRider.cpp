@@ -105,4 +105,7 @@ short CHorseRider::GetHorseMaxStamina() {
 short CHorseRider::GetHorseMaxHealth() {
 	return ((short(*)(CHorseRider *))Addr::CHorseRider::GetHorseMaxHealth)(this);
 }
+BYTE CHorseRider::GetHorseLevel(void) const{
+    return m_Horse.bLevel;
+}
 }

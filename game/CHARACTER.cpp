@@ -1807,6 +1807,8 @@ bool CHARACTER::CanMove() const {
 void CHARACTER::ToggleMonsterLog() {
 	((void(*)(CHARACTER *))Addr::CHARACTER::ToggleMonsterLog)(this);
 }
-
+CGuild* CHARACTER::GetGuild() const{
+    return m_pGuild;
+}
 
 }

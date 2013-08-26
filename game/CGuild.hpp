@@ -7,6 +7,7 @@
 #define __LIBM2_GAME_CGUILD_HPP
 #include "stdInclude.hpp"
 #include "EVENT.hpp"
+#include "SQLMsg.hpp"
 namespace libm2{
 struct SGuildGrade {
     char grade_name[9];
@@ -145,7 +146,7 @@ class CGuild {
     void SendLogoutPacket(LPCHARACTER, LPCHARACTER);
     void SendLogoutPacket(LPCHARACTER, DWORD);
     void SendGuildInfoPacket(LPCHARACTER);
-    void SendGuildDataUpdateToAllMember(void /* SQLMsg*/ *);
+    void SendGuildDataUpdateToAllMember(SQLMsg *);
     void Load(DWORD);
     void SaveLevel(void);
     void SaveSkill(void);
@@ -220,10 +221,10 @@ class CGuild {
     void InviteDeny(DWORD);
   private:
     void Initialize(void);
-    void LoadGuildData(void /*SQLMsg*/ *);
-    void LoadGuildGradeData(void /*SQLMsg*/ *);
-    void LoadGuildMemberData(void /*SQLMsg*/ *);
-    void __P2PUpdateGrade(void /*SQLMsg*/ *);
+    void LoadGuildData(SQLMsg *);
+    void LoadGuildGradeData(SQLMsg *);
+    void LoadGuildMemberData(SQLMsg *);
+    void __P2PUpdateGrade(SQLMsg *);
     CGuild::GuildJoinErrCode VerifyGuildJoinableCondition(LPCHARACTER);
 };
 }
