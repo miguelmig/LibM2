@@ -5,6 +5,7 @@
  */
 #ifndef __LIBM2_LIB_SINGLETON_HPP
 #define __LIBM2_LIB_SINGLETON_HPP
+#include <cstddef>
 namespace libm2{
 template <typename T>
 class singleton
