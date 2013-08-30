@@ -56,6 +56,10 @@ void LibM2::registerQuestTables() {
     }
 };
 void LibM2::addQuestFunction(std::string table,std::string name,lua_CFunction func) {
+    if (instance()->m_map_quest.find(table)==instance()->m_map_quest.end()) {
+        // insert new, empty map
+        instance()->m_map_quest.insert(std::pair<std::string,tQuestTable>(table,tQuestTable()));
+    }
     instance()->m_map_quest.at(table).insert(std::pair<std::string,lua_CFunction>(name,func));
 };
 void LibM2::addQuestTable(std::string tablename, tQuestTable table) {
