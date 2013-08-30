@@ -67,8 +67,8 @@ void LibM2::addQuestTable(std::string tablename, tQuestTable table) {
             for (tQuestTable::iterator it=table.begin(); it!=table.end(); it++) {
                 to.insert(std::pair<std::string,lua_CFunction>(it->first,it->second));
             }
+            return;
         }catch(std::out_of_range& e){ // catch odd exceptions
-            break;
         }
     }
     // otherwise just insert as new map
