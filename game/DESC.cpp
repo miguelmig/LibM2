@@ -202,4 +202,7 @@ void DESC::SendKeyAgreement() {
 void DESC::SetPhase(int a0) {
 	((void(*)(DESC *, int))Addr::DESC::SetPhase)(this, a0);
 }
+TAccountTable& DESC::GetAccountTable(){
+    return m_accountTable;
+}
 }
