@@ -6,6 +6,61 @@
 #include "fwDecl.hpp"
 #ifndef __LIBM2_GAME_STDINCLUDE_HPP
 #define __LIBM2_GAME_STDINCLUDE_HPP
+#include <iomanip>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <functional>
+#include <string>
+#include <vector>
+//#include <unordered_map>
+#include <map>
+#include <list>
+#include <queue>
+#include <unordered_set>
+#include <set>
+#include <stdexcept>
+#include <cassert>
+#include <cstdint>
+#include <cstdio>
+#include <cstdarg>
+#include <cstring>
+#include <ctime>
+#include <cmath>
+#include <algorithm>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <arpa/inet.h>
+#include <stdint.h>
+#include <pthread.h>
+#include <boost/version.hpp>
+#if BOOST_VERSION > 104700 || BOOST_VERSION < 104100
+namespace boost{
+template <typename Key, typename Mapped, typename Hash = int, typename Pred = int, typename Alloc = int>  class unordered_map{
+    char data[28];
+};
+}
+#else
+#include <boost/unordered_map.hpp>
+#endif
+#include <boost/unordered_set.hpp>
+#include <boost/functional/hash.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/algorithm/string/concept.hpp>
+#include <boost/algorithm/string/constants.hpp>
+#include <boost/algorithm/string/erase.hpp>
+#include <boost/algorithm/string/find.hpp>
+#include <boost/algorithm/string/find_format.hpp>
+#include <boost/algorithm/string/find_iterator.hpp>
+#include <boost/foreach.hpp>
+#include <boost/algorithm/string/finder.hpp>
+#include <boost/algorithm/string/replace.hpp>
+#include <boost/algorithm/string/std_containers_traits.hpp>
+#include <typeinfo>
+#include "../utils/lua.hpp"
+#include <boost/intrusive_ptr.hpp>
 namespace libm2{
 // Typedefs
 typedef int socket_t;
