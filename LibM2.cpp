@@ -62,14 +62,17 @@ void LibM2::addQuestTable(std::string tablename, tQuestTable table) {
     LibM2* self=instance();
     // Merge if already exists - overwriting already existing functions
     if (self->m_map_quest.find(tablename)!=self->m_map_quest.end()) {
-        tQuestTable to = self->m_map_quest.at(tablename);
-        for (tQuestTable::iterator it=table.begin(); it!=table.end(); it++) {
-            to.insert(std::pair<std::string,lua_CFunction>(it->first,it->second));
+        try{
+            tQuestTable to = self->m_map_quest.at(tablename);
+            for (tQuestTable::iterator it=table.begin(); it!=table.end(); it++) {
+                to.insert(std::pair<std::string,lua_CFunction>(it->first,it->second));
+            }
+        }catch(std::out_of_range& e){ // catch odd exceptions
+            break;
         }
-    } else {
-        // otherwise just insert as new map
-        self->m_map_quest.insert(std::pair<std::string,tQuestTable>(tablename,table));
     }
+    // otherwise just insert as new map
+    self->m_map_quest.insert(std::pair<std::string,tQuestTable>(tablename,table));
 };
 void LibM2::addQuestTable(IQuest* q){
     addQuestTable(q->getName(),q->getTable());
