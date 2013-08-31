@@ -6,9 +6,15 @@
 #include "CHARACTER.hpp"
 #include "../addr.hpp"
 #include "VID.hpp"
+#include <cstdio>
 namespace libm2{
-void CHARACTER::ChatPacket(BYTE type, const char * msg){
-    ((void(*)(CHARACTER* pkCh,BYTE,const char*))(Addr::CHARACTER::ChatPacket))(this,type,msg);
+void CHARACTER::ChatPacket(BYTE type, const char * msg, ...){
+    va_list va;
+    va_start(va, msg);
+    char buffer[513];
+    vsnprintf(buffer, 513, msg, va);
+    va_end(va);
+    ((void(*)(CHARACTER* pkCh,BYTE,const char*))(Addr::CHARACTER::ChatPacket))(this,type,buffer);
 }
 void CHARACTER::ChatPacket(BYTE type, std::string msg){
     this->ChatPacket(type, msg.c_str());
@@ -1096,8 +1102,13 @@ void CHARACTER::BuffOnAttr_AddBuffsFromItem(LPITEM a0) {
 	((void(*)(CHARACTER *, LPITEM))Addr::CHARACTER::BuffOnAttr_AddBuffsFromItem)(this, a0);
 }
 
-void CHARACTER::MonsterLog(const char * a0,...) {
-	((void(*)(CHARACTER *, const char *))Addr::CHARACTER::MonsterLog)(this, a0);
+void CHARACTER::MonsterLog(const char * format,...) {
+    va_list va;
+    va_start(va, format);
+    char buffer[513];
+    vsnprintf(buffer, 513, format, va);
+    va_end(va);
+	((void(*)(CHARACTER *, const char *))Addr::CHARACTER::MonsterLog)(this, buffer);
 }
 
 bool CHARACTER::GiveItemFromSpecialItemGroup(DWORD a0, std::vector<unsigned int> & a1, std::vector<unsigned int> & a2, std::vector<CItem*> & a3, int & a4) {

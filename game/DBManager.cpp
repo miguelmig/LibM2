@@ -56,12 +56,22 @@ void DBManager::SendMoneyLog(BYTE a0, DWORD a1, int a2) {
 	((void(*)(DBManager *, BYTE, DWORD, int))Addr::DBManager::SendMoneyLog)(this, a0, a1, a2);
 }
 
-void DBManager::ReturnQuery(int a0, DWORD a1, void * a2, const char * a3,...) {
-	((void(*)(DBManager *, int, DWORD, void *, const char *, ...))Addr::DBManager::ReturnQuery)(this, a0, a1, a2, a3);
+void DBManager::ReturnQuery(int a0, DWORD a1, void * a2, const char * format,...) {
+    va_list va;
+    va_start(va, format);
+    char buffer[513];
+    vsnprintf(buffer, 513, format, va);
+    va_end(va);
+	((void(*)(DBManager *, int, DWORD, void *, const char *,...))Addr::DBManager::ReturnQuery)(this, a0, a1, a2, buffer);
 }
 
-SQLMsg * DBManager::DirectQuery(const char * a0,...) {
-	return ((SQLMsg *(*)(DBManager *, const char *, ...))Addr::DBManager::DirectQuery)(this, a0);
+SQLMsg * DBManager::DirectQuery(const char * format,...) {
+    va_list va;
+    va_start(va, format);
+    char buffer[513];
+    vsnprintf(buffer, 513, format, va);
+    va_end(va);
+	return ((SQLMsg *(*)(DBManager *, const char *, ...))Addr::DBManager::DirectQuery)(this, buffer);
 }
 
 const std::string & DBManager::GetDBString(const std::string & a0) {
@@ -100,8 +110,13 @@ CLoginData * DBManager::GetLoginData(DWORD a0) {
 	return ((CLoginData *(*)(DBManager *, DWORD))Addr::DBManager::GetLoginData)(this, a0);
 }
 
-void DBManager::Query(const char * a0, ...) {
-	((void(*)(DBManager *, const char *, ...))Addr::DBManager::Query)(this, a0);
+void DBManager::Query(const char * format, ...) {
+    va_list va;
+    va_start(va, format);
+    char buffer[513];
+    vsnprintf(buffer, 513, format, va);
+    va_end(va);
+	((void(*)(DBManager *, const char *, ...))Addr::DBManager::Query)(this, buffer);
 }
 
 size_t DBManager::EscapeString(char * a0, size_t a1, const char * a2, size_t a3) {

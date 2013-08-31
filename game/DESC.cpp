@@ -7,8 +7,13 @@
 #include "../addr.hpp"
 #include "CInputLogin.hpp"
 namespace libm2{
-void DESC::ChatPacket(BYTE a0, const char * a1, ...) {
-	((void(*)(DESC *, BYTE, const char *, ...))Addr::DESC::ChatPacket)(this, a0, a1);
+void DESC::ChatPacket(BYTE a0, const char * format, ...) {
+    va_list va;
+    va_start(va, format);
+    char buffer[513];
+    vsnprintf(buffer, 513, format, va);
+    va_end(va);
+	((void(*)(DESC *, BYTE, const char *, ...))Addr::DESC::ChatPacket)(this, a0, buffer);
 }
 
 BYTE DESC::GetEmpire() {
