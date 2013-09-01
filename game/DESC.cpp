@@ -210,4 +210,7 @@ void DESC::SetPhase(int a0) {
 TAccountTable& DESC::GetAccountTable(){
     return m_accountTable;
 }
+LPCHARACTER DESC::GetCharacter(){
+    return m_lpCharacter;
+}
 }
