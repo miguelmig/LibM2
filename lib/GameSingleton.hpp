@@ -12,6 +12,7 @@ class GameSingleton
 {
   public:
     static T * ms_singleton;
+    char __dummy_data_to_fix_alignment[4]; // The singleton class in the game binary for some reason is 4bytes in size
     GameSingleton(void);
     ~GameSingleton();
     static T *instance(){
