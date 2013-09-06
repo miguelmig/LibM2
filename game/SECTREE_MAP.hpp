@@ -15,6 +15,7 @@ class SECTREE_MAP {
     SECTREE_MAP(SECTREE_MAP &);
     ~SECTREE_MAP();
     bool Add(DWORD, LPSECTREE);
+    std::map<unsigned int, SECTREE*> GetSectreeMap(void);
     LPSECTREE Find(DWORD);
     LPSECTREE Find(DWORD, DWORD);
     void Build(void);
