@@ -18,6 +18,9 @@ long CEntity::GetZ() const{
 const PIXEL_POSITION& CEntity::GetXYZ() const{
     return this->m_pos;
 };
+long CEntity::GetMapIndex() const{
+    return this->m_lMapIndex;
+}
 void CEntity::PacketAround(const void * data, int len, LPENTITY exclude){
     ((void(*)(LPENTITY,const void*,int,LPENTITY))Addr::CEntity::PacketAround)(this,data,len,exclude);
 };
