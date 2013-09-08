@@ -18,7 +18,7 @@ void SECTREE_MAP::Build() {
 	((void(*)(SECTREE_MAP *))Addr::SECTREE_MAP::Build)(this);
 }
 
-std::map<unsigned int, SECTREE*> GetSectreeMap() {
+const std::map<unsigned int, SECTREE*> & SECTREE_MAP::GetSectreeMap(void) const{
 	return this->map_;
 }
 void SECTREE_MAP::DumpAllToSysErr() {
