@@ -225,7 +225,7 @@ struct packet_chat {
 	WORD size;
 	DWORD id;
 	char bEmpire;
-} typefef TPacketGCChat;
+} typedef TPacketGCChat;
 
 struct packet_ping {
 	BYTE header;
