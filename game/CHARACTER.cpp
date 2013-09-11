@@ -1821,5 +1821,7 @@ void CHARACTER::ToggleMonsterLog() {
 CGuild* CHARACTER::GetGuild() const{
     return m_pGuild;
 }
-
+LPCHARACTER CHARACTER::GetHorse() const{
+    return m_chHorse;
+}
 }
