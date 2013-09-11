@@ -122,5 +122,119 @@ struct SPacketGGLogin {
     BYTE bChannel;
 } typedef TPacketGGLogin;
 
+struct packet_points {
+	BYTE header;
+	DWORD points[255];
+} typedef TPacketGCPoints;
+
+
+struct packet_main_character {
+	BYTE header;
+	DWORD dwVID;
+	word wRaceNum;
+	char szName[25];
+	long lx;
+	long ly;
+	char empire;
+	WORD skill_group;
+} typedef TPacketGCMainCharacter;
+
+struct packet_del_char {
+	BYTE header;
+	DWORD id;
+} typedef TPacketGCCharacterDelete;
+
+struct packet_quest_confirm {
+	BYTE header;
+	char msg[65];
+	DWORD requestPID;
+} typedef TPacketGCQuestConfirm;
+
+struct command_sync_position_element {
+	DWORD dwVID;
+	long lX;
+	long lY;
+} typedef TPacketCGSyncPositionElement;
+
+struct packet_land_list {
+	BYTE header;
+	WORD size;
+} typedef TPacketGCLandList;
+
+struct packet_land_element {
+	DWORD dwVID;
+	long x;
+	long y;
+	long width;
+	long height;
+	DWORD dwGuildID;
+} typedef TPacketGCLandElement;
+
+struct SPacketGCPanamaPack {
+	BYTE header;
+	char szPackName[256];
+	BYTE abIV[32];
+} typedef TPacketGCPanamaPack;
+
+
+struct packet_shop {
+	BYTE header;
+	WORD size;
+	BYTE subheader;
+} typedef TPacketGCShop;
+
+struct packet_shop_update_item {
+	BYTE pos;
+	packet_shop_item items;
+} typedef TPacketGCShopUpdateItem;
+
+struct packet_shop_start {
+	DWORD owner_vid;
+	DWORD items[420];
+} typedef TPacketGCShopStart;
+
+struct packet_shop_item {
+	DWORD vnum;
+	long price;
+	char count;
+	
+};
+
+struct SPacketGCNPCPosition {
+	BYTE header;
+	short size;
+	short count;
+} typedef TPacketGCNPCPosition;
+
+struct TNPCPosition {
+	BYTE bType;
+	char name[25];
+	long x;
+	long y;
+	
+} typedef TPacketGCNPCPositionElem;
+
+struct packet_item_del {
+	BYTE header;
+	char pos;
+} typedef TPacketGCItemDel;
+
+
+struct packet_chat {
+	BYTE header;
+	WORD size;
+	DWORD id;
+	char bEmpire;
+} typedef TPacketGCChat;
+
+struct packet_ping {
+	BYTE header;
+} typedef TPacketGCPing;
+
+struct command_client_version {
+	BYTE header;
+	char filename[33];
+	char timestamp[33];
+} typedef TPacketCGClientVersion;
 }
 #endif // __LIBM2_GAME_PACKET_HPP
