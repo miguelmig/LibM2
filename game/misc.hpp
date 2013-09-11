@@ -5,6 +5,7 @@
  */
 #ifndef __LIBM2_GAME_MISC_HPP
 #define __LIBM2_GAME_MISC_HPP
+#include "stdInclude.hpp"
 namespace libm2{
 enum e_overtime {OT_NONE, OT_3HOUR, OT_5HOUR};
 enum eFileUpdatedOptions {
@@ -19,5 +20,6 @@ enum eFileUpdatedOptions {
 };
 int get_global_time();
 const char* locale_find(const char*);
+const char* two_arguments(const char * src, char * one, size_t size_one, char * two, size_t size_two);
 }
 #endif // __LIBM2_GAME_MISC_HPP

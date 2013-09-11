@@ -14,6 +14,7 @@ enum class misc{
     interpret_command=0x80CCF80,
     locale_find=0x8163460,
     Metin2Server_Check=0x82328F0,
+    two_arguments=0x81FB8D0,
 };
 enum class CHARACTER{
 	GoHome = 0x80706B0, // CHARACTER::GoHome(void)
