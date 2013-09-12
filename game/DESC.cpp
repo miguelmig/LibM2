@@ -213,4 +213,7 @@ TAccountTable& DESC::GetAccountTable(){
 LPCHARACTER DESC::GetCharacter(){
     return m_lpCharacter;
 }
+bool DESC::IsPhase(int phase) const{
+    return this->m_iPhase==phase;
+}
 }
