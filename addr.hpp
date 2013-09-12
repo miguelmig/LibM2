@@ -16,6 +16,8 @@ enum class misc{
     Metin2Server_Check=0x82328F0,
     two_arguments=0x81FB8D0,
     thecore_random=0x8439614,
+	sys_err=0x8439110,
+	sys_log=0x8438A90,
 };
 enum class CHARACTER{
 	GoHome = 0x80706B0, // CHARACTER::GoHome(void)

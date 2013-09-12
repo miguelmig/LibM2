@@ -18,5 +18,20 @@ const char* two_arguments(const char * src, char * one, size_t size_one, char * 
 DWORD thecore_random(){
     return ((DWORD(*)(void))Addr::misc::thecore_random)();
 }
-
+void sys_err(const char *func, int line, const char *format, ...){
+	va_list args;
+	va_start(args, format);
+	char buffer[1024];
+	vsprintf(buffer, format, args)
+	((void(*)(const char*, int, const char*))Addr::misc::sys_err)(func, line, buffer);
+	va_end(args);
+}
+void sys_log(unsigned int bit, char const* format, ...){
+	va_list args;
+	va_start(args, format);
+	char buffer[1024];
+	vsprintf(buffer, format, args)
+	((void(*)(unsigned int, char const*))Addr::misc::sys_log)(bit, buffer);
+	va_end(args);
+}
 }
