@@ -131,7 +131,7 @@ struct packet_points {
 struct packet_main_character {
 	BYTE header;
 	DWORD dwVID;
-	word wRaceNum;
+	WORD wRaceNum;
 	char szName[25];
 	long lx;
 	long ly;
@@ -183,6 +183,12 @@ struct packet_shop {
 	BYTE subheader;
 } typedef TPacketGCShop;
 
+struct packet_shop_item {
+	DWORD vnum;
+	long price;
+	char count;
+
+};
 struct packet_shop_update_item {
 	BYTE pos;
 	packet_shop_item items;
@@ -192,13 +198,6 @@ struct packet_shop_start {
 	DWORD owner_vid;
 	DWORD items[420];
 } typedef TPacketGCShopStart;
-
-struct packet_shop_item {
-	DWORD vnum;
-	long price;
-	char count;
-	
-};
 
 struct SPacketGCNPCPosition {
 	BYTE header;
@@ -211,7 +210,7 @@ struct TNPCPosition {
 	char name[25];
 	long x;
 	long y;
-	
+
 } typedef TPacketGCNPCPositionElem;
 
 struct packet_item_del {
