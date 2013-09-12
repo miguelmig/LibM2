@@ -21,5 +21,6 @@ enum eFileUpdatedOptions {
 int get_global_time();
 const char* locale_find(const char*);
 const char* two_arguments(const char * src, char * one, size_t size_one, char * two, size_t size_two);
+DWORD thecore_random();
 }
 #endif // __LIBM2_GAME_MISC_HPP
