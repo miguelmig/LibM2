@@ -18,6 +18,7 @@ typedef SPacketElement TPacketElement;
 
 class CPacketInfo {
   protected:
+    void* __vtable;
     std::map<int, SPacketElement*, std::less<int>, std::allocator<std::pair<int const, SPacketElement*> > > m_pPacketMap;
     TPacketElement *m_pCurrentPacket;
     DWORD m_dwStartTime;

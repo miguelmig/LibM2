@@ -7,6 +7,9 @@
 #define __LIBM2_GAME_SACCOUNTTABLE_HPP
 #include "stdInclude.hpp"
 #include "SSimplePlayer.hpp"
+#ifdef __GNUC__
+#pragma pack(push, 1)
+#endif
 namespace libm2{
 typedef struct SAccountTable {
     DWORD id;
@@ -16,6 +19,13 @@ typedef struct SAccountTable {
     char status[9];
     BYTE bEmpire;
     TSimplePlayer players[4];
-} TAccountTable, * PAccountTable;
+}
+#ifndef __GNUC__
+__attribute__((packed))
+#endif
+TAccountTable, * PAccountTable;
+#ifdef __GNUC__
+#pragma pack(pop)
+#endif
 }
 #endif // __LIBM2_GAME_SACCOUNTTYPE_HPP

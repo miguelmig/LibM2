@@ -6,6 +6,9 @@
 #ifndef __LIBM2_GAME_SSIMPLEPLAYER_HPP
 #define __LIBM2_GAME_SSIMPLEPLAYER_HPP
 #include "stdInclude.hpp"
+#ifdef __GNUC__
+#pragma pack(push, 1)
+#endif
 namespace libm2{
 struct SSimplePlayer {
     DWORD dwID;
@@ -26,6 +29,13 @@ struct SSimplePlayer {
     long lAddr;
     WORD wPort;
     BYTE skill_group;
-} typedef TSimplePlayer;
+}
+#ifndef __GNUC__
+__attribute__((packed))
+#endif
+typedef TSimplePlayer;
+#ifdef __GNUC__
+#pragma pack(pop)
+#endif
 }
 #endif // __LIBM2_GAME_SSIMPLEPLAYER_HPP
