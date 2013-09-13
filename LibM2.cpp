@@ -43,15 +43,20 @@ void LibM2::registerQuestTables() {
     LibM2* self=instance();
     // register affect table (hooked function)
     self->detour_registerQuestTables->GetOriginalFunction()();
-    luaL_reg* ltable;
+    SYSLOG << "Registering quest tables" << std::endl;
     for (std::map<std::string,tQuestTable>::iterator it=self->m_map_quest.begin(); it!=self->m_map_quest.end(); it++) {
-        ltable=new luaL_reg[it->second.size()];
+        luaL_reg* ltable=new luaL_reg[it->second.size()+1];
         int i=0;
         for(tQuestTable::iterator itF=it->second.begin(); itF!=it->second.end(); itF++) {
-            ltable[i].name=itF->first.c_str();
+            SYSLOG << "Adding " << it->first << "." << itF->first << std::endl;
+            char* buffer = new char[itF->first.length()+1];
+            strcpy(buffer, itF->first.c_str());
+            ltable[i].name=buffer;
             ltable[i].func=itF->second;
             i++;
         }
+        ltable[i].name=NULL;
+        ltable[i].func=NULL;
         quest::CQuestManager::instance()->AddLuaFunctionTable(it->first.c_str(),ltable);
     }
 };
