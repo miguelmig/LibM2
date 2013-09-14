@@ -22,6 +22,9 @@ void CHARACTER::ChatPacket(BYTE type, std::string msg){
 const char * CHARACTER::GetName(void) const{
     return this->m_stName.c_str();
 }
+BYTE CHARACTER::GetEmpire(void) const{
+    return this->m_bEmpire;
+}
 bool CHARACTER::SetSyncOwner(LPCHARACTER ch, bool b){
     return ((bool(*)(LPCHARACTER,LPCHARACTER,bool))Addr::CHARACTER::SetSyncOwner)(this,ch,b);
 }
