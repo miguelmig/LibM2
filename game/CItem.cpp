@@ -396,4 +396,8 @@ long CItem::GetSocket(int pos){
     }
     return 0;
 }
+
+DWORD GetVnum(void) const {
+	return this->m_pProto->dwVnum;	
+}
 }
