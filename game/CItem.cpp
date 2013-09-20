@@ -408,4 +408,7 @@ BYTE CItem::GetAttributeType(int attr){
 short CItem::GetAttributeValue(int attr){
     return this->m_aAttr[attr].sValue;
 }
+DWORD GetVnum(void) const {
+	return this->m_pProto->dwVnum;
+}
 }
