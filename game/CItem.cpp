@@ -396,4 +396,16 @@ long CItem::GetSocket(int pos){
     }
     return 0;
 }
+const TPlayerItemAttribute * CItem::GetAttributes(){
+    return this->m_aAttr;
+}
+const TPlayerItemAttribute & CItem::GetAttribute(int attr){
+    return this->m_aAttr[attr];
+}
+BYTE CItem::GetAttributeType(int attr){
+    return this->m_aAttr[attr].bType;
+}
+short CItem::GetAttributeValue(int attr){
+    return this->m_aAttr[attr].sValue;
+}
 }
