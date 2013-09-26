@@ -18,6 +18,9 @@ const char* two_arguments(const char * src, char * one, size_t size_one, char * 
 DWORD thecore_random(){
     return ((DWORD(*)(void))Addr::misc::thecore_random)();
 }
+int number_ex(int from,int to,const char* file, int line){
+    return ((int(*)(int, int, const char*, int))Addr::misc::number_ex)(from,to,file,line);
+}
 void sys_err(const char *func, int line, const char *format, ...){
 	va_list args;
 	va_start(args, format);

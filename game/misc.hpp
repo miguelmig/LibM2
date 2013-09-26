@@ -22,6 +22,7 @@ int get_global_time();
 const char* locale_find(const char*);
 const char* two_arguments(const char * src, char * one, size_t size_one, char * two, size_t size_two);
 DWORD thecore_random();
+int number_ex(int from,int to,const char* file, int line);
 void sys_err(const char *func, int line, const char *format, ...);
 void sys_log(unsigned int bit, char const* format, ...);
 }

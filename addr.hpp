@@ -18,6 +18,7 @@ enum class misc{
     thecore_random=0x8439614,
 	sys_err=0x8439110,
 	sys_log=0x8438A90,
+	number_ex=0x8439620,
 };
 enum class CHARACTER{
 	GoHome = 0x80706B0, // CHARACTER::GoHome(void)
