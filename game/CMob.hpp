@@ -8,10 +8,17 @@
 #include "stdInclude.hpp"
 #include "SEntityTable.hpp"
 namespace libm2{
+#ifdef __GNUC__
+#pragma pack(push, 1)
+#endif
 struct SMobSkillLevel {
     DWORD dwVnum;
     BYTE bLevel;
-} typedef TMobSkillLevel;
+}
+#ifndef __GNUC__
+__attribute__((packed))
+#endif
+typedef TMobSkillLevel;
 
 struct SMobTable : public SEntityTable {
     char szName[25];
@@ -60,7 +67,14 @@ struct SMobTable : public SEntityTable {
     BYTE bGodSpeedPoint;
     BYTE bDeathBlowPoint;
     BYTE bRevivePoint;
-} typedef TMobTable;
+}
+#ifndef __GNUC__
+__attribute__((packed))
+#endif
+typedef TMobTable;
+#ifdef __GNUC__
+#pragma pack(pop)
+#endif
 class SMobSplashAttackInfo {
     DWORD dwTiming;
     DWORD dwHitDistance;
