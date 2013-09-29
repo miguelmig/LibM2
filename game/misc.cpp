@@ -37,4 +37,25 @@ void sys_log(unsigned int bit, char const* format, ...){
 	((void(*)(unsigned int, char const*))Addr::misc::sys_log)(bit, buffer);
 	va_end(args);
 }
+long long MIN(long long val, long long val2){
+    if (val>val2){
+        return val2;
+    }
+    return val;
+}
+long long MINMAX(long long min, long long val, long long max){
+    if (val<min){
+        return min;
+    }
+    if (val>max){
+        return max;
+    }
+    return val;
+};
+long long MAX(long long val, long long val2){
+    if (val>val2){
+        return val;
+    }
+    return val2;
+}
 }

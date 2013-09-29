@@ -25,5 +25,8 @@ DWORD thecore_random();
 int number_ex(int from,int to,const char* file, int line);
 void sys_err(const char *func, int line, const char *format, ...);
 void sys_log(unsigned int bit, char const* format, ...);
+long long MIN(long long val, long long val2);
+long long MINMAX(long long min, long long val, long long max);
+long long MAX(long long val, long long val2);
 }
 #endif // __LIBM2_GAME_MISC_HPP

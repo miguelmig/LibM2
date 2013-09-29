@@ -1491,6 +1491,25 @@ enum class CGuild {
 	SaveMember = 0x811A290, // CGuild::SaveMember(unsigned int)
 	LoadGuildData = 0x8119E00, // CGuild::LoadGuildData(_SQLMsg *)
 };
+enum class CPrivManager{
+    singleton=0x86A3794,
+	GetPriv = 0x818C550, // CPrivManager::GetPriv(CHARACTER *,unsigned char)
+	RemoveCharacterPriv = 0x818C890, // CPrivManager::RemoveCharacterPriv(unsigned int,unsigned char)
+	GetPrivByGuild = 0x818BEA0, // CPrivManager::GetPrivByGuild(unsigned int,unsigned char)
+	GiveEmpirePriv = 0x818C310, // CPrivManager::GiveEmpirePriv(unsigned char,unsigned char,int,unsigned char,int)
+	GetPrivByEmpireEx = 0x818BD90, // CPrivManager::GetPrivByEmpireEx(unsigned char,unsigned char)
+	CPrivManager = 0x818C660, // CPrivManager::CPrivManager(void)
+	RequestGiveEmpirePriv = 0x818C130, // CPrivManager::RequestGiveEmpirePriv(unsigned char,unsigned char,int,int)
+	GetPrivByCharacter = 0x818BE30, // CPrivManager::GetPrivByCharacter(unsigned int,unsigned char)
+	GiveCharacterPriv = 0x818C720, // CPrivManager::GiveCharacterPriv(unsigned int,unsigned char,int,unsigned char)
+	GetPrivByEmpire = 0x818BDE0, // CPrivManager::GetPrivByEmpire(unsigned char,unsigned char)
+	RequestGiveCharacterPriv = 0x818C080, // CPrivManager::RequestGiveCharacterPriv(unsigned int,unsigned char,int)
+	GetPrivByGuildEx = 0x818BF10, // CPrivManager::GetPrivByGuildEx(unsigned int,unsigned char)const
+	RemoveEmpirePriv = 0x818BF80, // CPrivManager::RemoveEmpirePriv(unsigned char,unsigned char)
+	RemoveGuildPriv = 0x818CA10, // CPrivManager::RemoveGuildPriv(unsigned int,unsigned char)
+	GiveGuildPriv = 0x818CB40, // CPrivManager::GiveGuildPriv(unsigned int,unsigned char,int,unsigned char,int)
+	RequestGiveGuildPriv = 0x818C220, // CPrivManager::RequestGiveGuildPriv(unsigned int,unsigned char,int,int)
+};
 }
 }
 #endif // __LIBM2_ADDR_HPP
