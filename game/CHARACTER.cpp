@@ -1827,4 +1827,7 @@ CGuild* CHARACTER::GetGuild() const{
 LPCHARACTER CHARACTER::GetHorse() const{
     return m_chHorse;
 }
+DWORD CHARACTER::GetMountVnum(void) const{
+    return this->m_dwMountVnum;
+};
 }
