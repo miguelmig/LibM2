@@ -1552,6 +1552,32 @@ namespace marriage{
         RequestEndWedding = 0x816CC50, // marriage::TMarriage::RequestEndWedding(void)
     };
 } // marriage
+enum class CInputP2P {
+	FindPosition = 0x8147860, // CInputP2P::FindPosition(DESC *,char  const*)
+	Transfer = 0x81476C0, // CInputP2P::Transfer(char  const*)
+	Shout = 0x8147B20, // CInputP2P::Shout(char  const*)
+	Disconnect = 0x8148870, // CInputP2P::Disconnect(char  const*)
+	Analyze = 0x8148FD0, // CInputP2P::Analyze(DESC *,unsigned char,char  const*)
+	XmasWarpSantaReply = 0x8147560, // CInputP2P::XmasWarpSantaReply(char  const*)
+	MessengerAdd = 0x81484E0, // CInputP2P::MessengerAdd(char  const*)
+	LoginPing = 0x81474D0, // CInputP2P::LoginPing(DESC *,char  const*)
+	Relay = 0x8147DE0, // CInputP2P::Relay(DESC *,char  const*,unsigned int)
+	XmasWarpSanta = 0x8147620, // CInputP2P::XmasWarpSanta(char  const*)
+	MonarchNotice = 0x8147C50, // CInputP2P::MonarchNotice(DESC *,char  const*,unsigned int)
+	Logout = 0x8147FB0, // CInputP2P::Logout(DESC *,char  const*)
+	MessengerRemove = 0x8148150, // CInputP2P::MessengerRemove(char  const*)
+	WarpCharacter = 0x81477F0, // CInputP2P::WarpCharacter(char  const*)
+	Guild = 0x8147B60, // CInputP2P::Guild(DESC *,char  const*,unsigned int)
+	Setup = 0x8147980, // CInputP2P::Setup(DESC *,char  const*)
+	BlockChat = 0x81473F0, // CInputP2P::BlockChat(char  const*)
+	Notice = 0x8147D20, // CInputP2P::Notice(DESC *,char  const*,unsigned int)
+	MonarchTransfer = 0x8148A50, // CInputP2P::MonarchTransfer(DESC *,char  const*)
+	Login = 0x8147FF0, // CInputP2P::Login(DESC *,char  const*)
+	CInputP2P = 0x81480C0, // CInputP2P::CInputP2P(void)
+	GuildWarZoneMapIndex = 0x8147730, // CInputP2P::GuildWarZoneMapIndex(char  const*)
+	GetType = 0x81492C0, // CInputP2P::GetType(void)
+	PCBangUpdate = 0x81473B0, // CInputP2P::PCBangUpdate(char  const*)
+};
 } // Addr
 } // libm2
 #endif // __LIBM2_ADDR_HPP
