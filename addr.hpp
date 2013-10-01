@@ -1510,6 +1510,48 @@ enum class CPrivManager{
 	GiveGuildPriv = 0x818CB40, // CPrivManager::GiveGuildPriv(unsigned int,unsigned char,int,unsigned char,int)
 	RequestGiveGuildPriv = 0x818C220, // CPrivManager::RequestGiveGuildPriv(unsigned int,unsigned char,int,int)
 };
-}
-}
+namespace marriage{
+    enum class CManager {
+        singleton=0x86A3718,
+        CManager = 0x816DAE0, // marriage::CManager::CManager(void)
+        IsMarried = 0x816CBB0, // marriage::CManager::IsMarried(unsigned int)
+        Add = 0x816DBB0, // marriage::CManager::Add(unsigned int,unsigned int,int,char  const*,char  const*)
+        IsMarriageUniqueItem = 0x816C9E0, // marriage::CManager::IsMarriageUniqueItem(unsigned int)
+        Destroy = 0x816CA60, // marriage::CManager::Destroy(void)
+        IsEngaged = 0x816CB60, // marriage::CManager::IsEngaged(unsigned int)
+        RequestAdd = 0x816CE40, // marriage::CManager::RequestAdd(unsigned int,unsigned int,char  const*,char  const*)
+        Get = 0x816CAD0, // marriage::CManager::Get(unsigned int)
+        WeddingStart = 0x816D3E0, // marriage::CManager::WeddingStart(unsigned int,unsigned int)
+        Update = 0x816D320, // marriage::CManager::Update(unsigned int,unsigned int,long,unsigned char)
+        Logout = 0x816D2C0, // marriage::CManager::Logout(unsigned int)
+        Initialize = 0x816CA30, // marriage::CManager::Initialize(void)
+        WeddingReady = 0x816D4D0, // marriage::CManager::WeddingReady(unsigned int,unsigned int,unsigned int)
+        RequestUpdate = 0x816CD20, // marriage::CManager::RequestUpdate(unsigned int,unsigned int,int,unsigned char)
+        Remove = 0x816ECD0, // marriage::CManager::Remove(unsigned int,unsigned int)
+        Logout__19223 = 0x816D590, // marriage::CManager::Logout(CHARACTER *)
+        Login = 0x816E750, // marriage::CManager::Login(CHARACTER *)
+        RequestEndWedding = 0x816CBF0, // marriage::CManager::RequestEndWedding(unsigned int,unsigned int)
+        WeddingEnd = 0x816D5D0, // marriage::CManager::WeddingEnd(unsigned int,unsigned int)
+        RequestRemove = 0x816CCA0, // marriage::CManager::RequestRemove(unsigned int,unsigned int)
+        IsEngagedOrMarried = 0x816CB20, // marriage::CManager::IsEngagedOrMarried(unsigned int)
+    };
+    enum class TMarriage {
+        Save = 0x816CFC0, // marriage::TMarriage::Save(void)
+        GetMarriageGrade = 0x816E7B0, // marriage::TMarriage::GetMarriageGrade(void)
+        SetMarried = 0x816E270, // marriage::TMarriage::SetMarried(void)
+        IsNear = 0x816C990, // marriage::TMarriage::IsNear(void)
+        GetMarriagePoint = 0x816DE70, // marriage::TMarriage::GetMarriagePoint(void)
+        StartNearCheckEvent = 0x816D800, // marriage::TMarriage::StartNearCheckEvent(void)
+        Update = 0x816E150, // marriage::TMarriage::Update(unsigned int)
+        StopNearCheckEvent = 0x816D040, // marriage::TMarriage::StopNearCheckEvent(void)
+        WarpToWeddingMap = 0x816CEF0, // marriage::TMarriage::WarpToWeddingMap(unsigned int)
+        Logout = 0x816D100, // marriage::TMarriage::Logout(unsigned int)
+        NearCheck = 0x816E330, // marriage::TMarriage::NearCheck(void)
+        GetBonus = 0x816E810, // marriage::TMarriage::GetBonus(unsigned int,bool,CHARACTER *)
+        Login = 0x816E570, // marriage::TMarriage::Login(CHARACTER *)
+        RequestEndWedding = 0x816CC50, // marriage::TMarriage::RequestEndWedding(void)
+    };
+} // marriage
+} // Addr
+} // libm2
 #endif // __LIBM2_ADDR_HPP
