@@ -1510,6 +1510,74 @@ enum class CPrivManager{
 	GiveGuildPriv = 0x818CB40, // CPrivManager::GiveGuildPriv(unsigned int,unsigned char,int,unsigned char,int)
 	RequestGiveGuildPriv = 0x818C220, // CPrivManager::RequestGiveGuildPriv(unsigned int,unsigned char,int,int)
 };
-}
-}
+namespace marriage{
+    enum class CManager {
+        singleton=0x86A3718,
+        CManager = 0x816DAE0, // marriage::CManager::CManager(void)
+        IsMarried = 0x816CBB0, // marriage::CManager::IsMarried(unsigned int)
+        Add = 0x816DBB0, // marriage::CManager::Add(unsigned int,unsigned int,int,char  const*,char  const*)
+        IsMarriageUniqueItem = 0x816C9E0, // marriage::CManager::IsMarriageUniqueItem(unsigned int)
+        Destroy = 0x816CA60, // marriage::CManager::Destroy(void)
+        IsEngaged = 0x816CB60, // marriage::CManager::IsEngaged(unsigned int)
+        RequestAdd = 0x816CE40, // marriage::CManager::RequestAdd(unsigned int,unsigned int,char  const*,char  const*)
+        Get = 0x816CAD0, // marriage::CManager::Get(unsigned int)
+        WeddingStart = 0x816D3E0, // marriage::CManager::WeddingStart(unsigned int,unsigned int)
+        Update = 0x816D320, // marriage::CManager::Update(unsigned int,unsigned int,long,unsigned char)
+        Logout = 0x816D2C0, // marriage::CManager::Logout(unsigned int)
+        Initialize = 0x816CA30, // marriage::CManager::Initialize(void)
+        WeddingReady = 0x816D4D0, // marriage::CManager::WeddingReady(unsigned int,unsigned int,unsigned int)
+        RequestUpdate = 0x816CD20, // marriage::CManager::RequestUpdate(unsigned int,unsigned int,int,unsigned char)
+        Remove = 0x816ECD0, // marriage::CManager::Remove(unsigned int,unsigned int)
+        Logout__19223 = 0x816D590, // marriage::CManager::Logout(CHARACTER *)
+        Login = 0x816E750, // marriage::CManager::Login(CHARACTER *)
+        RequestEndWedding = 0x816CBF0, // marriage::CManager::RequestEndWedding(unsigned int,unsigned int)
+        WeddingEnd = 0x816D5D0, // marriage::CManager::WeddingEnd(unsigned int,unsigned int)
+        RequestRemove = 0x816CCA0, // marriage::CManager::RequestRemove(unsigned int,unsigned int)
+        IsEngagedOrMarried = 0x816CB20, // marriage::CManager::IsEngagedOrMarried(unsigned int)
+    };
+    enum class TMarriage {
+        Save = 0x816CFC0, // marriage::TMarriage::Save(void)
+        GetMarriageGrade = 0x816E7B0, // marriage::TMarriage::GetMarriageGrade(void)
+        SetMarried = 0x816E270, // marriage::TMarriage::SetMarried(void)
+        IsNear = 0x816C990, // marriage::TMarriage::IsNear(void)
+        GetMarriagePoint = 0x816DE70, // marriage::TMarriage::GetMarriagePoint(void)
+        StartNearCheckEvent = 0x816D800, // marriage::TMarriage::StartNearCheckEvent(void)
+        Update = 0x816E150, // marriage::TMarriage::Update(unsigned int)
+        StopNearCheckEvent = 0x816D040, // marriage::TMarriage::StopNearCheckEvent(void)
+        WarpToWeddingMap = 0x816CEF0, // marriage::TMarriage::WarpToWeddingMap(unsigned int)
+        Logout = 0x816D100, // marriage::TMarriage::Logout(unsigned int)
+        NearCheck = 0x816E330, // marriage::TMarriage::NearCheck(void)
+        GetBonus = 0x816E810, // marriage::TMarriage::GetBonus(unsigned int,bool,CHARACTER *)
+        Login = 0x816E570, // marriage::TMarriage::Login(CHARACTER *)
+        RequestEndWedding = 0x816CC50, // marriage::TMarriage::RequestEndWedding(void)
+    };
+} // marriage
+enum class CInputP2P {
+	FindPosition = 0x8147860, // CInputP2P::FindPosition(DESC *,char  const*)
+	Transfer = 0x81476C0, // CInputP2P::Transfer(char  const*)
+	Shout = 0x8147B20, // CInputP2P::Shout(char  const*)
+	Disconnect = 0x8148870, // CInputP2P::Disconnect(char  const*)
+	Analyze = 0x8148FD0, // CInputP2P::Analyze(DESC *,unsigned char,char  const*)
+	XmasWarpSantaReply = 0x8147560, // CInputP2P::XmasWarpSantaReply(char  const*)
+	MessengerAdd = 0x81484E0, // CInputP2P::MessengerAdd(char  const*)
+	LoginPing = 0x81474D0, // CInputP2P::LoginPing(DESC *,char  const*)
+	Relay = 0x8147DE0, // CInputP2P::Relay(DESC *,char  const*,unsigned int)
+	XmasWarpSanta = 0x8147620, // CInputP2P::XmasWarpSanta(char  const*)
+	MonarchNotice = 0x8147C50, // CInputP2P::MonarchNotice(DESC *,char  const*,unsigned int)
+	Logout = 0x8147FB0, // CInputP2P::Logout(DESC *,char  const*)
+	MessengerRemove = 0x8148150, // CInputP2P::MessengerRemove(char  const*)
+	WarpCharacter = 0x81477F0, // CInputP2P::WarpCharacter(char  const*)
+	Guild = 0x8147B60, // CInputP2P::Guild(DESC *,char  const*,unsigned int)
+	Setup = 0x8147980, // CInputP2P::Setup(DESC *,char  const*)
+	BlockChat = 0x81473F0, // CInputP2P::BlockChat(char  const*)
+	Notice = 0x8147D20, // CInputP2P::Notice(DESC *,char  const*,unsigned int)
+	MonarchTransfer = 0x8148A50, // CInputP2P::MonarchTransfer(DESC *,char  const*)
+	Login = 0x8147FF0, // CInputP2P::Login(DESC *,char  const*)
+	CInputP2P = 0x81480C0, // CInputP2P::CInputP2P(void)
+	GuildWarZoneMapIndex = 0x8147730, // CInputP2P::GuildWarZoneMapIndex(char  const*)
+	GetType = 0x81492C0, // CInputP2P::GetType(void)
+	PCBangUpdate = 0x81473B0, // CInputP2P::PCBangUpdate(char  const*)
+};
+} // Addr
+} // libm2
 #endif // __LIBM2_ADDR_HPP

@@ -1832,5 +1832,8 @@ LPCHARACTER CHARACTER::GetHorse() const{
 }
 DWORD CHARACTER::GetMountVnum(void) const{
     return this->m_dwMountVnum;
+}
+DWORD CHARACTER::GetExp(void) const{
+    return this->m_points.exp;
 };
 }
