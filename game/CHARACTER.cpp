@@ -19,6 +19,9 @@ void CHARACTER::ChatPacket(BYTE type, const char * msg, ...){
 void CHARACTER::ChatPacket(BYTE type, std::string msg){
     this->ChatPacket(type, msg.c_str());
 };
+LPPARTY CHARACTER::GetParty(void) const {
+	return this->m_pkParty;
+}
 const char * CHARACTER::GetName(void) const{
     return this->m_stName.c_str();
 }
