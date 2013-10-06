@@ -411,4 +411,7 @@ short CItem::GetAttributeValue(int attr){
 DWORD CItem::GetVnum(void) const {
 	return this->m_pProto->dwVnum;
 }
+BYTE CItem::GetType() const{
+    return this->m_pProto->bType;
+}
 }
