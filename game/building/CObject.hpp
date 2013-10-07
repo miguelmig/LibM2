@@ -34,7 +34,7 @@ struct CObject: public CEntity {
     ~CObject();
     void Destroy(void);
     virtual void EncodeInsertPacket(LPENTITY);
-    virtual void EncodeRemovePacket(LPENTITY);
+    //virtual void EncodeRemovePacket(LPENTITY); isnt implemented
     DWORD GetID(void);
     void SetVID(DWORD);
     DWORD GetVID(void);
