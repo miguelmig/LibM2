@@ -934,7 +934,6 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider {
     void SetDamMul(float);
 // custom functions
 public:
-	LPPARTY GetParty(void) const;
     void ChatPacket(BYTE, std::string);
 };
 typedef CHARACTER* LPCHARACTER;
