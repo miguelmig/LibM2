@@ -471,6 +471,7 @@ namespace libm2 {
         enum class EVENT {
             intrusive_ptr_add_ref = 0x81107C0,
             intrusive_ptr_release = 0x81108B0,
+            event_create_ex=0x8110990,
         };
         enum class CEntity {
             UpdateSectree = 0x810FC60, // CEntity::UpdateSectree(void)

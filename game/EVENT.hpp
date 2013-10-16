@@ -36,7 +36,8 @@ class event {
   public:
     event();
     ~event();
-} typedef EVENT;
+} typedef EVENT, * LPEVENT;
+LPEVENT event_create_ex(TEVENTFUNC func, event_info_data * info, long when);
 }
 
 #endif // __LIBM2_GAME_EVENT_HPP
