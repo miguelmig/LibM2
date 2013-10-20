@@ -19,6 +19,7 @@ namespace libm2 {
             sys_err = 0x8439110,
             sys_log = 0x8438A90,
             number_ex = 0x8439620,
+            TransformRefineItem = 0x8097700,
         };
         enum class CHARACTER {
             GoHome = 0x80706B0, // CHARACTER::GoHome(void)
@@ -659,6 +660,7 @@ namespace libm2 {
             SetExchanging = 0x814B920, // CItem::SetExchanging(bool)
             SetAccessorySocketDownGradeTime = 0x814C9C0, // CItem::SetAccessorySocketDownGradeTime(unsigned int)
             AddAttribute = 0x8150CC0, // CItem::AddAttribute(unsigned char,short)
+            AddAttributeVoid = 0x8151AA0, // CItem::AddAttribute(void)
             IsPCBangItem = 0x814BB00, // CItem::IsPCBangItem(void)
             EncodeInsertPacket = 0x814D670, // CItem::EncodeInsertPacket(CEntity *)
             StartDestroyEvent = 0x814F390, // CItem::StartDestroyEvent(int)
