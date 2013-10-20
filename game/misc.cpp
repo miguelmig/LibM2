@@ -58,4 +58,7 @@ long long MAX(long long val, long long val2){
     }
     return val2;
 }
+void TransformRefineItem(LPITEM a1, LPITEM a2){
+    ((void(*)(CItem *, CItem *))Addr::misc::TransformRefineItem)(a1, a2);
+}
 }
