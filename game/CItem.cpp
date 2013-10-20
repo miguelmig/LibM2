@@ -414,4 +414,10 @@ DWORD CItem::GetVnum(void) const {
 BYTE CItem::GetType() const{
     return this->m_pProto->bType;
 }
+BYTE CItem::GetSize(){
+    return this->m_pProto->bSize;
+}
+void CItem::AddAttribute(void){
+    ((void(*)(CItem *))Addr::CItem::AddAttributeVoid)(this);
+}
 }
