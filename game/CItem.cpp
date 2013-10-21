@@ -420,4 +420,10 @@ BYTE CItem::GetSize(){
 void CItem::AddAttribute(void){
     ((void(*)(CItem *))Addr::CItem::AddAttributeVoid)(this);
 }
+const char * CItem::GetName(){
+    return this->m_pProto->szLocaleName;
+}
+const char * CItem::GetBaseName(){
+    return this->m_pProto->szName;
+}
 }
