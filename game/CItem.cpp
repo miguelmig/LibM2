@@ -426,4 +426,7 @@ const char * CItem::GetName(){
 const char * CItem::GetBaseName(){
     return this->m_pProto->szName;
 }
+DWORD CItem::GetID(){
+    return this->m_dwID;
+}
 }
