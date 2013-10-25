@@ -1639,6 +1639,37 @@ namespace libm2 {
                 Reconstruct = 0x8067EC0, // building::CObject::Reconstruct(unsigned int)
             };
         } // building
+        enum class CPetActor {
+            CPetActor = 0x80C9FD0, // CPetActor::CPetActor(CHARACTER *,unsigned int,unsigned int)
+            GiveBuff = 0x80CA2A0, // CPetActor::GiveBuff(void)
+            Unmount = 0x80CA040, // CPetActor::Unmount(void)
+            ClearBuff = 0x80CA200, // CPetActor::ClearBuff(void)
+            SetName = 0x80CB630, // CPetActor::SetName(char  const*)
+            SetSummonItem = 0x80CA090, // CPetActor::SetSummonItem(CItem *)
+            Mount = 0x80CA570, // CPetActor::Mount(void)
+            Update = 0x80CAA90, // CPetActor::Update(unsigned int)
+            Summon = 0x80CB850, // CPetActor::Summon(char  const*,CItem *,bool)
+            _UpdatAloneActionAI = 0x80CA5D0, // CPetActor::_UpdatAloneActionAI(float,float)
+            __CPetActor = 0x80CB490, // CPetActor::~CPetActor()
+            Follow = 0x80CA320, // CPetActor::Follow(float)
+            Unsummon = 0x80CA4E0, // CPetActor::Unsummon(void)
+            _UpdateFollowAI = 0x80CA780, // CPetActor::_UpdateFollowAI(void)
+            CPetActor__20790 = 0x80CA100, // CPetActor::CPetActor(CHARACTER *,unsigned int,unsigned int)
+        };
+        enum class CPetSystem {
+            GetByVID = 0x80CACA0, // CPetSystem::GetByVID(unsigned int)const
+            DeletePet = 0x80CADF0, // CPetSystem::DeletePet(unsigned int)
+            CountSummoned = 0x80CAA10, // CPetSystem::CountSummoned(void)const
+            CPetSystem = 0x80CABA0, // CPetSystem::CPetSystem(CHARACTER *)
+            Update = 0x80CB110, // CPetSystem::Update(unsigned int)
+            GetByVnum = 0x80CAB50, // CPetSystem::GetByVnum(unsigned int)const
+            RefreshBuff = 0x80CAEC0, // CPetSystem::RefreshBuff(void)
+            __CPetSystem = 0x80CB360, // CPetSystem::~CPetSystem()
+            Destroy = 0x80CAD60, // CPetSystem::Destroy(void)
+            Summon = 0x80CC060, // CPetSystem::Summon(unsigned int,CItem *,char  const*,bool,unsigned int)
+            Unsummon = 0x80CB000, // CPetSystem::Unsummon(unsigned int,bool)
+            DeletePet__7723 = 0x80CAF40, // CPetSystem::DeletePet(CPetActor *)
+        };
     } // Addr
 } // libm2
 #endif // __LIBM2_ADDR_HPP
