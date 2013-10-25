@@ -53,6 +53,7 @@ class SECTREE {
     int GetEventAttribute(long, long);
     void SetAttribute(DWORD, DWORD, DWORD);
     void RemoveAttribute(DWORD, DWORD, DWORD);
+	const ENTITY_SET & GetEntitySet(void) const; 
   private:
     //void for_each_entity<FCollectEntity>(FCollectEntity &);
 };
