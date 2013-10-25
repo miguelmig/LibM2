@@ -1670,6 +1670,24 @@ namespace libm2 {
             Unsummon = 0x80CB000, // CPetSystem::Unsummon(unsigned int,bool)
             DeletePet__7723 = 0x80CAF40, // CPetSystem::DeletePet(CPetActor *)
         };
+        enum class SECTREE {
+            IncreasePC = 0x81E4F60, // SECTREE::IncreasePC(void)
+            BindAttribute = 0x81E4FB0, // SECTREE::BindAttribute(CAttribute *)
+            CloneAttribute = 0x81E4FE0, // SECTREE::CloneAttribute(SECTREE*)
+            DecreasePC = 0x81E52F0, // SECTREE::DecreasePC(void)
+            RemoveAttribute = 0x81E5150, // SECTREE::RemoveAttribute(unsigned int,unsigned int,unsigned int)
+            GetAttribute = 0x81E5020, // SECTREE::GetAttribute(long,long)
+            SetAttribute = 0x81E51A0, // SECTREE::SetAttribute(unsigned int,unsigned int,unsigned int)
+            RemoveEntity = 0x81E5410, // SECTREE::RemoveEntity(CEntity *)
+            GetID = 0x81E4F30, // SECTREE::GetID(void)
+            IsAttr = 0x81E5100, // SECTREE::IsAttr(long,long,unsigned int)
+            SECTREE = 0x81E5270, // SECTREE::SECTREE(void)
+            InsertEntity = 0x81E54D0, // SECTREE::InsertEntity(CEntity *)
+            Initialize = 0x81E4EF0, // SECTREE::Initialize(void)
+            Destroy = 0x81E5620, // SECTREE::Destroy(void)
+            GetEventAttribute = 0x81E50C0, // SECTREE::GetEventAttribute(long,long)
+            __SECTREE = 0x81E5830, // SECTREE::~SECTREE()
+        };
     } // Addr
 } // libm2
 #endif // __LIBM2_ADDR_HPP
