@@ -407,5 +407,10 @@ void CGuild::LoadGuildData(SQLMsg * a0) {
 DWORD CGuild::GetMasterPID() const{
     return m_data.master_pid;
 }
-
+const char* CGuild::GetName() const{
+    return this->m_data.name;
+}
+DWORD CGuild::GetID() const{
+    return this->m_data.guild_id;
+}
 }
