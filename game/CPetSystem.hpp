@@ -12,6 +12,7 @@ namespace libm2{
 struct SPetAbility{};
 class CPetSystem {
   private:
+    void* ___vtable;
     boost::unordered_map<unsigned int, CPetActor*, boost::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, CPetActor*> > > m_petActorMap;
     LPCHARACTER m_pkOwner;
     DWORD m_dwUpdatePeriod;
