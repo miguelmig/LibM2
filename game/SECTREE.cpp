@@ -61,6 +61,9 @@ int SECTREE::GetEventAttribute(long a0, long a1) {
 	return ((int(*)(SECTREE *, long, long))Addr::SECTREE::GetEventAttribute)(this, a0, a1);
 }
 
+const ENTITY_SET & SECTREE::GetEntitySet(void) const{
+	return this->m_set_entity; 
+}
 SECTREE::~SECTREE() {
 	((void(*)(SECTREE *))Addr::SECTREE::__SECTREE)(this);
 }
