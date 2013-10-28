@@ -1835,5 +1835,11 @@ DWORD CHARACTER::GetMountVnum(void) const{
 }
 DWORD CHARACTER::GetExp(void) const{
     return this->m_points.exp;
-};
+}
+CPetSystem * CHARACTER::GetPetSystem() {
+	return this->m_petSystem;
+}
+bool CHARACTER::IsPet() {
+	return this->m_bIsPet;
+}
 }
