@@ -1688,6 +1688,27 @@ namespace libm2 {
             GetEventAttribute = 0x81E50C0, // SECTREE::GetEventAttribute(long,long)
             __SECTREE = 0x81E5830, // SECTREE::~SECTREE()
         };
+        enum class CThreeWayWar {
+            singleton = 0x86A3798,
+            LoadSetting = 0x8207950, // CThreeWayWar::LoadSetting(char  const*)
+            CThreeWayWar = 0x8207870, // CThreeWayWar::CThreeWayWar(void)
+            DecreaseReviveTokenForPlayer = 0x82043B0, // CThreeWayWar::DecreaseReviveTokenForPlayer(unsigned int)
+            RandomEventMapSet = 0x8204D30, // CThreeWayWar::RandomEventMapSet(void)
+            SetKillScore = 0x8203EA0, // CThreeWayWar::SetKillScore(unsigned char,int)
+            GetEventSungZiMapInfo = 0x82050F0, // CThreeWayWar::GetEventSungZiMapInfo(void)const
+            GetKillScore = 0x8203F10, // CThreeWayWar::GetKillScore(unsigned char)const
+            RemoveAllMonstersInThreeWay = 0x8204140, // CThreeWayWar::RemoveAllMonstersInThreeWay(void)const
+            GetEventPassMapInfo = 0x8205410, // CThreeWayWar::GetEventPassMapInfo(void)const
+            __CThreeWayWar = 0x82049D0, // CThreeWayWar::~CThreeWayWar()
+            IsSungZiMapIndex = 0x8203DB0, // CThreeWayWar::IsSungZiMapIndex(int)const
+            RegisterUser = 0x8204470, // CThreeWayWar::RegisterUser(unsigned int)
+            onDead = 0x82056D0, // CThreeWayWar::onDead(CHARACTER *,CHARACTER *)
+            Initialize = 0x82040E0, // CThreeWayWar::Initialize(void)
+            IsRegisteredUser = 0x8203E50, // CThreeWayWar::IsRegisteredUser(unsigned int)const
+            GetReviveTokenForPlayer = 0x8204420, // CThreeWayWar::GetReviveTokenForPlayer(unsigned int)
+            IsThreeWayWarMapIndex = 0x8203E00, // CThreeWayWar::IsThreeWayWarMapIndex(int)const
+            SetReviveTokenForPlayer = 0x8204360, // CThreeWayWar::SetReviveTokenForPlayer(unsigned int,int)
+        };
     } // Addr
 } // libm2
 #endif // __LIBM2_ADDR_HPP
