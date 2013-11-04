@@ -61,4 +61,20 @@ long long MAX(long long val, long long val2){
 void TransformRefineItem(LPITEM a1, LPITEM a2){
     ((void(*)(CItem *, CItem *))Addr::misc::TransformRefineItem)(a1, a2);
 }
+void BroadcastNotice(const char * format, ...){
+    	va_list args;
+	va_start(args, format);
+	char buffer[1024];
+	vsnprintf(buffer, 1024, format, args);
+	((void(*)(const char*))Addr::misc::BroadcastNotice)(buffer);
+	va_end(args);
+};
+void SendNotice(const char * format, ...){
+    	va_list args;
+	va_start(args, format);
+	char buffer[1024];
+	vsnprintf(buffer, 1024, format, args);
+	((void(*)(const char*))Addr::misc::SendNotice)(buffer);
+	va_end(args);
+};
 }

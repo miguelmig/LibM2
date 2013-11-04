@@ -29,5 +29,7 @@ long long MIN(long long val, long long val2);
 long long MINMAX(long long min, long long val, long long max);
 long long MAX(long long val, long long val2);
 void TransformRefineItem(LPITEM a1, LPITEM a2);
+void BroadcastNotice(const char *, ...);
+void SendNotice(const char *, ...);
 }
 #endif // __LIBM2_GAME_MISC_HPP

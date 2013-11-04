@@ -20,6 +20,8 @@ namespace libm2 {
             sys_log = 0x8438A90,
             number_ex = 0x8439620,
             TransformRefineItem = 0x8097700,
+            BroadcastNotice = 0x80d5570,
+            SendNotice = 0x80d54b0,
         };
         enum class CHARACTER {
             GoHome = 0x80706B0, // CHARACTER::GoHome(void)
