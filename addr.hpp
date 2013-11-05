@@ -1711,6 +1711,10 @@ namespace libm2 {
             IsThreeWayWarMapIndex = 0x8203E00, // CThreeWayWar::IsThreeWayWarMapIndex(int)const
             SetReviveTokenForPlayer = 0x8204360, // CThreeWayWar::SetReviveTokenForPlayer(unsigned int,int)
         };
+        enum class global{
+            g_start_map=0x85ef360,
+            g_start_position=0x85ef380,
+        };
     } // Addr
 } // libm2
 #endif // __LIBM2_ADDR_HPP
