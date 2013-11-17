@@ -235,5 +235,11 @@ struct command_client_version {
 	char filename[33];
 	char timestamp[33];
 } typedef TPacketCGClientVersion;
+struct command_whisper {
+    BYTE bHeader;
+    WORD wSize;
+    char szNameTo[25];
+    // msg = command_whisper+28
+};
 }
 #endif // __LIBM2_GAME_PACKET_HPP
