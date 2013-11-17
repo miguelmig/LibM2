@@ -5,6 +5,7 @@
  */
 #ifndef __LIBM2_GAME_PACKET_HPP
 #define __LIBM2_GAME_PACKET_HPP
+#include "stdInclude.hpp"
 namespace libm2{
 struct packet_motion {
     BYTE header;
