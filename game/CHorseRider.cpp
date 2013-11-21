@@ -1,111 +1,118 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CHorseRider.hpp"
 #include "../addr.hpp"
 
-namespace libm2{
-DWORD CHorseRider::GetMyHorseVnum() const {
-	return ((DWORD(*)(const CHorseRider *))Addr::CHorseRider::GetMyHorseVnum)(this);
-}
+namespace libm2 {
 
-void CHorseRider::SetHorseData(const THorseInfo & a0) {
-	((void(*)(CHorseRider *, const THorseInfo &))Addr::CHorseRider::SetHorseData)(this, a0);
-}
+    CHorseRider::CHorseRider() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::CHorseRider)(this);
+    }
 
-void CHorseRider::EnterHorse() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::EnterHorse)(this);
-}
+    void CHorseRider::CheckHorseHealthDropTime(bool bSend) {
+        ((void(*)(CHorseRider * const, bool))Addr::CHorseRider::CheckHorseHealthDropTime__bool)(this, bSend);
+    }
 
-void CHorseRider::ClearHorseInfo() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::ClearHorseInfo)(this);
-}
+    void CHorseRider::ClearHorseInfo() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::ClearHorseInfo)(this);
+    }
 
-BYTE CHorseRider::GetHorseGrade() {
-	return ((BYTE(*)(CHorseRider *))Addr::CHorseRider::GetHorseGrade)(this);
-}
+    void CHorseRider::Destroy() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::Destroy)(this);
+    }
 
-void CHorseRider::Destroy() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::Destroy)(this);
-}
+    void CHorseRider::EnterHorse() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::EnterHorse)(this);
+    }
 
-void CHorseRider::SendHorseInfo() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::SendHorseInfo)(this);
-}
+    void CHorseRider::FeedHorse() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::FeedHorse)(this);
+    }
 
-void CHorseRider::HorseDie() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::HorseDie)(this);
-}
+    BYTE CHorseRider::GetHorseGrade() {
+        return ((BYTE(*)(CHorseRider * const))Addr::CHorseRider::GetHorseGrade)(this);
+    }
 
-bool CHorseRider::ReviveHorse() {
-	return ((bool(*)(CHorseRider *))Addr::CHorseRider::ReviveHorse)(this);
-}
+    short CHorseRider::GetHorseMaxHealth() {
+        return ((short(*)(CHorseRider * const))Addr::CHorseRider::GetHorseMaxHealth)(this);
+    }
 
-void CHorseRider::UpdateHorseDataByLogoff(DWORD a0) {
-	((void(*)(CHorseRider *, DWORD))Addr::CHorseRider::UpdateHorseDataByLogoff)(this, a0);
-}
+    short CHorseRider::GetHorseMaxStamina() {
+        return ((short(*)(CHorseRider * const))Addr::CHorseRider::GetHorseMaxStamina)(this);
+    }
 
-void CHorseRider::FeedHorse() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::FeedHorse)(this);
-}
+    DWORD CHorseRider::GetMyHorseVnum() const {
+        return ((DWORD(*)(const CHorseRider * const))Addr::CHorseRider::GetMyHorseVnum)(this);
+    }
 
-void CHorseRider::SetHorseLevel(int a0) {
-	((void(*)(CHorseRider *, int))Addr::CHorseRider::SetHorseLevel)(this, a0);
-}
+    void CHorseRider::HorseDie() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::HorseDie)(this);
+    }
 
-void CHorseRider::StartStaminaRegenEvent() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::StartStaminaRegenEvent)(this);
-}
+    void CHorseRider::Initialize() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::Initialize)(this);
+    }
 
-bool CHorseRider::StopRiding() {
-	return ((bool(*)(CHorseRider *))Addr::CHorseRider::StopRiding)(this);
-}
+    void CHorseRider::ResetHorseHealthDropTime() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::ResetHorseHealthDropTime)(this);
+    }
 
-void CHorseRider::ResetHorseHealthDropTime() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::ResetHorseHealthDropTime)(this);
-}
+    bool CHorseRider::ReviveHorse() {
+        return ((bool(*)(CHorseRider * const))Addr::CHorseRider::ReviveHorse)(this);
+    }
 
-CHorseRider::CHorseRider() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::CHorseRider)(this);
-}
+    void CHorseRider::SendHorseInfo() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::SendHorseInfo)(this);
+    }
 
-void CHorseRider::Initialize() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::Initialize)(this);
-}
+    void CHorseRider::SetHorseData(const THorseInfo & crInfo) {
+        ((void(*)(CHorseRider * const, const THorseInfo &))Addr::CHorseRider::SetHorseData__const_THorseInfo_)(this, crInfo);
+    }
 
-void CHorseRider::UpdateRideTime(int a0) {
-	((void(*)(CHorseRider *, int))Addr::CHorseRider::UpdateRideTime)(this, a0);
-}
+    void CHorseRider::SetHorseLevel(int iLevel) {
+        ((void(*)(CHorseRider * const, int))Addr::CHorseRider::SetHorseLevel__int)(this, iLevel);
+    }
 
-bool CHorseRider::StartRiding() {
-	return ((bool(*)(CHorseRider *))Addr::CHorseRider::StartRiding)(this);
-}
+    bool CHorseRider::StartRiding() {
+        return ((bool(*)(CHorseRider * const))Addr::CHorseRider::StartRiding)(this);
+    }
 
-void CHorseRider::UpdateHorseHealth(int a0, bool a1) {
-	((void(*)(CHorseRider *, int, bool))Addr::CHorseRider::UpdateHorseHealth)(this, a0, a1);
-}
+    void CHorseRider::StartStaminaConsumeEvent() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::StartStaminaConsumeEvent)(this);
+    }
 
-void CHorseRider::StartStaminaConsumeEvent() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::StartStaminaConsumeEvent)(this);
-}
+    void CHorseRider::StartStaminaRegenEvent() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::StartStaminaRegenEvent)(this);
+    }
 
-void CHorseRider::UpdateHorseStamina(int a0, bool a1) {
-	((void(*)(CHorseRider *, int, bool))Addr::CHorseRider::UpdateHorseStamina)(this, a0, a1);
-}
+    bool CHorseRider::StopRiding() {
+        return ((bool(*)(CHorseRider * const))Addr::CHorseRider::StopRiding)(this);
+    }
 
-CHorseRider::~CHorseRider() {
-	((void(*)(CHorseRider *))Addr::CHorseRider::__CHorseRider)(this);
-}
+    void CHorseRider::UpdateHorseDataByLogoff(DWORD dwLogoffTime) {
+        ((void(*)(CHorseRider * const, DWORD))Addr::CHorseRider::UpdateHorseDataByLogoff__DWORD)(this, dwLogoffTime);
+    }
 
-void CHorseRider::CheckHorseHealthDropTime(bool a0) {
-	((void(*)(CHorseRider *, bool))Addr::CHorseRider::CheckHorseHealthDropTime)(this, a0);
-}
+    void CHorseRider::UpdateHorseHealth(int iHealth, bool bSend) {
+        ((void(*)(CHorseRider * const, int, bool))Addr::CHorseRider::UpdateHorseHealth__int_bool)(this, iHealth, bSend);
+    }
 
-short CHorseRider::GetHorseMaxStamina() {
-	return ((short(*)(CHorseRider *))Addr::CHorseRider::GetHorseMaxStamina)(this);
-}
+    void CHorseRider::UpdateHorseStamina(int iStamina, bool bSend) {
+        ((void(*)(CHorseRider * const, int, bool))Addr::CHorseRider::UpdateHorseStamina__int_bool)(this, iStamina, bSend);
+    }
 
-short CHorseRider::GetHorseMaxHealth() {
-	return ((short(*)(CHorseRider *))Addr::CHorseRider::GetHorseMaxHealth)(this);
-}
-BYTE CHorseRider::GetHorseLevel(void) const{
-    return m_Horse.bLevel;
-}
+    void CHorseRider::UpdateRideTime(int interval) {
+        ((void(*)(CHorseRider * const, int))Addr::CHorseRider::UpdateRideTime__int)(this, interval);
+    }
+
+    CHorseRider::~CHorseRider() {
+        ((void(*)(CHorseRider * const))Addr::CHorseRider::__CHorseRider)(this);
+    }
+
+    BYTE CHorseRider::GetHorseLevel(void) const {
+        return m_Horse.bLevel;
+    }
 }

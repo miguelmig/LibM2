@@ -1,58 +1,58 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CPetActor.hpp"
 #include "../addr.hpp"
 namespace libm2 {
-    CPetActor::CPetActor(LPCHARACTER a0, DWORD a1, DWORD a2) {
-        ((void(*)(CPetActor *, LPCHARACTER, DWORD, DWORD))Addr::CPetActor::CPetActor)(this, a0, a1, a2);
+
+    void CPetActor::ClearBuff() {
+        ((void(*)(CPetActor * const))Addr::CPetActor::ClearBuff)(this);
+    }
+
+    bool CPetActor::Follow(float fMinDistance) {
+        return ((bool(*)(CPetActor * const, float))Addr::CPetActor::Follow__float)(this, fMinDistance);
     }
 
     void CPetActor::GiveBuff() {
-        ((void(*)(CPetActor *))Addr::CPetActor::GiveBuff)(this);
-    }
-    void CPetActor::Unmount() {
-        ((void(*)(CPetActor *))Addr::CPetActor::Unmount)(this);
-    }
-
-    void CPetActor::ClearBuff() {
-        ((void(*)(CPetActor *))Addr::CPetActor::ClearBuff)(this);
-    }
-
-    void CPetActor::SetName(const char * a0) {
-        ((void(*)(CPetActor *, const char *))Addr::CPetActor::SetName)(this, a0);
-    }
-
-    void CPetActor::SetSummonItem(LPITEM a0) {
-        ((void(*)(CPetActor *, LPITEM))Addr::CPetActor::SetSummonItem)(this, a0);
+        ((void(*)(CPetActor * const))Addr::CPetActor::GiveBuff)(this);
     }
 
     bool CPetActor::Mount() {
-        return ((bool(*)(CPetActor *))Addr::CPetActor::Mount)(this);
+        return ((bool(*)(CPetActor * const))Addr::CPetActor::Mount)(this);
     }
 
-    bool CPetActor::Update(DWORD a0) {
-        return ((bool(*)(CPetActor *, DWORD))Addr::CPetActor::Update)(this, a0);
+    void CPetActor::SetName(const char * name) {
+        ((void(*)(CPetActor * const, const char *))Addr::CPetActor::SetName__const_char_)(this, name);
     }
 
-    DWORD CPetActor::Summon(const char * a0, LPITEM a1, bool a2) {
-        return ((DWORD(*)(CPetActor *, const char *, LPITEM, bool))Addr::CPetActor::Summon)(this, a0, a1, a2);
+    void CPetActor::SetSummonItem(LPITEM pItem) {
+        ((void(*)(CPetActor * const, LPITEM))Addr::CPetActor::SetSummonItem__LPITEM)(this, pItem);
     }
 
-    bool CPetActor::_UpdatAloneActionAI(float a0, float a1) {
-        return ((bool(*)(CPetActor *, float, float))Addr::CPetActor::_UpdatAloneActionAI)(this, a0, a1);
+    DWORD CPetActor::Summon(const char * petName, LPITEM pSummonItem, bool bSpawnFar) {
+        return ((DWORD(*)(CPetActor * const, const char *, LPITEM, bool))Addr::CPetActor::Summon__const_char__LPITEM_bool)(this, petName, pSummonItem, bSpawnFar);
     }
 
-    CPetActor::~CPetActor() {
-        ((void(*)(CPetActor *))Addr::CPetActor::__CPetActor)(this);
-    }
-
-    bool CPetActor::Follow(float a0) {
-        return ((bool(*)(CPetActor *, float))Addr::CPetActor::Follow)(this, a0);
+    void CPetActor::Unmount() {
+        ((void(*)(CPetActor * const))Addr::CPetActor::Unmount)(this);
     }
 
     void CPetActor::Unsummon() {
-        ((void(*)(CPetActor *))Addr::CPetActor::Unsummon)(this);
+        ((void(*)(CPetActor * const))Addr::CPetActor::Unsummon)(this);
+    }
+
+    bool CPetActor::Update(DWORD deltaTime) {
+        return ((bool(*)(CPetActor * const, DWORD))Addr::CPetActor::Update__DWORD)(this, deltaTime);
+    }
+
+    bool CPetActor::_UpdatAloneActionAI(float fMinDist, float fMaxDist) {
+        return ((bool(*)(CPetActor * const, float, float))Addr::CPetActor::_UpdatAloneActionAI__float_float)(this, fMinDist, fMaxDist);
     }
 
     bool CPetActor::_UpdateFollowAI() {
-        return ((bool(*)(CPetActor *))Addr::CPetActor::_UpdateFollowAI)(this);
+        return ((bool(*)(CPetActor * const))Addr::CPetActor::_UpdateFollowAI)(this);
     }
+
 } 

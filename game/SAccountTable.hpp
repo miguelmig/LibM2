@@ -10,20 +10,21 @@
 #ifdef __GNUC__
 #pragma pack(push, 1)
 #endif
-namespace libm2{
-typedef struct SAccountTable {
-    DWORD id;
-    char login[31];
-    char passwd[17];
-    char social_id[19];
-    char status[9];
-    BYTE bEmpire;
-    TSimplePlayer players[4];
-}
+namespace libm2 {
+
+    typedef struct SAccountTable {
+        DWORD id;
+        char login[31];
+        char passwd[17];
+        char social_id[19];
+        char status[9];
+        BYTE bEmpire;
+        TSimplePlayer players[4];
+    }
 #ifndef __GNUC__
-__attribute__((packed))
+    __attribute__((packed))
 #endif
-TAccountTable, * PAccountTable;
+    TAccountTable, * PAccountTable;
 #ifdef __GNUC__
 #pragma pack(pop)
 #endif

@@ -1,32 +1,34 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CInputProcessor.hpp"
 #include "../addr.hpp"
 #include "DESC.hpp"
-namespace libm2{
-void CInputProcessor::Handshake(LPDESC a0, const char * a1) {
-	((void(*)(CInputProcessor *, LPDESC, const char *))Addr::CInputProcessor::Handshake)(this, a0, a1);
-}
+namespace libm2 {
 
-CInputProcessor::CInputProcessor() {
-	((void(*)(CInputProcessor *))Addr::CInputProcessor::CInputProcessor)(this);
-}
+    void CInputProcessor::BindPacketInfo(CPacketInfo * pPacketInfo) {
+        ((void(*)(CInputProcessor * const, CPacketInfo *))Addr::CInputProcessor::BindPacketInfo__CPacketInfo_)(this, pPacketInfo);
+    }
 
-void CInputProcessor::Version(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputProcessor *, LPCHARACTER, const char *))Addr::CInputProcessor::Version)(this, a0, a1);
-}
+    CInputProcessor::CInputProcessor() {
+        ((void(*)(CInputProcessor * const))Addr::CInputProcessor::CInputProcessor)(this);
+    }
 
-bool CInputProcessor::Process(LPDESC a0, const void * a1, int a2, int & a3) {
-	return ((bool(*)(CInputProcessor *, LPDESC, const void *, int, int &))Addr::CInputProcessor::Process)(this, a0, a1, a2, a3);
-}
+    void CInputProcessor::Handshake(LPDESC d, const char * c_pData) {
+        ((void(*)(CInputProcessor * const, LPDESC, const char *))Addr::CInputProcessor::Handshake__LPDESC_const_char_)(this, d, c_pData);
+    }
 
-void CInputProcessor::BindPacketInfo(CPacketInfo * a0) {
-	((void(*)(CInputProcessor *, CPacketInfo *))Addr::CInputProcessor::BindPacketInfo)(this, a0);
-}
+    void CInputProcessor::Pong(LPDESC d) {
+        ((void(*)(CInputProcessor * const, LPDESC))Addr::CInputProcessor::Pong__LPDESC)(this, d);
+    }
 
-CInputProcessor::~CInputProcessor() {
-	((void(*)(CInputProcessor *))Addr::CInputProcessor::__CInputProcessor)(this);
-}
+    bool CInputProcessor::Process(LPDESC lpDesc, const void * c_pvOrig, int iBytes, int & r_iBytesProceed) {
+        return ((bool(*)(CInputProcessor * const, LPDESC, const void *, int, int &))Addr::CInputProcessor::Process__LPDESC_const_void__int_int_)(this, lpDesc, c_pvOrig, iBytes, r_iBytesProceed);
+    }
 
-void CInputProcessor::Pong(LPDESC a0) {
-	((void(*)(CInputProcessor *, LPDESC))Addr::CInputProcessor::Pong)(this, a0);
-}
+    void CInputProcessor::Version(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputProcessor * const, LPCHARACTER, const char *))Addr::CInputProcessor::Version__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 }

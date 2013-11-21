@@ -1,36 +1,42 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CFSM.hpp"
 #include "../addr.hpp"
 #include "CState.hpp"
-namespace libm2{
-void CFSM::BeginStateInitial() {
-	((void(*)(CFSM *))Addr::CFSM::BeginStateInitial)(this);
-}
+namespace libm2 {
 
-bool CFSM::IsState(CState & a0) const {
-	return ((bool(*)(const CFSM *, CState &))Addr::CFSM::IsState)(this, a0);
-}
+    void CFSM::BeginStateInitial() {
+        ((void(*)(CFSM * const))Addr::CFSM::BeginStateInitial)(this);
+    }
 
-void CFSM::Update() {
-	((void(*)(CFSM *))Addr::CFSM::Update)(this);
-}
+    CFSM::CFSM() {
+        ((void(*)(CFSM * const))Addr::CFSM::CFSM)(this);
+    }
 
-void CFSM::StateInitial() {
-	((void(*)(CFSM *))Addr::CFSM::StateInitial)(this);
-}
+    void CFSM::EndStateInitial() {
+        ((void(*)(CFSM * const))Addr::CFSM::EndStateInitial)(this);
+    }
 
-CFSM::CFSM() {
-	((void(*)(CFSM *))Addr::CFSM::CFSM)(this);
-}
+    bool CFSM::GotoState(CState & NewState) {
+        return ((bool(*)(CFSM * const, CState &))Addr::CFSM::GotoState__CState_)(this, NewState);
+    }
 
-CFSM::~CFSM() {
-	((void(*)(CFSM *))Addr::CFSM::__CFSM)(this);
-}
+    bool CFSM::IsState(CState & State) const {
+        return ((bool(*)(const CFSM * const, CState &))Addr::CFSM::IsState__CState_)(this, State);
+    }
 
-bool CFSM::GotoState(CState & a0) {
-	return ((bool(*)(CFSM *, CState &))Addr::CFSM::GotoState)(this, a0);
-}
+    void CFSM::StateInitial() {
+        ((void(*)(CFSM * const))Addr::CFSM::StateInitial)(this);
+    }
 
-void CFSM::EndStateInitial() {
-	((void(*)(CFSM *))Addr::CFSM::EndStateInitial)(this);
-}
+    void CFSM::Update() {
+        ((void(*)(CFSM * const))Addr::CFSM::Update)(this);
+    }
+
+    CFSM::~CFSM() {
+        ((void(*)(CFSM * const))Addr::CFSM::__CFSM)(this);
+    }
 }

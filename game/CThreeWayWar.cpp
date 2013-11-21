@@ -1,73 +1,79 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CThreeWayWar.hpp"
-namespace libm2{
-CThreeWayWar::CThreeWayWar() {
-	((void(*)(CThreeWayWar *))Addr::CThreeWayWar::CThreeWayWar)(this);
-}
+namespace libm2 {
+    CThreeWayWar::CThreeWayWar() {
+        ((void(*)(CThreeWayWar * const))Addr::CThreeWayWar::CThreeWayWar)(this);
+    }
 
-CThreeWayWar::~CThreeWayWar() {
-	((void(*)(CThreeWayWar *))Addr::CThreeWayWar::__CThreeWayWar)(this);
-}
+    void CThreeWayWar::DecreaseReviveTokenForPlayer(DWORD PlayerID) {
+        ((void(*)(CThreeWayWar * const, DWORD))Addr::CThreeWayWar::DecreaseReviveTokenForPlayer__DWORD)(this, PlayerID);
+    }
 
-bool CThreeWayWar::LoadSetting(const char * a0) {
-	return ((bool(*)(CThreeWayWar *, const char *))Addr::CThreeWayWar::LoadSetting)(this, a0);
-}
+    const ForkedPassMapInfo & CThreeWayWar::GetEventPassMapInfo() const {
+        return ((const ForkedPassMapInfo & (*)(const CThreeWayWar * const))Addr::CThreeWayWar::GetEventPassMapInfo)(this);
+    }
 
-void CThreeWayWar::DecreaseReviveTokenForPlayer(DWORD a0) {
-	((void(*)(CThreeWayWar *, DWORD))Addr::CThreeWayWar::DecreaseReviveTokenForPlayer)(this, a0);
-}
+    const ForkedSungziMapInfo & CThreeWayWar::GetEventSungZiMapInfo() const {
+        return ((const ForkedSungziMapInfo & (*)(const CThreeWayWar * const))Addr::CThreeWayWar::GetEventSungZiMapInfo)(this);
+    }
 
-void CThreeWayWar::RandomEventMapSet() {
-	((void(*)(CThreeWayWar *))Addr::CThreeWayWar::RandomEventMapSet)(this);
-}
+    int CThreeWayWar::GetKillScore(BYTE empire) const {
+        return ((int(*)(const CThreeWayWar * const, BYTE))Addr::CThreeWayWar::GetKillScore__BYTE)(this, empire);
+    }
 
-void CThreeWayWar::SetKillScore(BYTE a0, int a1) {
-	((void(*)(CThreeWayWar *, BYTE, int))Addr::CThreeWayWar::SetKillScore)(this, a0, a1);
-}
+    int CThreeWayWar::GetReviveTokenForPlayer(DWORD PlayerID) {
+        return ((int(*)(CThreeWayWar * const, DWORD))Addr::CThreeWayWar::GetReviveTokenForPlayer__DWORD)(this, PlayerID);
+    }
 
-const ForkedSungziMapInfo & CThreeWayWar::GetEventSungZiMapInfo() const {
-	return ((const ForkedSungziMapInfo &(*)(const CThreeWayWar *))Addr::CThreeWayWar::GetEventSungZiMapInfo)(this);
-}
+    void CThreeWayWar::Initialize() {
+        ((void(*)(CThreeWayWar * const))Addr::CThreeWayWar::Initialize)(this);
+    }
 
-int CThreeWayWar::GetKillScore(BYTE a0) const {
-	return ((int(*)(const CThreeWayWar *, BYTE))Addr::CThreeWayWar::GetKillScore)(this, a0);
-}
+    bool CThreeWayWar::IsRegisteredUser(DWORD PlayerID) const {
+        return ((bool(*)(const CThreeWayWar * const, DWORD))Addr::CThreeWayWar::IsRegisteredUser__DWORD)(this, PlayerID);
+    }
 
-void CThreeWayWar::RemoveAllMonstersInThreeWay() const {
-	((void(*)(const CThreeWayWar *))Addr::CThreeWayWar::RemoveAllMonstersInThreeWay)(this);
-}
+    bool CThreeWayWar::IsSungZiMapIndex(int iMapIndex) const {
+        return ((bool(*)(const CThreeWayWar * const, int))Addr::CThreeWayWar::IsSungZiMapIndex__int)(this, iMapIndex);
+    }
 
-const ForkedPassMapInfo & CThreeWayWar::GetEventPassMapInfo() const {
-	return ((const ForkedPassMapInfo &(*)(const CThreeWayWar *))Addr::CThreeWayWar::GetEventPassMapInfo)(this);
-}
-bool CThreeWayWar::IsSungZiMapIndex(int a0) const {
-	return ((bool(*)(const CThreeWayWar *, int))Addr::CThreeWayWar::IsSungZiMapIndex)(this, a0);
-}
+    bool CThreeWayWar::IsThreeWayWarMapIndex(int iMapIndex) const {
+        return ((bool(*)(const CThreeWayWar * const, int))Addr::CThreeWayWar::IsThreeWayWarMapIndex__int)(this, iMapIndex);
+    }
 
-void CThreeWayWar::RegisterUser(DWORD a0) {
-	((void(*)(CThreeWayWar *, DWORD))Addr::CThreeWayWar::RegisterUser)(this, a0);
-}
+    bool CThreeWayWar::LoadSetting(const char * szFileName) {
+        return ((bool(*)(CThreeWayWar * const, const char *))Addr::CThreeWayWar::LoadSetting__const_char_)(this, szFileName);
+    }
 
-void CThreeWayWar::onDead(LPCHARACTER a0, LPCHARACTER a1) {
-	((void(*)(CThreeWayWar *, LPCHARACTER, LPCHARACTER))Addr::CThreeWayWar::onDead)(this, a0, a1);
-}
+    void CThreeWayWar::RandomEventMapSet() {
+        ((void(*)(CThreeWayWar * const))Addr::CThreeWayWar::RandomEventMapSet)(this);
+    }
 
-void CThreeWayWar::Initialize() {
-	((void(*)(CThreeWayWar *))Addr::CThreeWayWar::Initialize)(this);
-}
+    void CThreeWayWar::RegisterUser(DWORD PlayerID) {
+        ((void(*)(CThreeWayWar * const, DWORD))Addr::CThreeWayWar::RegisterUser__DWORD)(this, PlayerID);
+    }
 
-bool CThreeWayWar::IsRegisteredUser(DWORD a0) const {
-	return ((bool(*)(const CThreeWayWar *, DWORD))Addr::CThreeWayWar::IsRegisteredUser)(this, a0);
-}
+    void CThreeWayWar::RemoveAllMonstersInThreeWay() const {
+        ((void(*)(const CThreeWayWar * const))Addr::CThreeWayWar::RemoveAllMonstersInThreeWay)(this);
+    }
 
-int CThreeWayWar::GetReviveTokenForPlayer(DWORD a0) {
-	return ((int(*)(CThreeWayWar *, DWORD))Addr::CThreeWayWar::GetReviveTokenForPlayer)(this, a0);
-}
+    void CThreeWayWar::SetKillScore(BYTE empire, int count) {
+        ((void(*)(CThreeWayWar * const, BYTE, int))Addr::CThreeWayWar::SetKillScore__BYTE_int)(this, empire, count);
+    }
 
-bool CThreeWayWar::IsThreeWayWarMapIndex(int a0) const {
-	return ((bool(*)(const CThreeWayWar *, int))Addr::CThreeWayWar::IsThreeWayWarMapIndex)(this, a0);
-}
+    void CThreeWayWar::SetReviveTokenForPlayer(DWORD PlayerID, int count) {
+        ((void(*)(CThreeWayWar * const, DWORD, int))Addr::CThreeWayWar::SetReviveTokenForPlayer__DWORD_int)(this, PlayerID, count);
+    }
 
-void CThreeWayWar::SetReviveTokenForPlayer(DWORD a0, int a1) {
-	((void(*)(CThreeWayWar *, DWORD, int))Addr::CThreeWayWar::SetReviveTokenForPlayer)(this, a0, a1);
-}   
+    void CThreeWayWar::onDead(LPCHARACTER pChar, LPCHARACTER pkKiller) {
+        ((void(*)(CThreeWayWar * const, LPCHARACTER, LPCHARACTER))Addr::CThreeWayWar::onDead__LPCHARACTER_LPCHARACTER)(this, pChar, pkKiller);
+    }
+
+    CThreeWayWar::~CThreeWayWar() {
+        ((void(*)(CThreeWayWar * const))Addr::CThreeWayWar::__CThreeWayWar)(this);
+    }
 }

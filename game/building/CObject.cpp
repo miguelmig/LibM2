@@ -1,43 +1,49 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CObject.hpp"
 #include "../../addr.hpp"
-namespace libm2{
-void building::CObject::SetVID(DWORD a0) {
-	((void(*)(building::CObject *, DWORD))Addr::building::CObject::SetVID)(this, a0);
-}
+namespace libm2 {
 
-void building::CObject::ApplySpecialEffect() {
-	((void(*)(building::CObject *))Addr::building::CObject::ApplySpecialEffect)(this);
-}
+    void building::CObject::ApplySpecialEffect() {
+        ((void(*)(building::CObject * const))Addr::building::CObject::ApplySpecialEffect)(this);
+    }
 
-bool building::CObject::Show(long a0, long a1, long a2) {
-	return ((bool(*)(building::CObject *, long, long, long))Addr::building::CObject::Show)(this, a0, a1, a2);
-}
+    void building::CObject::Destroy() {
+        ((void(*)(building::CObject * const))Addr::building::CObject::Destroy)(this);
+    }
 
-void building::CObject::RemoveSpecialEffect() {
-	((void(*)(building::CObject *))Addr::building::CObject::RemoveSpecialEffect)(this);
-}
+    void building::CObject::EncodeInsertPacket(LPENTITY entity) {
+        ((void(*)(building::CObject * const, LPENTITY))Addr::building::CObject::EncodeInsertPacket__LPENTITY)(this, entity);
+    }
 
-void building::CObject::RegenNPC() {
-	((void(*)(building::CObject *))Addr::building::CObject::RegenNPC)(this);
-}
+    void building::CObject::Reconstruct(DWORD dwVnum) {
+        ((void(*)(building::CObject * const, DWORD))Addr::building::CObject::Reconstruct__DWORD)(this, dwVnum);
+    }
 
-building::CObject::CObject(building::TObject * a0, building::TObjectProto * a1) {
-	((void(*)(building::CObject *, building::TObject *, building::TObjectProto *))Addr::building::CObject::CObject)(this, a0, a1);
-}
+    void building::CObject::RegenNPC() {
+        ((void(*)(building::CObject * const))Addr::building::CObject::RegenNPC)(this);
+    }
 
-void building::CObject::EncodeInsertPacket(LPENTITY a0) {
-	((void(*)(building::CObject *, LPENTITY))Addr::building::CObject::EncodeInsertPacket)(this, a0);
-}
+    void building::CObject::RemoveSpecialEffect() {
+        ((void(*)(building::CObject * const))Addr::building::CObject::RemoveSpecialEffect)(this);
+    }
 
-void building::CObject::Destroy() {
-	((void(*)(building::CObject *))Addr::building::CObject::Destroy)(this);
-}
+    void building::CObject::Save() {
+        ((void(*)(building::CObject * const))Addr::building::CObject::Save)(this);
+    }
 
-void building::CObject::Save() {
-	((void(*)(building::CObject *))Addr::building::CObject::Save)(this);
-}
+    void building::CObject::SetVID(DWORD dwVID) {
+        ((void(*)(building::CObject * const, DWORD))Addr::building::CObject::SetVID__DWORD)(this, dwVID);
+    }
 
-void building::CObject::Reconstruct(DWORD a0) {
-	((void(*)(building::CObject *, DWORD))Addr::building::CObject::Reconstruct)(this, a0);
-}
+    bool building::CObject::Show(long lMapIndex, long x, long y) {
+        return ((bool(*)(building::CObject * const, long, long, long))Addr::building::CObject::Show__long_long_long)(this, lMapIndex, x, y);
+    }
+
+    building::CObject::~CObject() {
+        ((void(*)(building::CObject * const))Addr::building::CObject::__CObject)(this);
+    }
 }

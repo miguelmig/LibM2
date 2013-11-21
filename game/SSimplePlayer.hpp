@@ -9,31 +9,32 @@
 #ifdef __GNUC__
 #pragma pack(push, 1)
 #endif
-namespace libm2{
-struct SSimplePlayer {
-    DWORD dwID;
-    char szName[25];
-    BYTE byJob;
-    BYTE byLevel;
-    DWORD dwPlayMinutes;
-    BYTE byST;
-    BYTE byHT;
-    BYTE byDX;
-    BYTE byIQ;
-    WORD wMainPart;
-    BYTE bChangeName;
-    WORD wHairPart;
-    BYTE bDummy[4];
-    long x;
-    long y;
-    long lAddr;
-    WORD wPort;
-    BYTE skill_group;
-}
+namespace libm2 {
+
+    struct SSimplePlayer {
+        DWORD dwID;
+        char szName[25];
+        BYTE byJob;
+        BYTE byLevel;
+        DWORD dwPlayMinutes;
+        BYTE byST;
+        BYTE byHT;
+        BYTE byDX;
+        BYTE byIQ;
+        WORD wMainPart;
+        BYTE bChangeName;
+        WORD wHairPart;
+        BYTE bDummy[4];
+        long x;
+        long y;
+        long lAddr;
+        WORD wPort;
+        BYTE skill_group;
+    }
 #ifndef __GNUC__
-__attribute__((packed))
+    __attribute__((packed))
 #endif
-typedef TSimplePlayer;
+    typedef TSimplePlayer;
 #ifdef __GNUC__
 #pragma pack(pop)
 #endif

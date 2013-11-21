@@ -6,21 +6,22 @@
 #ifndef __LIBM2_GAME_VID_HPP
 #define __LIBM2_GAME_VID_HPP
 #include "stdInclude.hpp"
-namespace libm2{
-class VID {
-  private:
-    DWORD m_id;
-    DWORD m_crc;
+namespace libm2 {
 
-  public:
-    VID();
-    VID(DWORD, DWORD);
-//    VID(const VID &);
-    const VID & operator=(const VID &);
-    bool operator==(const VID &) const;
-    bool operator!=(const VID &) const;
-    operator DWORD() const;
-    void Reset();
-};
+    class VID {
+    private:
+        DWORD m_id;
+        DWORD m_crc;
+
+    public:
+        VID();
+        VID(DWORD, DWORD);
+        //    VID(const VID &);
+        const VID & operator=(const VID &);
+        bool operator==(const VID &) const;
+        bool operator!=(const VID &) const;
+        operator DWORD() const;
+        void Reset();
+    };
 }
 #endif // __LIBM2_GAME_VID_HPP

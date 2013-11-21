@@ -1,432 +1,447 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CItem.hpp"
 #include "../addr.hpp"
 #include "CEntity.hpp"
 #include "CHARACTER.hpp"
 #include "PIXEL_POSITION.hpp"
-namespace libm2{
-void CItem::SetAttribute(int a0, BYTE a1, short a2) {
-	((void(*)(CItem *, int, BYTE, short))Addr::CItem::SetAttribute)(this, a0, a1, a2);
-}
+namespace libm2 {
 
-LPITEM CItem::RemoveFromGround() {
-	return ((LPITEM(*)(CItem *))Addr::CItem::RemoveFromGround)(this);
-}
-
-void CItem::SetDestroyEvent(LPEVENT a0) {
-	((void(*)(CItem *, LPEVENT))Addr::CItem::SetDestroyEvent)(this, a0);
-}
-
-void CItem::AttrLog() {
-	((void(*)(CItem *))Addr::CItem::AttrLog)(this);
-}
-
-void CItem::StartTimerBasedOnWearExpireEvent() {
-	((void(*)(CItem *))Addr::CItem::StartTimerBasedOnWearExpireEvent)(this);
-}
-
-void CItem::AlterToSocketItem(int a0) {
-	((void(*)(CItem *, int))Addr::CItem::AlterToSocketItem)(this, a0);
-}
-
-void CItem::StartRealTimeExpireEvent() {
-	((void(*)(CItem *))Addr::CItem::StartRealTimeExpireEvent)(this);
-}
-
-void CItem::Initialize() {
-	((void(*)(CItem *))Addr::CItem::Initialize)(this);
-}
-
-bool CItem::IsPolymorphItem() {
-	return ((bool(*)(CItem *))Addr::CItem::IsPolymorphItem)(this);
-}
-
-void CItem::SetOwnershipEvent(LPEVENT a0) {
-	((void(*)(CItem *, LPEVENT))Addr::CItem::SetOwnershipEvent)(this, a0);
-}
-
-void CItem::ClearMountAttributeAndAffect() {
-	((void(*)(CItem *))Addr::CItem::ClearMountAttributeAndAffect)(this);
-}
-
-void CItem::SetForceAttribute(int a0, BYTE a1, short a2) {
-	((void(*)(CItem *, int, BYTE, short))Addr::CItem::SetForceAttribute)(this, a0, a1, a2);
-}
-
-bool CItem::CanUsedBy(LPCHARACTER a0) {
-	return ((bool(*)(CItem *, LPCHARACTER))Addr::CItem::CanUsedBy)(this, a0);
-}
-
-void CItem::AddFlag(long a0) {
-	((void(*)(CItem *, long))Addr::CItem::AddFlag)(this, a0);
-}
-
-int CItem::GetSpecialGroup() {
-	return ((int(*)(CItem *))Addr::CItem::GetSpecialGroup)(this);
-}
-
-int CItem::GetAccessorySocketGrade() {
-	return ((int(*)(CItem *))Addr::CItem::GetAccessorySocketGrade)(this);
-}
-
-bool CItem::RemoveAttributeType(BYTE a0) {
-	return ((bool(*)(CItem *, BYTE))Addr::CItem::RemoveAttributeType)(this, a0);
-}
-
-void CItem::RemoveFlag(long a0) {
-	((void(*)(CItem *, long))Addr::CItem::RemoveFlag)(this, a0);
-}
-
-void CItem::SetAccessorySocketGrade(int a0) {
-	((void(*)(CItem *, int))Addr::CItem::SetAccessorySocketGrade)(this, a0);
-}
-
-bool CItem::AddToGround(long a0, const PIXEL_POSITION & a1, bool a2) {
-	return ((bool(*)(CItem *, long, const PIXEL_POSITION &, bool))Addr::CItem::AddToGround)(this, a0, a1, a2);
-}
-
-bool CItem::IsRamadanRing() {
-	return ((bool(*)(CItem *))Addr::CItem::IsRamadanRing)(this);
-}
-
-int CItem::GetRareAttrCount() {
-	return ((int(*)(CItem *))Addr::CItem::GetRareAttrCount)(this);
-}
-
-LPITEM CItem::RemoveFromCharacter() {
-	return ((LPITEM(*)(CItem *))Addr::CItem::RemoveFromCharacter)(this);
-}
-
-void CItem::PutAttributeWithLevel(BYTE a0) {
-	((void(*)(CItem *, BYTE))Addr::CItem::PutAttributeWithLevel)(this, a0);
-}
-
-bool CItem::IsEquipable() const {
-	return ((bool(*)(const CItem *))Addr::CItem::IsEquipable)(this);
-}
-
-void CItem::CopyAttributeTo(LPITEM a0) {
-	((void(*)(CItem *, LPITEM))Addr::CItem::CopyAttributeTo)(this, a0);
-}
-
-DWORD CItem::GetRefineFromVnum() {
-	return ((DWORD(*)(CItem *))Addr::CItem::GetRefineFromVnum)(this);
-}
-
-void CItem::SetSockets(const long * a0) {
-	((void(*)(CItem *, const long *))Addr::CItem::SetSockets)(this, a0);
-}
-
-int CItem::GetAttributeSetIndex() {
-	return ((int(*)(CItem *))Addr::CItem::GetAttributeSetIndex)(this);
-}
-
-void CItem::Destroy() {
-	((void(*)(CItem *))Addr::CItem::Destroy)(this);
-}
-
-void CItem::Save() {
-	((void(*)(CItem *))Addr::CItem::Save)(this);
-}
-
-void CItem::SetUniqueExpireEvent(LPEVENT a0) {
-	((void(*)(CItem *, LPEVENT))Addr::CItem::SetUniqueExpireEvent)(this, a0);
-}
-
-bool CItem::HasAttr(BYTE a0) {
-	return ((bool(*)(CItem *, BYTE))Addr::CItem::HasAttr)(this, a0);
-}
-
-void CItem::AccessorySocketDegrade() {
-	((void(*)(CItem *))Addr::CItem::AccessorySocketDegrade)(this);
-}
-
-void CItem::PutAttribute(const int * a0) {
-	((void(*)(CItem *, const int *))Addr::CItem::PutAttribute)(this, a0);
-}
-
-int CItem::FindAttribute(BYTE a0) {
-	return ((int(*)(CItem *, BYTE))Addr::CItem::FindAttribute)(this, a0);
-}
-
-bool CItem::CreateSocket(BYTE a0, BYTE a1) {
-	return ((bool(*)(CItem *, BYTE, BYTE))Addr::CItem::CreateSocket)(this, a0, a1);
-}
-
-void CItem::SetAccessorySocketExpireEvent(LPEVENT a0) {
-	((void(*)(CItem *, LPEVENT))Addr::CItem::SetAccessorySocketExpireEvent)(this, a0);
-}
-
-bool CItem::AddRareAttribute() {
-	return ((bool(*)(CItem *))Addr::CItem::AddRareAttribute)(this);
-}
-
-bool CItem::IsOwnership(LPCHARACTER a0) {
-	return ((bool(*)(CItem *, LPCHARACTER))Addr::CItem::IsOwnership)(this, a0);
-}
-
-bool CItem::IsNewMountItem() {
-	return ((bool(*)(CItem *))Addr::CItem::IsNewMountItem)(this);
-}
-
-int CItem::GetAccessorySocketMaxGrade() {
-	return ((int(*)(CItem *))Addr::CItem::GetAccessorySocketMaxGrade)(this);
-}
-
-bool CItem::AddSocket() {
-	return ((bool(*)(CItem *))Addr::CItem::AddSocket)(this);
-}
-
-
-DWORD CItem::GetCount() {
-	return ((DWORD(*)(CItem *))Addr::CItem::GetCount)(this);
-}
-
-int CItem::GetAccessorySocketDownGradeTime() {
-	return ((int(*)(CItem *))Addr::CItem::GetAccessorySocketDownGradeTime)(this);
-}
-
-int CItem::GetLevelLimit() {
-	return ((int(*)(CItem *))Addr::CItem::GetLevelLimit)(this);
-}
-
-void CItem::StopTimerBasedOnWearExpireEvent() {
-	((void(*)(CItem *))Addr::CItem::StopTimerBasedOnWearExpireEvent)(this);
-}
-
-bool CItem::SetCount(DWORD a0) {
-	return ((bool(*)(CItem *, DWORD))Addr::CItem::SetCount)(this, a0);
-}
-
-void CItem::EncodeRemovePacket(LPENTITY a0) {
-	((void(*)(CItem *, LPENTITY))Addr::CItem::EncodeRemovePacket)(this, a0);
-}
-
-void CItem::SetAttributes(const TPlayerItemAttribute * a0) {
-	((void(*)(CItem *, const TPlayerItemAttribute *))Addr::CItem::SetAttributes)(this, a0);
-}
-
-void CItem::ChangeAttribute(const int * a0) {
-	((void(*)(CItem *, const int *))Addr::CItem::ChangeAttribute)(this, a0);
-}
-
-long CItem::GetValue(DWORD a0) {
-	return ((long(*)(CItem *, DWORD))Addr::CItem::GetValue)(this, a0);
-}
-
-void CItem::SetAccessorySocketMaxGrade(int a0) {
-	((void(*)(CItem *, int))Addr::CItem::SetAccessorySocketMaxGrade)(this, a0);
-}
-
-bool CItem::HasRareAttr(BYTE a0) {
-	return ((bool(*)(CItem *, BYTE))Addr::CItem::HasRareAttr)(this, a0);
-}
-
-void CItem::SetExchanging(bool a0) {
-	((void(*)(CItem *, bool))Addr::CItem::SetExchanging)(this, a0);
-}
-
-void CItem::SetAccessorySocketDownGradeTime(DWORD a0) {
-	((void(*)(CItem *, DWORD))Addr::CItem::SetAccessorySocketDownGradeTime)(this, a0);
-}
-
-void CItem::AddAttribute(BYTE a0, short a1) {
-	((void(*)(CItem *, BYTE, short))Addr::CItem::AddAttribute)(this, a0, a1);
-}
-
-bool CItem::IsPCBangItem() {
-	return ((bool(*)(CItem *))Addr::CItem::IsPCBangItem)(this);
-}
-
-void CItem::EncodeInsertPacket(LPENTITY a0) {
-	((void(*)(CItem *, LPENTITY))Addr::CItem::EncodeInsertPacket)(this, a0);
-}
-
-void CItem::StartDestroyEvent(int a0) {
-	((void(*)(CItem *, int))Addr::CItem::StartDestroyEvent)(this, a0);
-}
-
-void CItem::ClearAttribute() {
-	((void(*)(CItem *))Addr::CItem::ClearAttribute)(this);
-}
-
-bool CItem::DistanceValid(LPCHARACTER a0) {
-	return ((bool(*)(CItem *, LPCHARACTER))Addr::CItem::DistanceValid)(this, a0);
-}
-
-void CItem::SetOwnership(LPCHARACTER a0, int a1) {
-	((void(*)(CItem *, LPCHARACTER, int))Addr::CItem::SetOwnership)(this, a0, a1);
-}
-
-void CItem::ApplyAddon(int a0) {
-	((void(*)(CItem *, int))Addr::CItem::ApplyAddon)(this, a0);
-}
-
-void CItem::UsePacketEncode(LPCHARACTER a0, LPCHARACTER a1, packet_item_use * a2) {
-	((void(*)(CItem *, LPCHARACTER, LPCHARACTER, packet_item_use *))Addr::CItem::UsePacketEncode)(this, a0, a1, a2);
-}
-
-void CItem::StopAccessorySocketExpireEvent() {
-	((void(*)(CItem *))Addr::CItem::StopAccessorySocketExpireEvent)(this);
-}
-
-void CItem::StopUniqueExpireEvent() {
-	((void(*)(CItem *))Addr::CItem::StopUniqueExpireEvent)(this);
-}
-
-void CItem::SetSocket(int a0, long a1, bool a2) {
-	((void(*)(CItem *, int, long, bool))Addr::CItem::SetSocket)(this, a0, a1, a2);
-}
-
-bool CItem::IsAccessoryForSocket() {
-	return ((bool(*)(CItem *))Addr::CItem::IsAccessoryForSocket)(this);
-}
-
-long CItem::FindApplyValue(BYTE a0) {
-	return ((long(*)(CItem *, BYTE))Addr::CItem::FindApplyValue)(this, a0);
-}
-
-bool CItem::CanPutInto(LPITEM a0) {
-	return ((bool(*)(CItem *, LPITEM))Addr::CItem::CanPutInto)(this, a0);
-}
-
-void CItem::ModifyPoints(bool a0) {
-	((void(*)(CItem *, bool))Addr::CItem::ModifyPoints)(this, a0);
-}
-
-void CItem::AddAttr(BYTE a0, BYTE a1) {
-	((void(*)(CItem *, BYTE, BYTE))Addr::CItem::AddAttr)(this, a0, a1);
-}
-
-bool CItem::EquipTo(LPCHARACTER a0, BYTE a1) {
-	return ((bool(*)(CItem *, LPCHARACTER, BYTE))Addr::CItem::EquipTo)(this, a0, a1);
-}
-
-bool CItem::ChangeRareAttribute() {
-	return ((bool(*)(CItem *))Addr::CItem::ChangeRareAttribute)(this);
-}
-
-void CItem::CopySocketTo(LPITEM a0) {
-	((void(*)(CItem *, LPITEM))Addr::CItem::CopySocketTo)(this, a0);
-}
-
-void CItem::SetProto(const TItemTable * a0) {
-	((void(*)(CItem *, const TItemTable *))Addr::CItem::SetProto)(this, a0);
-}
-
-bool CItem::Unequip() {
-	return ((bool(*)(CItem *))Addr::CItem::Unequip)(this);
-}
-
-void CItem::SetTimerBasedOnWearExpireEvent(LPEVENT a0) {
-	((void(*)(CItem *, LPEVENT))Addr::CItem::SetTimerBasedOnWearExpireEvent)(this, a0);
-}
-
-int CItem::GetShopBuyPrice() {
-	return ((int(*)(CItem *))Addr::CItem::GetShopBuyPrice)(this);
-}
-
-CItem::CItem() {
-	((void(*)(CItem *))Addr::CItem::CItem)(this);
-}
-
-void CItem::AlterToMagicItem() {
-	((void(*)(CItem *))Addr::CItem::AlterToMagicItem)(this);
-}
-
-int CItem::GetGold() {
-	return ((int(*)(CItem *))Addr::CItem::GetGold)(this);
-}
-
-int CItem::FindEquipCell(LPCHARACTER a0) {
-	return ((int(*)(CItem *, LPCHARACTER))Addr::CItem::FindEquipCell)(this, a0);
-}
-
-int CItem::GetAttributeCount() {
-	return ((int(*)(CItem *))Addr::CItem::GetAttributeCount)(this);
-}
-
-int CItem::GetRefineLevel() {
-	return ((int(*)(CItem *))Addr::CItem::GetRefineLevel)(this);
-}
-
-bool CItem::CheckItemUseLevel(int a0) {
-	return ((bool(*)(CItem *, int))Addr::CItem::CheckItemUseLevel)(this, a0);
-}
-
-void CItem::StartAccessorySocketExpireEvent() {
-	((void(*)(CItem *))Addr::CItem::StartAccessorySocketExpireEvent)(this);
-}
-
-void CItem::StartUniqueExpireEvent() {
-	((void(*)(CItem *))Addr::CItem::StartUniqueExpireEvent)(this);
-}
-
-bool CItem::IsRealTimeItem() {
-	return ((bool(*)(CItem *))Addr::CItem::IsRealTimeItem)(this);
-}
-
-bool CItem::AddToCharacter(LPCHARACTER a0, BYTE a1, bool a2) {
-	return ((bool(*)(CItem *, LPCHARACTER, BYTE, bool))Addr::CItem::AddToCharacter)(this, a0, a1, a2);
-}
-
-void CItem::UpdatePacket() {
-	((void(*)(CItem *))Addr::CItem::UpdatePacket)(this);
-}
-
-bool CItem::IsRideItem() {
-	return ((bool(*)(CItem *))Addr::CItem::IsRideItem)(this);
-}
-
-int CItem::GetSocketCount() {
-	return ((int(*)(CItem *))Addr::CItem::GetSocketCount)(this);
-}
-
-bool CItem::OnAfterCreatedItem() {
-	return ((bool(*)(CItem *))Addr::CItem::OnAfterCreatedItem)(this);
-}
-const TItemTable* CItem::GetProto(){
-    return m_pProto;
-}
-DWORD CItem::GetMaskVnum(){
-    return m_dwMaskVnum;
-}
-long CItem::GetSocket(int pos){
-    if (pos < 3){
-        return m_alSockets[pos];
+    void CItem::AccessorySocketDegrade() {
+        ((void(*)(CItem * const))Addr::CItem::AccessorySocketDegrade)(this);
     }
-    return 0;
-}
-const TPlayerItemAttribute * CItem::GetAttributes(){
-    return this->m_aAttr;
-}
-const TPlayerItemAttribute & CItem::GetAttribute(int attr){
-    return this->m_aAttr[attr];
-}
-BYTE CItem::GetAttributeType(int attr){
-    return this->m_aAttr[attr].bType;
-}
-short CItem::GetAttributeValue(int attr){
-    return this->m_aAttr[attr].sValue;
-}
-DWORD CItem::GetVnum(void) const {
-	return this->m_pProto->dwVnum;
-}
-BYTE CItem::GetType() const{
-    return this->m_pProto->bType;
-}
-BYTE CItem::GetSize(){
-    return this->m_pProto->bSize;
-}
-void CItem::AddAttribute(void){
-    ((void(*)(CItem *))Addr::CItem::AddAttributeVoid)(this);
-}
-const char * CItem::GetName(){
-    return this->m_pProto->szLocaleName;
-}
-const char * CItem::GetBaseName(){
-    return this->m_pProto->szName;
-}
-DWORD CItem::GetID(){
-    return this->m_dwID;
-}
+
+    void CItem::AddAttr(BYTE bApply, BYTE bLevel) {
+        ((void(*)(CItem * const, BYTE, BYTE))Addr::CItem::AddAttr__BYTE_BYTE)(this, bApply, bLevel);
+    }
+
+    void CItem::AddAttribute(BYTE bApply, short sValue) {
+        ((void(*)(CItem * const, BYTE, short))Addr::CItem::AddAttribute__BYTE_short)(this, bApply, sValue);
+    }
+
+    void CItem::AddAttribute() {
+        ((void(*)(CItem * const))Addr::CItem::AddAttribute)(this);
+    }
+
+    void CItem::AddFlag(long bit) {
+        ((void(*)(CItem * const, long))Addr::CItem::AddFlag__long)(this, bit);
+    }
+
+    bool CItem::AddRareAttribute() {
+        return ((bool(*)(CItem * const))Addr::CItem::AddRareAttribute)(this);
+    }
+
+    bool CItem::AddSocket() {
+        return ((bool(*)(CItem * const))Addr::CItem::AddSocket)(this);
+    }
+
+    bool CItem::AddToCharacter(LPCHARACTER ch, BYTE _cell, bool skipOwnerCheck) {
+        return ((bool(*)(CItem * const, LPCHARACTER, BYTE, bool))Addr::CItem::AddToCharacter__LPCHARACTER_BYTE_bool)(this, ch, _cell, skipOwnerCheck);
+    }
+
+    bool CItem::AddToGround(long lMapIndex, const PIXEL_POSITION & pos, bool skipOwnerCheck) {
+        return ((bool(*)(CItem * const, long, const PIXEL_POSITION &, bool))Addr::CItem::AddToGround__long_const_PIXEL_POSITION__bool)(this, lMapIndex, pos, skipOwnerCheck);
+    }
+
+    void CItem::AlterToMagicItem() {
+        ((void(*)(CItem * const))Addr::CItem::AlterToMagicItem)(this);
+    }
+
+    void CItem::AlterToSocketItem(int iSocketCount) {
+        ((void(*)(CItem * const, int))Addr::CItem::AlterToSocketItem__int)(this, iSocketCount);
+    }
+
+    void CItem::ApplyAddon(int iAddonType) {
+        ((void(*)(CItem * const, int))Addr::CItem::ApplyAddon__int)(this, iAddonType);
+    }
+
+    void CItem::AttrLog() {
+        ((void(*)(CItem * const))Addr::CItem::AttrLog)(this);
+    }
+
+    bool CItem::CanPutInto(LPITEM a1) {
+        return ((bool(*)(CItem * const, LPITEM))Addr::CItem::CanPutInto__LPITEM)(this, a1);
+    }
+
+    bool CItem::CanUsedBy(LPCHARACTER ch) {
+        return ((bool(*)(CItem * const, LPCHARACTER))Addr::CItem::CanUsedBy__LPCHARACTER)(this, ch);
+    }
+
+    void CItem::ChangeAttribute(const int * aiChangeProb) {
+        ((void(*)(CItem * const, const int *))Addr::CItem::ChangeAttribute__const_int_)(this, aiChangeProb);
+    }
+
+    bool CItem::ChangeRareAttribute() {
+        return ((bool(*)(CItem * const))Addr::CItem::ChangeRareAttribute)(this);
+    }
+
+    bool CItem::CheckItemUseLevel(int nLevel) {
+        return ((bool(*)(CItem * const, int))Addr::CItem::CheckItemUseLevel__int)(this, nLevel);
+    }
+
+    void CItem::ClearAttribute() {
+        ((void(*)(CItem * const))Addr::CItem::ClearAttribute)(this);
+    }
+
+    void CItem::ClearMountAttributeAndAffect() {
+        ((void(*)(CItem * const))Addr::CItem::ClearMountAttributeAndAffect)(this);
+    }
+
+    void CItem::CopyAttributeTo(LPITEM pItem) {
+        ((void(*)(CItem * const, LPITEM))Addr::CItem::CopyAttributeTo__LPITEM)(this, pItem);
+    }
+
+    void CItem::CopySocketTo(LPITEM pItem) {
+        ((void(*)(CItem * const, LPITEM))Addr::CItem::CopySocketTo__LPITEM)(this, pItem);
+    }
+
+    bool CItem::CreateSocket(BYTE bSlot, BYTE bGold) {
+        return ((bool(*)(CItem * const, BYTE, BYTE))Addr::CItem::CreateSocket__BYTE_BYTE)(this, bSlot, bGold);
+    }
+
+    void CItem::Destroy() {
+        ((void(*)(CItem * const))Addr::CItem::Destroy)(this);
+    }
+
+    bool CItem::DistanceValid(LPCHARACTER ch) {
+        return ((bool(*)(CItem * const, LPCHARACTER))Addr::CItem::DistanceValid__LPCHARACTER)(this, ch);
+    }
+
+    void CItem::EncodeInsertPacket(LPENTITY ent) {
+        ((void(*)(CItem * const, LPENTITY))Addr::CItem::EncodeInsertPacket__LPENTITY)(this, ent);
+    }
+
+    void CItem::EncodeRemovePacket(LPENTITY ent) {
+        ((void(*)(CItem * const, LPENTITY))Addr::CItem::EncodeRemovePacket__LPENTITY)(this, ent);
+    }
+
+    bool CItem::EquipTo(LPCHARACTER ch, BYTE bWearCell) {
+        return ((bool(*)(CItem * const, LPCHARACTER, BYTE))Addr::CItem::EquipTo__LPCHARACTER_BYTE)(this, ch, bWearCell);
+    }
+
+    long CItem::FindApplyValue(BYTE bApplyType) {
+        return ((long(*)(CItem * const, BYTE))Addr::CItem::FindApplyValue__BYTE)(this, bApplyType);
+    }
+
+    int CItem::FindAttribute(BYTE bType) {
+        return ((int(*)(CItem * const, BYTE))Addr::CItem::FindAttribute__BYTE)(this, bType);
+    }
+
+    int CItem::FindEquipCell(LPCHARACTER ch) {
+        return ((int(*)(CItem * const, LPCHARACTER))Addr::CItem::FindEquipCell__LPCHARACTER)(this, ch);
+    }
+
+    int CItem::GetAccessorySocketDownGradeTime() {
+        return ((int(*)(CItem * const))Addr::CItem::GetAccessorySocketDownGradeTime)(this);
+    }
+
+    int CItem::GetAccessorySocketGrade() {
+        return ((int(*)(CItem * const))Addr::CItem::GetAccessorySocketGrade)(this);
+    }
+
+    int CItem::GetAccessorySocketMaxGrade() {
+        return ((int(*)(CItem * const))Addr::CItem::GetAccessorySocketMaxGrade)(this);
+    }
+
+    int CItem::GetAttributeCount() {
+        return ((int(*)(CItem * const))Addr::CItem::GetAttributeCount)(this);
+    }
+
+    int CItem::GetAttributeSetIndex() {
+        return ((int(*)(CItem * const))Addr::CItem::GetAttributeSetIndex)(this);
+    }
+
+    DWORD CItem::GetCount() {
+        return ((DWORD(*)(CItem * const))Addr::CItem::GetCount)(this);
+    }
+
+    int CItem::GetGold() {
+        return ((int(*)(CItem * const))Addr::CItem::GetGold)(this);
+    }
+
+    int CItem::GetLevelLimit() {
+        return ((int(*)(CItem * const))Addr::CItem::GetLevelLimit)(this);
+    }
+
+    int CItem::GetRareAttrCount() {
+        return ((int(*)(CItem * const))Addr::CItem::GetRareAttrCount)(this);
+    }
+
+    DWORD CItem::GetRefineFromVnum() {
+        return ((DWORD(*)(CItem * const))Addr::CItem::GetRefineFromVnum)(this);
+    }
+
+    int CItem::GetRefineLevel() {
+        return ((int(*)(CItem * const))Addr::CItem::GetRefineLevel)(this);
+    }
+
+    int CItem::GetShopBuyPrice() {
+        return ((int(*)(CItem * const))Addr::CItem::GetShopBuyPrice)(this);
+    }
+
+    int CItem::GetSocketCount() {
+        return ((int(*)(CItem * const))Addr::CItem::GetSocketCount)(this);
+    }
+
+    int CItem::GetSpecialGroup() {
+        return ((int(*)(CItem * const))Addr::CItem::GetSpecialGroup)(this);
+    }
+
+    long CItem::GetValue(DWORD idx) {
+        return ((long(*)(CItem * const, DWORD))Addr::CItem::GetValue__DWORD)(this, idx);
+    }
+
+    bool CItem::HasAttr(BYTE bApply) {
+        return ((bool(*)(CItem * const, BYTE))Addr::CItem::HasAttr__BYTE)(this, bApply);
+    }
+
+    bool CItem::HasRareAttr(BYTE bApply) {
+        return ((bool(*)(CItem * const, BYTE))Addr::CItem::HasRareAttr__BYTE)(this, bApply);
+    }
+
+    void CItem::Initialize() {
+        ((void(*)(CItem * const))Addr::CItem::Initialize)(this);
+    }
+
+    bool CItem::IsAccessoryForSocket() {
+        return ((bool(*)(CItem * const))Addr::CItem::IsAccessoryForSocket)(this);
+    }
+
+    bool CItem::IsEquipable() const {
+        return ((bool(*)(const CItem * const))Addr::CItem::IsEquipable)(this);
+    }
+
+    bool CItem::IsNewMountItem() {
+        return ((bool(*)(CItem * const))Addr::CItem::IsNewMountItem)(this);
+    }
+
+    bool CItem::IsOwnership(LPCHARACTER ch) {
+        return ((bool(*)(CItem * const, LPCHARACTER))Addr::CItem::IsOwnership__LPCHARACTER)(this, ch);
+    }
+
+    bool CItem::IsPCBangItem() {
+        return ((bool(*)(CItem * const))Addr::CItem::IsPCBangItem)(this);
+    }
+
+    bool CItem::IsPolymorphItem() {
+        return ((bool(*)(CItem * const))Addr::CItem::IsPolymorphItem)(this);
+    }
+
+    bool CItem::IsRamadanRing() {
+        return ((bool(*)(CItem * const))Addr::CItem::IsRamadanRing)(this);
+    }
+
+    bool CItem::IsRealTimeItem() {
+        return ((bool(*)(CItem * const))Addr::CItem::IsRealTimeItem)(this);
+    }
+
+    bool CItem::IsRideItem() {
+        return ((bool(*)(CItem * const))Addr::CItem::IsRideItem)(this);
+    }
+
+    void CItem::ModifyPoints(bool bAdd) {
+        ((void(*)(CItem * const, bool))Addr::CItem::ModifyPoints__bool)(this, bAdd);
+    }
+
+    bool CItem::OnAfterCreatedItem() {
+        return ((bool(*)(CItem * const))Addr::CItem::OnAfterCreatedItem)(this);
+    }
+
+    void CItem::PutAttribute(const int * aiAttrPercentTable) {
+        ((void(*)(CItem * const, const int *))Addr::CItem::PutAttribute__const_int_)(this, aiAttrPercentTable);
+    }
+
+    void CItem::PutAttributeWithLevel(BYTE bLevel) {
+        ((void(*)(CItem * const, BYTE))Addr::CItem::PutAttributeWithLevel__BYTE)(this, bLevel);
+    }
+
+    bool CItem::RemoveAttributeType(BYTE bType) {
+        return ((bool(*)(CItem * const, BYTE))Addr::CItem::RemoveAttributeType__BYTE)(this, bType);
+    }
+
+    void CItem::RemoveFlag(long bit) {
+        ((void(*)(CItem * const, long))Addr::CItem::RemoveFlag__long)(this, bit);
+    }
+
+    LPITEM CItem::RemoveFromCharacter() {
+        return ((LPITEM(*)(CItem * const))Addr::CItem::RemoveFromCharacter)(this);
+    }
+
+    LPITEM CItem::RemoveFromGround() {
+        return ((LPITEM(*)(CItem * const))Addr::CItem::RemoveFromGround)(this);
+    }
+
+    void CItem::Save() {
+        ((void(*)(CItem * const))Addr::CItem::Save)(this);
+    }
+
+    void CItem::SetAccessorySocketDownGradeTime(DWORD time) {
+        ((void(*)(CItem * const, DWORD))Addr::CItem::SetAccessorySocketDownGradeTime__DWORD)(this, time);
+    }
+
+    void CItem::SetAccessorySocketExpireEvent(LPEVENT pkEvent) {
+        ((void(*)(CItem * const, LPEVENT))Addr::CItem::SetAccessorySocketExpireEvent__LPEVENT_)(this, pkEvent);
+    }
+
+    void CItem::SetAccessorySocketGrade(int iGrade) {
+        ((void(*)(CItem * const, int))Addr::CItem::SetAccessorySocketGrade__int)(this, iGrade);
+    }
+
+    void CItem::SetAccessorySocketMaxGrade(int iMaxGrade) {
+        ((void(*)(CItem * const, int))Addr::CItem::SetAccessorySocketMaxGrade__int)(this, iMaxGrade);
+    }
+
+    void CItem::SetAttribute(int i, BYTE bType, short sValue) {
+        ((void(*)(CItem * const, int, BYTE, short))Addr::CItem::SetAttribute__int_BYTE_short)(this, i, bType, sValue);
+    }
+
+    void CItem::SetAttributes(const TPlayerItemAttribute * c_pAttribute) {
+        ((void(*)(CItem * const, const TPlayerItemAttribute *))Addr::CItem::SetAttributes__const_TPlayerItemAttribute_)(this, c_pAttribute);
+    }
+
+    bool CItem::SetCount(DWORD count) {
+        return ((bool(*)(CItem * const, DWORD))Addr::CItem::SetCount__DWORD)(this, count);
+    }
+
+    void CItem::SetDestroyEvent(LPEVENT pkEvent) {
+        ((void(*)(CItem * const, LPEVENT))Addr::CItem::SetDestroyEvent__LPEVENT_)(this, pkEvent);
+    }
+
+    void CItem::SetExchanging(bool bOn) {
+        ((void(*)(CItem * const, bool))Addr::CItem::SetExchanging__bool)(this, bOn);
+    }
+
+    void CItem::SetForceAttribute(int i, BYTE bType, short sValue) {
+        ((void(*)(CItem * const, int, BYTE, short))Addr::CItem::SetForceAttribute__int_BYTE_short)(this, i, bType, sValue);
+    }
+
+    void CItem::SetOwnership(LPCHARACTER ch, int iSec) {
+        ((void(*)(CItem * const, LPCHARACTER, int))Addr::CItem::SetOwnership__LPCHARACTER_int)(this, ch, iSec);
+    }
+
+    void CItem::SetOwnershipEvent(LPEVENT pkEvent) {
+        ((void(*)(CItem * const, LPEVENT))Addr::CItem::SetOwnershipEvent__LPEVENT_)(this, pkEvent);
+    }
+
+    void CItem::SetProto(const TItemTable * table) {
+        ((void(*)(CItem * const, const TItemTable *))Addr::CItem::SetProto__const_TItemTable_)(this, table);
+    }
+
+    void CItem::SetSocket(int i, long v, bool bLog) {
+        ((void(*)(CItem * const, int, long, bool))Addr::CItem::SetSocket__int_long_bool)(this, i, v, bLog);
+    }
+
+    void CItem::SetSockets(const long * c_al) {
+        ((void(*)(CItem * const, const long *))Addr::CItem::SetSockets__const_long_)(this, c_al);
+    }
+
+    void CItem::SetTimerBasedOnWearExpireEvent(LPEVENT pkEvent) {
+        ((void(*)(CItem * const, LPEVENT))Addr::CItem::SetTimerBasedOnWearExpireEvent__LPEVENT_)(this, pkEvent);
+    }
+
+    void CItem::SetUniqueExpireEvent(LPEVENT pkEvent) {
+        ((void(*)(CItem * const, LPEVENT))Addr::CItem::SetUniqueExpireEvent__LPEVENT_)(this, pkEvent);
+    }
+
+    void CItem::StartAccessorySocketExpireEvent() {
+        ((void(*)(CItem * const))Addr::CItem::StartAccessorySocketExpireEvent)(this);
+    }
+
+    void CItem::StartDestroyEvent(int iSec) {
+        ((void(*)(CItem * const, int))Addr::CItem::StartDestroyEvent__int)(this, iSec);
+    }
+
+    void CItem::StartRealTimeExpireEvent() {
+        ((void(*)(CItem * const))Addr::CItem::StartRealTimeExpireEvent)(this);
+    }
+
+    void CItem::StartTimerBasedOnWearExpireEvent() {
+        ((void(*)(CItem * const))Addr::CItem::StartTimerBasedOnWearExpireEvent)(this);
+    }
+
+    void CItem::StartUniqueExpireEvent() {
+        ((void(*)(CItem * const))Addr::CItem::StartUniqueExpireEvent)(this);
+    }
+
+    void CItem::StopAccessorySocketExpireEvent() {
+        ((void(*)(CItem * const))Addr::CItem::StopAccessorySocketExpireEvent)(this);
+    }
+
+    void CItem::StopTimerBasedOnWearExpireEvent() {
+        ((void(*)(CItem * const))Addr::CItem::StopTimerBasedOnWearExpireEvent)(this);
+    }
+
+    void CItem::StopUniqueExpireEvent() {
+        ((void(*)(CItem * const))Addr::CItem::StopUniqueExpireEvent)(this);
+    }
+
+    bool CItem::Unequip() {
+        return ((bool(*)(CItem * const))Addr::CItem::Unequip)(this);
+    }
+
+    void CItem::UpdatePacket() {
+        ((void(*)(CItem * const))Addr::CItem::UpdatePacket)(this);
+    }
+
+    void CItem::UsePacketEncode(LPCHARACTER ch, LPCHARACTER victim, packet_item_use * packet) {
+        ((void(*)(CItem * const, LPCHARACTER, LPCHARACTER, packet_item_use *))Addr::CItem::UsePacketEncode__LPCHARACTER_LPCHARACTER_packet_item_use_)(this, ch, victim, packet);
+    }
+
+    const TItemTable* CItem::GetProto() {
+        return m_pProto;
+    }
+
+    DWORD CItem::GetMaskVnum() {
+        return m_dwMaskVnum;
+    }
+
+    long CItem::GetSocket(int pos) {
+        if (pos < 3) {
+            return m_alSockets[pos];
+        }
+        return 0;
+    }
+
+    const TPlayerItemAttribute * CItem::GetAttributes() {
+        return this->m_aAttr;
+    }
+
+    const TPlayerItemAttribute & CItem::GetAttribute(int attr) {
+        return this->m_aAttr[attr];
+    }
+
+    BYTE CItem::GetAttributeType(int attr) {
+        return this->m_aAttr[attr].bType;
+    }
+
+    short CItem::GetAttributeValue(int attr) {
+        return this->m_aAttr[attr].sValue;
+    }
+
+    DWORD CItem::GetVnum(void) const {
+        return this->m_pProto->dwVnum;
+    }
+
+    BYTE CItem::GetType() const {
+        return this->m_pProto->bType;
+    }
+
+    BYTE CItem::GetSize() {
+        return this->m_pProto->bSize;
+    }
+
+    const char * CItem::GetName() {
+        return this->m_pProto->szLocaleName;
+    }
+
+    const char * CItem::GetBaseName() {
+        return this->m_pProto->szName;
+    }
+
+    DWORD CItem::GetID() {
+        return this->m_dwID;
+    }
 }

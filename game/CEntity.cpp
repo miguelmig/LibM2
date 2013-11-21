@@ -5,81 +5,89 @@
  */
 #include "CEntity.hpp"
 #include "../addr.hpp"
-namespace libm2{
-long CEntity::GetX() const{
-    return this->m_pos.x;
-};
-long CEntity::GetY() const{
-    return this->m_pos.y;
-};
-long CEntity::GetZ() const{
-    return this->m_pos.z;
-};
-const PIXEL_POSITION& CEntity::GetXYZ() const{
-    return this->m_pos;
-};
-long CEntity::GetMapIndex() const{
-    return this->m_lMapIndex;
-}
-void CEntity::PacketAround(const void * data, int len, LPENTITY exclude){
-    ((void(*)(LPENTITY,const void*,int,LPENTITY))Addr::CEntity::PacketAround)(this,data,len,exclude);
-};
-void CEntity::UpdateSectree() {
-	((void(*)(CEntity *))Addr::CEntity::UpdateSectree)(this);
-}
+namespace libm2 {
 
-void CEntity::ViewCleanup() {
-	((void(*)(CEntity *))Addr::CEntity::ViewCleanup)(this);
-}
+    CEntity::CEntity() {
+        ((void(*)(CEntity * const))Addr::CEntity::CEntity)(this);
+    }
 
-CEntity::~CEntity() {
-	((void(*)(CEntity *))Addr::CEntity::__CEntity)(this);
-}
+    void CEntity::Destroy() {
+        ((void(*)(CEntity * const))Addr::CEntity::Destroy)(this);
+    }
 
-void CEntity::PacketView(const void * a0, int a1, LPENTITY a2) {
-	((void(*)(CEntity *, const void *, int, LPENTITY))Addr::CEntity::PacketView)(this, a0, a1, a2);
-}
+    int CEntity::GetType() const {
+        return ((int(*)(const CEntity * const))Addr::CEntity::GetType)(this);
+    }
 
-int CEntity::GetType() const {
-	return ((int(*)(const CEntity *))Addr::CEntity::GetType)(this);
-}
+    void CEntity::Initialize(int type) {
+        ((void(*)(CEntity * const, int))Addr::CEntity::Initialize__int)(this, type);
+    }
 
-CEntity::CEntity() {
-	((void(*)(CEntity *))Addr::CEntity::CEntity)(this);
-}
+    bool CEntity::IsType(int type) const {
+        return ((bool(*)(const CEntity * const, int))Addr::CEntity::IsType__int)(this, type);
+    }
 
-void CEntity::ViewReencode() {
-	((void(*)(CEntity *))Addr::CEntity::ViewReencode)(this);
-}
+    void CEntity::PacketAround(const void * data, int bytes, LPENTITY except) {
+        ((void(*)(CEntity * const, const void *, int, LPENTITY))Addr::CEntity::PacketAround__const_void__int_LPENTITY)(this, data, bytes, except);
+    }
 
-void CEntity::ViewRemove(LPENTITY a0, bool a1) {
-	((void(*)(CEntity *, LPENTITY, bool))Addr::CEntity::ViewRemove)(this, a0, a1);
-}
+    void CEntity::PacketView(const void * data, int bytes, LPENTITY except) {
+        ((void(*)(CEntity * const, const void *, int, LPENTITY))Addr::CEntity::PacketView__const_void__int_LPENTITY)(this, data, bytes, except);
+    }
 
-void CEntity::SetObserverMode(bool a0) {
-	((void(*)(CEntity *, bool))Addr::CEntity::SetObserverMode)(this, a0);
-}
+    void CEntity::SetObserverMode(bool bFlag) {
+        ((void(*)(CEntity * const, bool))Addr::CEntity::SetObserverMode__bool)(this, bFlag);
+    }
 
-bool CEntity::IsType(int a0) const {
-	return ((bool(*)(const CEntity *, int))Addr::CEntity::IsType)(this, a0);
-}
+    void CEntity::SetType(int type) {
+        ((void(*)(CEntity * const, int))Addr::CEntity::SetType__int)(this, type);
+    }
 
-void CEntity::Initialize(int a0) {
-	((void(*)(CEntity *, int))Addr::CEntity::Initialize)(this, a0);
-}
+    void CEntity::UpdateSectree() {
+        ((void(*)(CEntity * const))Addr::CEntity::UpdateSectree)(this);
+    }
 
-void CEntity::Destroy() {
-	((void(*)(CEntity *))Addr::CEntity::Destroy)(this);
-}
+    void CEntity::ViewCleanup() {
+        ((void(*)(CEntity * const))Addr::CEntity::ViewCleanup)(this);
+    }
 
-void CEntity::ViewInsert(LPENTITY a0, bool a1) {
-	((void(*)(CEntity *, LPENTITY, bool))Addr::CEntity::ViewInsert)(this, a0, a1);
-}
+    void CEntity::ViewInsert(LPENTITY entity, bool recursive) {
+        ((void(*)(CEntity * const, LPENTITY, bool))Addr::CEntity::ViewInsert__LPENTITY_bool)(this, entity, recursive);
+    }
 
-void CEntity::SetType(int a0) {
-	((void(*)(CEntity *, int))Addr::CEntity::SetType)(this, a0);
-}
-LPDESC CEntity::GetDesc(void) const {
-    return m_lpDesc;
-}
+    void CEntity::ViewReencode() {
+        ((void(*)(CEntity * const))Addr::CEntity::ViewReencode)(this);
+    }
+
+    void CEntity::ViewRemove(LPENTITY entity, bool recursive) {
+        ((void(*)(CEntity * const, LPENTITY, bool))Addr::CEntity::ViewRemove__LPENTITY_bool)(this, entity, recursive);
+    }
+
+    CEntity::~CEntity() {
+        ((void(*)(CEntity * const))Addr::CEntity::__CEntity)(this);
+    }
+
+    LPDESC CEntity::GetDesc(void) const {
+        return m_lpDesc;
+    }
+
+    long CEntity::GetX() const {
+        return this->m_pos.x;
+    };
+
+    long CEntity::GetY() const {
+        return this->m_pos.y;
+    };
+
+    long CEntity::GetZ() const {
+        return this->m_pos.z;
+    };
+
+    const PIXEL_POSITION& CEntity::GetXYZ() const {
+        return this->m_pos;
+    };
+
+    long CEntity::GetMapIndex() const {
+        return this->m_lMapIndex;
+    }
 }

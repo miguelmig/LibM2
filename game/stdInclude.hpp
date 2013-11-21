@@ -31,10 +31,11 @@
 #include <netinet/in.h>
 #include <boost/version.hpp>
 #if BOOST_VERSION > 104700 || BOOST_VERSION < 104100
-namespace boost{
-template <typename Key, typename Mapped, typename Hash = int, typename Pred = int, typename Alloc = int>  class unordered_map{
-    char data[28];
-};
+namespace boost {
+
+    template <typename Key, typename Mapped, typename Hash = int, typename Pred = int, typename Alloc = int> class unordered_map {
+        char data[28];
+    };
 }
 #else
 #include <boost/unordered_map.hpp>
@@ -43,19 +44,19 @@ template <typename Key, typename Mapped, typename Hash = int, typename Pred = in
 #include <typeinfo>
 #include "../utils/lua.hpp"
 #include <boost/intrusive_ptr.hpp>
-namespace libm2{
-// Typedefs
-typedef int socket_t;
-typedef uint8_t BYTE;
-typedef uint16_t WORD;
-typedef uint32_t DWORD;
-typedef uint64_t QWORD;
+namespace libm2 {
+    // Typedefs
+    typedef int socket_t;
+    typedef uint8_t BYTE;
+    typedef uint16_t WORD;
+    typedef uint32_t DWORD;
+    typedef uint64_t QWORD;
 
-typedef struct seq_t {
-    BYTE hdr;
-    BYTE seq;
-} seq_t;
+    typedef struct seq_t {
+        BYTE hdr;
+        BYTE seq;
+    } seq_t;
 
-typedef std::vector<seq_t,std::allocator<seq_t> > seq_vector_t;
+    typedef std::vector<seq_t, std::allocator<seq_t> > seq_vector_t;
 }
 #endif // __LIBM2_GAME_STDINCLUDE_HPP

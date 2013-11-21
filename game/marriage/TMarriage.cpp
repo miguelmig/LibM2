@@ -1,59 +1,70 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "TMarriage.hpp"
 #include "../../addr.hpp"
-namespace libm2{
-void marriage::TMarriage::Save() {
-	((void(*)(marriage::TMarriage *))Addr::marriage::TMarriage::Save)(this);
-}
+namespace libm2 {
 
-int marriage::TMarriage::GetMarriageGrade() {
-	return ((int(*)(marriage::TMarriage *))Addr::marriage::TMarriage::GetMarriageGrade)(this);
-}
+    int marriage::TMarriage::GetBonus(DWORD dwItemVnum, bool bShare, LPCHARACTER me) {
+        return ((int(*)(marriage::TMarriage * const, DWORD, bool, LPCHARACTER))Addr::marriage::TMarriage::GetBonus__DWORD_bool_LPCHARACTER)(this, dwItemVnum, bShare, me);
+    }
 
-void marriage::TMarriage::SetMarried() {
-	((void(*)(marriage::TMarriage *))Addr::marriage::TMarriage::SetMarried)(this);
-}
+    int marriage::TMarriage::GetMarriageGrade() {
+        return ((int(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::GetMarriageGrade)(this);
+    }
 
-bool marriage::TMarriage::IsNear() {
-	return ((bool(*)(marriage::TMarriage *))Addr::marriage::TMarriage::IsNear)(this);
-}
+    int marriage::TMarriage::GetMarriagePoint() {
+        return ((int(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::GetMarriagePoint)(this);
+    }
 
-int marriage::TMarriage::GetMarriagePoint() {
-	return ((int(*)(marriage::TMarriage *))Addr::marriage::TMarriage::GetMarriagePoint)(this);
-}
+    bool marriage::TMarriage::IsNear() {
+        return ((bool(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::IsNear)(this);
+    }
 
-void marriage::TMarriage::StartNearCheckEvent() {
-	((void(*)(marriage::TMarriage *))Addr::marriage::TMarriage::StartNearCheckEvent)(this);
-}
+    void marriage::TMarriage::Login(LPCHARACTER ch) {
+        ((void(*)(marriage::TMarriage * const, LPCHARACTER))Addr::marriage::TMarriage::Login__LPCHARACTER)(this, ch);
+    }
 
-void marriage::TMarriage::Update(DWORD a0) {
-	((void(*)(marriage::TMarriage *, DWORD))Addr::marriage::TMarriage::Update)(this, a0);
-}
+    void marriage::TMarriage::Logout(DWORD pid) {
+        ((void(*)(marriage::TMarriage * const, DWORD))Addr::marriage::TMarriage::Logout__DWORD)(this, pid);
+    }
 
-void marriage::TMarriage::StopNearCheckEvent() {
-	((void(*)(marriage::TMarriage *))Addr::marriage::TMarriage::StopNearCheckEvent)(this);
-}
+    void marriage::TMarriage::NearCheck() {
+        ((void(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::NearCheck)(this);
+    }
 
-void marriage::TMarriage::WarpToWeddingMap(DWORD a0) {
-	((void(*)(marriage::TMarriage *, DWORD))Addr::marriage::TMarriage::WarpToWeddingMap)(this, a0);
-}
+    void marriage::TMarriage::RequestEndWedding() {
+        ((void(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::RequestEndWedding)(this);
+    }
 
-void marriage::TMarriage::Logout(DWORD a0) {
-	((void(*)(marriage::TMarriage *, DWORD))Addr::marriage::TMarriage::Logout)(this, a0);
-}
+    void marriage::TMarriage::Save() {
+        ((void(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::Save)(this);
+    }
 
-void marriage::TMarriage::NearCheck() {
-	((void(*)(marriage::TMarriage *))Addr::marriage::TMarriage::NearCheck)(this);
-}
+    void marriage::TMarriage::SetMarried() {
+        ((void(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::SetMarried)(this);
+    }
 
-int marriage::TMarriage::GetBonus(DWORD a0, bool a1, LPCHARACTER a2) {
-	return ((int(*)(marriage::TMarriage *, DWORD, bool, LPCHARACTER))Addr::marriage::TMarriage::GetBonus)(this, a0, a1, a2);
-}
+    void marriage::TMarriage::StartNearCheckEvent() {
+        ((void(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::StartNearCheckEvent)(this);
+    }
 
-void marriage::TMarriage::Login(LPCHARACTER a0) {
-	((void(*)(marriage::TMarriage *, LPCHARACTER))Addr::marriage::TMarriage::Login)(this, a0);
-}
+    void marriage::TMarriage::StopNearCheckEvent() {
+        ((void(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::StopNearCheckEvent)(this);
+    }
 
-void marriage::TMarriage::RequestEndWedding() {
-	((void(*)(marriage::TMarriage *))Addr::marriage::TMarriage::RequestEndWedding)(this);
-}
+    void marriage::TMarriage::Update(DWORD point) {
+        ((void(*)(marriage::TMarriage * const, DWORD))Addr::marriage::TMarriage::Update__DWORD)(this, point);
+    }
+
+    void marriage::TMarriage::WarpToWeddingMap(DWORD dwPID) {
+        ((void(*)(marriage::TMarriage * const, DWORD))Addr::marriage::TMarriage::WarpToWeddingMap__DWORD)(this, dwPID);
+    }
+
+    marriage::TMarriage::~TMarriage() {
+        ((void(*)(marriage::TMarriage * const))Addr::marriage::TMarriage::__TMarriage)(this);
+    }
+
 }

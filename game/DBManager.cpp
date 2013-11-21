@@ -1,125 +1,131 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "DBManager.hpp"
-namespace libm2{
-const std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > & DBManager::GetGreetMessage() {
-	return ((const std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > &(*)(DBManager *))Addr::DBManager::GetGreetMessage)(this);
-}
+namespace libm2 {
 
-void DBManager::InsertLoginData(CLoginData * a0) {
-	((void(*)(DBManager *, CLoginData *))Addr::DBManager::InsertLoginData)(this, a0);
-}
+    void DBManager::AnalyzeReturnQuery(SQLMsg * pMsg) {
+        ((void(*)(DBManager * const, SQLMsg *))Addr::DBManager::AnalyzeReturnQuery__SQLMsg_)(this, pMsg);
+    }
 
-SQLMsg * DBManager::PopResult() {
-	return ((SQLMsg *(*)(DBManager *))Addr::DBManager::PopResult)(this);
-}
+    void DBManager::CheckBilling() {
+        ((void(*)(DBManager * const))Addr::DBManager::CheckBilling)(this);
+    }
 
-void DBManager::CheckBilling() {
-	((void(*)(DBManager *))Addr::DBManager::CheckBilling)(this);
-}
+    bool DBManager::Connect(const char * host, const int port, const char * user, const char * pwd, const char * db) {
+        return ((bool(*)(DBManager * const, const char *, const int, const char *, const char *, const char *))Addr::DBManager::Connect__const_char__const_int_const_char__const_char__const_char_)(this, host, port, user, pwd, db);
+    }
 
-void DBManager::LoadDBString() {
-	((void(*)(DBManager *))Addr::DBManager::LoadDBString)(this);
-}
+    DBManager::DBManager() {
+        ((void(*)(DBManager * const))Addr::DBManager::DBManager)(this);
+    }
 
-void DBManager::StopAllBilling() {
-	((void(*)(DBManager *))Addr::DBManager::StopAllBilling)(this);
-}
+    void DBManager::DeleteLoginData(CLoginData * pkLD) {
+        ((void(*)(DBManager * const, CLoginData *))Addr::DBManager::DeleteLoginData__CLoginData_)(this, pkLD);
+    }
 
-void DBManager::SetBilling(DWORD a0, bool a1, bool a2) {
-	((void(*)(DBManager *, DWORD, bool, bool))Addr::DBManager::SetBilling)(this, a0, a1, a2);
-}
+    SQLMsg * DBManager::DirectQuery(const char * c_pszFormat, ...) {
+        va_list va;
+        va_start(va, c_pszFormat);
+        char buffer[1024];
+        vsnprintf(buffer, 513, c_pszFormat, va);
+        va_end(va);
+        return ((SQLMsg * (*)(DBManager * const, const char *, ...))Addr::DBManager::DirectQuery__const_char___)(this, buffer);
+    }
 
-bool DBManager::IsConnected() {
-	return ((bool(*)(DBManager *))Addr::DBManager::IsConnected)(this);
-}
+    size_t DBManager::EscapeString(char * dst, size_t dstSize, const char * src, size_t srcSize) {
+        return ((size_t(*)(DBManager * const, char *, size_t, const char *, size_t))Addr::DBManager::EscapeString__char__size_t_const_char__size_t)(this, dst, dstSize, src, srcSize);
+    }
 
-void DBManager::FlushBilling(bool a0) {
-	((void(*)(DBManager *, bool))Addr::DBManager::FlushBilling)(this, a0);
-}
+    void DBManager::FlushBilling(bool bForce) {
+        ((void(*)(DBManager * const, bool))Addr::DBManager::FlushBilling__bool)(this, bForce);
+    }
 
-void DBManager::DeleteLoginData(CLoginData * a0) {
-	((void(*)(DBManager *, CLoginData *))Addr::DBManager::DeleteLoginData)(this, a0);
-}
+    const std::string & DBManager::GetDBString(const std::string & key) {
+        return ((const std::string & (*)(DBManager * const, const std::string &))Addr::DBManager::GetDBString__const_std_locale_string_)(this, key);
+    }
 
-void DBManager::LoginPrepare(BYTE a0, DWORD a1, long a2, LPDESC a3, DWORD * a4, int * a5) {
-	((void(*)(DBManager *, BYTE, DWORD, long, LPDESC, DWORD *, int *))Addr::DBManager::LoginPrepare)(this, a0, a1, a2, a3, a4, a5);
-}
+    const std::vector<std::string> & DBManager::GetGreetMessage() {
+        return ((const std::vector<std::string> &(*)(DBManager * const))Addr::DBManager::GetGreetMessage)(this);
+    }
 
-DBManager::~DBManager() {
-	((void(*)(DBManager *))Addr::DBManager::__DBManager)(this);
-}
+    CLoginData * DBManager::GetLoginData(DWORD dwKey) {
+        return ((CLoginData * (*)(DBManager * const, DWORD))Addr::DBManager::GetLoginData__DWORD)(this, dwKey);
+    }
 
-void DBManager::SendAuthLogin(LPDESC a0) {
-	((void(*)(DBManager *, LPDESC))Addr::DBManager::SendAuthLogin)(this, a0);
-}
+    void DBManager::InsertLoginData(CLoginData * pkLD) {
+        ((void(*)(DBManager * const, CLoginData *))Addr::DBManager::InsertLoginData__CLoginData_)(this, pkLD);
+    }
 
-void DBManager::SendMoneyLog(BYTE a0, DWORD a1, int a2) {
-	((void(*)(DBManager *, BYTE, DWORD, int))Addr::DBManager::SendMoneyLog)(this, a0, a1, a2);
-}
+    bool DBManager::IsConnected() {
+        return ((bool(*)(DBManager * const))Addr::DBManager::IsConnected)(this);
+    }
 
-void DBManager::ReturnQuery(int a0, DWORD a1, void * a2, const char * format,...) {
-    va_list va;
-    va_start(va, format);
-    char buffer[513];
-    vsnprintf(buffer, 513, format, va);
-    va_end(va);
-	((void(*)(DBManager *, int, DWORD, void *, const char *,...))Addr::DBManager::ReturnQuery)(this, a0, a1, a2, buffer);
-}
+    void DBManager::LoadDBString() {
+        ((void(*)(DBManager * const))Addr::DBManager::LoadDBString)(this);
+    }
 
-SQLMsg * DBManager::DirectQuery(const char * format,...) {
-    va_list va;
-    va_start(va, format);
-    char buffer[513];
-    vsnprintf(buffer, 513, format, va);
-    va_end(va);
-	return ((SQLMsg *(*)(DBManager *, const char *, ...))Addr::DBManager::DirectQuery)(this, buffer);
-}
+    void DBManager::LoginPrepare(BYTE bBillType, DWORD dwBillID, long lRemainSecs, LPDESC d, DWORD * pdwClientKey, int * paiPremiumTimes) {
+        ((void(*)(DBManager * const, BYTE, DWORD, long, LPDESC, DWORD *, int *))Addr::DBManager::LoginPrepare__BYTE_DWORD_long_LPDESC_DWORD__int_)(this, bBillType, dwBillID, lRemainSecs, d, pdwClientKey, paiPremiumTimes);
+    }
 
-const std::string & DBManager::GetDBString(const std::string & a0) {
-	return ((const std::string &(*)(DBManager *, const std::string &))Addr::DBManager::GetDBString)(this, a0);
-}
+    SQLMsg * DBManager::PopResult() {
+        return ((SQLMsg * (*)(DBManager * const))Addr::DBManager::PopResult)(this);
+    }
 
-void DBManager::RequestBlockException(const char * a0, int a1) {
-	((void(*)(DBManager *, const char *, int))Addr::DBManager::RequestBlockException)(this, a0, a1);
-}
+    void DBManager::Process() {
+        ((void(*)(DBManager * const))Addr::DBManager::Process)(this);
+    }
 
-void DBManager::SendLoginPing(const char * a0) {
-	((void(*)(DBManager *, const char *))Addr::DBManager::SendLoginPing)(this, a0);
-}
+    void DBManager::PushBilling(CLoginData * pkLD) {
+        ((void(*)(DBManager * const, CLoginData *))Addr::DBManager::PushBilling__CLoginData_)(this, pkLD);
+    }
 
-void DBManager::PushBilling(CLoginData * a0) {
-	((void(*)(DBManager *, CLoginData *))Addr::DBManager::PushBilling)(this, a0);
-}
+    void DBManager::Query(const char * c_pszFormat, ...) {
+        va_list va;
+        va_start(va, c_pszFormat);
+        char buffer[1024];
+        vsnprintf(buffer, 513, c_pszFormat, va);
+        va_end(va);
+        ((void(*)(DBManager * const, const char *, ...))Addr::DBManager::Query__const_char___)(this, buffer);
+    }
 
-void DBManager::AnalyzeReturnQuery(SQLMsg * a0) {
-	((void(*)(DBManager *, SQLMsg *))Addr::DBManager::AnalyzeReturnQuery)(this, a0);
-}
+    void DBManager::RequestBlockException(const char * login, int cmd) {
+        ((void(*)(DBManager * const, const char *, int))Addr::DBManager::RequestBlockException__const_char__int)(this, login, cmd);
+    }
 
-void DBManager::Process() {
-	((void(*)(DBManager *))Addr::DBManager::Process)(this);
-}
+    void DBManager::ReturnQuery(int iType, DWORD dwIdent, void * pvData, const char * c_pszFormat, ...) {
+        va_list va;
+        va_start(va, c_pszFormat);
+        char buffer[1024];
+        vsnprintf(buffer, 513, c_pszFormat, va);
+        va_end(va);
+        ((void(*)(DBManager * const, int, DWORD, void *, const char *, ...))Addr::DBManager::ReturnQuery__int_DWORD_void__const_char___)(this, iType, dwIdent, pvData, buffer);
+    }
 
-DBManager::DBManager() {
-	((void(*)(DBManager *))Addr::DBManager::DBManager)(this);
-}
+    void DBManager::SendAuthLogin(LPDESC d) {
+        ((void(*)(DBManager * const, LPDESC))Addr::DBManager::SendAuthLogin__LPDESC)(this, d);
+    }
 
-bool DBManager::Connect(const char * a0, const int a1, const char * a2, const char * a3, const char * a4) {
-	return ((bool(*)(DBManager *, const char *, const int, const char *, const char *, const char *))Addr::DBManager::Connect)(this, a0, a1, a2, a3, a4);
-}
+    void DBManager::SendLoginPing(const char * c_pszLogin) {
+        ((void(*)(DBManager * const, const char *))Addr::DBManager::SendLoginPing__const_char_)(this, c_pszLogin);
+    }
 
-CLoginData * DBManager::GetLoginData(DWORD a0) {
-	return ((CLoginData *(*)(DBManager *, DWORD))Addr::DBManager::GetLoginData)(this, a0);
-}
+    void DBManager::SendMoneyLog(BYTE type, DWORD vnum, int gold) {
+        ((void(*)(DBManager * const, BYTE, DWORD, int))Addr::DBManager::SendMoneyLog__BYTE_DWORD_int)(this, type, vnum, gold);
+    }
 
-void DBManager::Query(const char * format, ...) {
-    va_list va;
-    va_start(va, format);
-    char buffer[513];
-    vsnprintf(buffer, 513, format, va);
-    va_end(va);
-	((void(*)(DBManager *, const char *, ...))Addr::DBManager::Query)(this, buffer);
-}
+    void DBManager::SetBilling(DWORD dwKey, bool bOn, bool bSkipPush) {
+        ((void(*)(DBManager * const, DWORD, bool, bool))Addr::DBManager::SetBilling__DWORD_bool_bool)(this, dwKey, bOn, bSkipPush);
+    }
 
-size_t DBManager::EscapeString(char * a0, size_t a1, const char * a2, size_t a3) {
-	return ((size_t(*)(DBManager *, char *, size_t, const char *, size_t))Addr::DBManager::EscapeString)(this, a0, a1, a2, a3);
-}
+    void DBManager::StopAllBilling() {
+        ((void(*)(DBManager * const))Addr::DBManager::StopAllBilling)(this);
+    }
+
+    DBManager::~DBManager() {
+        ((void(*)(DBManager * const))Addr::DBManager::__DBManager)(this);
+    }
 }

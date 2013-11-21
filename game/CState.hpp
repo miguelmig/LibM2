@@ -5,13 +5,14 @@
  */
 #ifndef __LIBM2_GAME_CSTATE_HPP
 #define __LIBM2_GAME_CSTATE_HPP
-namespace libm2{
-class CState {
-  public:
-    ~CState();
-    virtual void ExecuteBeginState(void)=0;
-    virtual void ExecuteState(void)=0;
-    virtual void ExecuteEndState(void)=0;
-};
+namespace libm2 {
+
+    class CState {
+    public:
+        ~CState();
+        virtual void ExecuteBeginState(void) = 0;
+        virtual void ExecuteState(void) = 0;
+        virtual void ExecuteEndState(void) = 0;
+    };
 }
 #endif // __LIBM2_GAME_CSTATE_HPP

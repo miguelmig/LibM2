@@ -1,49 +1,49 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CPetSystem.hpp"
 #include "../addr.hpp"
-namespace libm2{
-CPetActor * CPetSystem::GetByVID(DWORD a0) const {
-	return ((CPetActor *(*)(const CPetSystem *, DWORD))Addr::CPetSystem::GetByVID)(this, a0);
-}
+namespace libm2 {
 
-void CPetSystem::DeletePet(DWORD a0) {
-	((void(*)(CPetSystem *, DWORD))Addr::CPetSystem::DeletePet)(this, a0);
-}
+    size_t CPetSystem::CountSummoned() const {
+        return ((size_t(*)(const CPetSystem * const))Addr::CPetSystem::CountSummoned)(this);
+    }
 
-size_t CPetSystem::CountSummoned() const {
-	return ((size_t(*)(const CPetSystem *))Addr::CPetSystem::CountSummoned)(this);
-}
-CPetSystem::CPetSystem(LPCHARACTER a0) {
-	((void(*)(CPetSystem *, LPCHARACTER))Addr::CPetSystem::CPetSystem)(this, a0);
-}
+    void CPetSystem::DeletePet(CPetActor * petActor) {
+        ((void(*)(CPetSystem * const, CPetActor *))Addr::CPetSystem::DeletePet__CPetActor_)(this, petActor);
+    }
 
-bool CPetSystem::Update(DWORD a0) {
-	return ((bool(*)(CPetSystem *, DWORD))Addr::CPetSystem::Update)(this, a0);
-}
-CPetActor * CPetSystem::GetByVnum(DWORD a0) const {
-	return ((CPetActor *(*)(const CPetSystem *, DWORD))Addr::CPetSystem::GetByVnum)(this, a0);
-}
+    void CPetSystem::DeletePet(DWORD mobVnum) {
+        ((void(*)(CPetSystem * const, DWORD))Addr::CPetSystem::DeletePet__DWORD)(this, mobVnum);
+    }
 
-void CPetSystem::RefreshBuff() {
-	((void(*)(CPetSystem *))Addr::CPetSystem::RefreshBuff)(this);
-}
+    void CPetSystem::Destroy() {
+        ((void(*)(CPetSystem * const))Addr::CPetSystem::Destroy)(this);
+    }
 
-CPetSystem::~CPetSystem() {
-	((void(*)(CPetSystem *))Addr::CPetSystem::__CPetSystem)(this);
-}
+    CPetActor * CPetSystem::GetByVID(DWORD vid) const {
+        return ((CPetActor * (*)(const CPetSystem * const, DWORD))Addr::CPetSystem::GetByVID__DWORD)(this, vid);
+    }
 
-void CPetSystem::Destroy() {
-	((void(*)(CPetSystem *))Addr::CPetSystem::Destroy)(this);
-}
+    CPetActor * CPetSystem::GetByVnum(DWORD vnum) const {
+        return ((CPetActor * (*)(const CPetSystem * const, DWORD))Addr::CPetSystem::GetByVnum__DWORD)(this, vnum);
+    }
 
-CPetActor * CPetSystem::Summon(DWORD a0, LPITEM a1, const char * a2, bool a3, DWORD a4) {
-	return ((CPetActor *(*)(CPetSystem *, DWORD, LPITEM, const char *, bool, DWORD))Addr::CPetSystem::Summon)(this, a0, a1, a2, a3, a4);
-}
+    void CPetSystem::RefreshBuff() {
+        ((void(*)(CPetSystem * const))Addr::CPetSystem::RefreshBuff)(this);
+    }
 
-void CPetSystem::Unsummon(DWORD a0, bool a1) {
-	((void(*)(CPetSystem *, DWORD, bool))Addr::CPetSystem::Unsummon)(this, a0, a1);
-}
+    CPetActor * CPetSystem::Summon(DWORD mobVnum, LPITEM pSummonItem, const char * petName, bool bSpawnFar, DWORD options) {
+        return ((CPetActor * (*)(CPetSystem * const, DWORD, LPITEM, const char *, bool, DWORD))Addr::CPetSystem::Summon__DWORD_LPITEM_const_char__bool_DWORD)(this, mobVnum, pSummonItem, petName, bSpawnFar, options);
+    }
 
-void CPetSystem::DeletePet(CPetActor * a0) {
-	((void(*)(CPetSystem *, CPetActor *))Addr::CPetSystem::DeletePet__7723)(this, a0);
-}
+    void CPetSystem::Unsummon(DWORD vnum, bool bDeleteFromList) {
+        ((void(*)(CPetSystem * const, DWORD, bool))Addr::CPetSystem::Unsummon__DWORD_bool)(this, vnum, bDeleteFromList);
+    }
+
+    bool CPetSystem::Update(DWORD deltaTime) {
+        return ((bool(*)(CPetSystem * const, DWORD))Addr::CPetSystem::Update__DWORD)(this, deltaTime);
+    }
 }

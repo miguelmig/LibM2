@@ -1,171 +1,177 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CGuildManager.hpp"
-namespace libm2{
-bool CGuildManager::EndWar(DWORD a0, DWORD a1) {
-	return ((bool(*)(CGuildManager *, DWORD, DWORD))Addr::CGuildManager::EndWar)(this, a0, a1);
-}
+namespace libm2 {
 
-void CGuildManager::RefuseWar(DWORD a0, DWORD a1) {
-	((void(*)(CGuildManager *, DWORD, DWORD))Addr::CGuildManager::RefuseWar)(this, a0, a1);
-}
+    CGuildManager::CGuildManager() {
+        ((void(*)(CGuildManager * const))Addr::CGuildManager::CGuildManager)(this);
+    }
 
-void CGuildManager::DeclareWar(DWORD a0, DWORD a1, BYTE a2) {
-	((void(*)(CGuildManager *, DWORD, DWORD, BYTE))Addr::CGuildManager::DeclareWar)(this, a0, a1, a2);
-}
+    void CGuildManager::CancelWar(DWORD guild_id1, DWORD guild_id2) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD))Addr::CGuildManager::CancelWar__DWORD_DWORD)(this, guild_id1, guild_id2);
+    }
 
-void CGuildManager::CancelWar(DWORD a0, DWORD a1) {
-	((void(*)(CGuildManager *, DWORD, DWORD))Addr::CGuildManager::CancelWar)(this, a0, a1);
-}
+    void CGuildManager::ChangeMaster(DWORD dwGID) {
+        ((void(*)(CGuildManager * const, DWORD))Addr::CGuildManager::ChangeMaster__DWORD)(this, dwGID);
+    }
 
-void CGuildManager::ReserveWarDelete(DWORD a0) {
-	((void(*)(CGuildManager *, DWORD))Addr::CGuildManager::ReserveWarDelete)(this, a0);
-}
+    DWORD CGuildManager::CreateGuild(TGuildCreateParameter & gcp) {
+        return ((DWORD(*)(CGuildManager * const, TGuildCreateParameter &))Addr::CGuildManager::CreateGuild__TGuildCreateParameter_)(this, gcp);
+    }
 
-bool CGuildManager::IsBet(DWORD a0, const char * a1) {
-	return ((bool(*)(CGuildManager *, DWORD, const char *))Addr::CGuildManager::IsBet)(this, a0, a1);
-}
+    void CGuildManager::DeclareWar(DWORD guild_id1, DWORD guild_id2, BYTE bType) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD, BYTE))Addr::CGuildManager::DeclareWar__DWORD_DWORD_BYTE)(this, guild_id1, guild_id2, bType);
+    }
 
-int CGuildManager::GetRank(CGuild * a0) {
-	return ((int(*)(CGuildManager *, CGuild *))Addr::CGuildManager::GetRank)(this, a0);
-}
+    void CGuildManager::DisbandGuild(DWORD guild_id) {
+        ((void(*)(CGuildManager * const, DWORD))Addr::CGuildManager::DisbandGuild__DWORD)(this, guild_id);
+    }
 
-int CGuildManager::GetWithdrawDelay() {
-	return ((int(*)(CGuildManager *))Addr::CGuildManager::GetWithdrawDelay)(this);
-}
+    bool CGuildManager::EndWar(DWORD guild_id1, DWORD guild_id2) {
+        return ((bool(*)(CGuildManager * const, DWORD, DWORD))Addr::CGuildManager::EndWar__DWORD_DWORD)(this, guild_id1, guild_id2);
+    }
 
-void CGuildManager::ShowGuildWarList(LPCHARACTER a0) {
-	((void(*)(CGuildManager *, LPCHARACTER))Addr::CGuildManager::ShowGuildWarList)(this, a0);
-}
+    CGuild * CGuildManager::FindGuild(DWORD guild_id) {
+        return ((CGuild * (*)(CGuildManager * const, DWORD))Addr::CGuildManager::FindGuild__DWORD)(this, guild_id);
+    }
 
-void CGuildManager::WaitStartWar(DWORD a0, DWORD a1) {
-	((void(*)(CGuildManager *, DWORD, DWORD))Addr::CGuildManager::WaitStartWar)(this, a0, a1);
-}
+    CGuild * CGuildManager::FindGuildByName(std::string guild_name) {
+        return ((CGuild * (*)(CGuildManager * const, std::string))Addr::CGuildManager::FindGuildByName__const_std_locale_string_)(this, guild_name);
+    }
 
-void CGuildManager::StopAllGuildWar() {
-	((void(*)(CGuildManager *))Addr::CGuildManager::StopAllGuildWar)(this);
-}
+    void CGuildManager::GetAroundRankString(DWORD dwMyGuild, char * buffer, size_t buflen) {
+        ((void(*)(CGuildManager * const, DWORD, char *, size_t))Addr::CGuildManager::GetAroundRankString__DWORD_char__size_t)(this, dwMyGuild, buffer, buflen);
+    }
 
-void CGuildManager::GetHighRankString(DWORD a0, char * a1, size_t a2) {
-	((void(*)(CGuildManager *, DWORD, char *, size_t))Addr::CGuildManager::GetHighRankString)(this, a0, a1, a2);
-}
+    int CGuildManager::GetDisbandDelay() {
+        return ((int(*)(CGuildManager * const))Addr::CGuildManager::GetDisbandDelay)(this);
+    }
 
-void CGuildManager::DisbandGuild(DWORD a0) {
-	((void(*)(CGuildManager *, DWORD))Addr::CGuildManager::DisbandGuild)(this, a0);
-}
+    void CGuildManager::GetHighRankString(DWORD a1, char * a2, size_t a3) {
+        ((void(*)(CGuildManager * const, DWORD, char *, size_t))Addr::CGuildManager::GetHighRankString__DWORD_char__size_t)(this, a1, a2, a3);
+    }
 
-CGuild * CGuildManager::FindGuild(DWORD a0) {
-	return ((CGuild *(*)(CGuildManager *, DWORD))Addr::CGuildManager::FindGuild)(this, a0);
-}
+    CGuild * CGuildManager::GetLinkedGuild(DWORD pid) {
+        return ((CGuild * (*)(CGuildManager * const, DWORD))Addr::CGuildManager::GetLinkedGuild__DWORD)(this, pid);
+    }
 
-CGuildManager::CGuildManager() {
-	((void(*)(CGuildManager *))Addr::CGuildManager::CGuildManager)(this);
-}
+    int CGuildManager::GetRank(CGuild * g) {
+        return ((int(*)(CGuildManager * const, CGuild *))Addr::CGuildManager::GetRank__CGuild_)(this, g);
+    }
 
-void CGuildManager::LoginMember(LPCHARACTER a0) {
-	((void(*)(CGuildManager *, LPCHARACTER))Addr::CGuildManager::LoginMember)(this, a0);
-}
+    std::vector<CGuildWarReserveForGame*, std::allocator<CGuildWarReserveForGame*> > & CGuildManager::GetReserveWarRef() {
+        return ((std::vector<CGuildWarReserveForGame*, std::allocator<CGuildWarReserveForGame*> > &(*)(CGuildManager * const))Addr::CGuildManager::GetReserveWarRef)(this);
+    }
 
-void CGuildManager::Link(DWORD a0, CGuild * a1) {
-	((void(*)(CGuildManager *, DWORD, CGuild *))Addr::CGuildManager::Link)(this, a0, a1);
-}
+    int CGuildManager::GetWithdrawDelay() {
+        return ((int(*)(CGuildManager * const))Addr::CGuildManager::GetWithdrawDelay)(this);
+    }
 
-void CGuildManager::ChangeMaster(DWORD a0) {
-	((void(*)(CGuildManager *, DWORD))Addr::CGuildManager::ChangeMaster)(this, a0);
-}
+    void CGuildManager::Initialize() {
+        ((void(*)(CGuildManager * const))Addr::CGuildManager::Initialize)(this);
+    }
 
-void CGuildManager::Initialize() {
-	((void(*)(CGuildManager *))Addr::CGuildManager::Initialize)(this);
-}
+    bool CGuildManager::IsBet(DWORD dwID, const char * c_pszLogin) {
+        return ((bool(*)(CGuildManager * const, DWORD, const char *))Addr::CGuildManager::IsBet__DWORD_const_char_)(this, dwID, c_pszLogin);
+    }
 
-void CGuildManager::P2PLoginMember(DWORD a0) {
-	((void(*)(CGuildManager *, DWORD))Addr::CGuildManager::P2PLoginMember)(this, a0);
-}
+    void CGuildManager::Kill(LPCHARACTER killer, LPCHARACTER victim) {
+        ((void(*)(CGuildManager * const, LPCHARACTER, LPCHARACTER))Addr::CGuildManager::Kill__LPCHARACTER_LPCHARACTER)(this, killer, victim);
+    }
 
-void CGuildManager::Unlink(DWORD a0) {
-	((void(*)(CGuildManager *, DWORD))Addr::CGuildManager::Unlink)(this, a0);
-}
+    void CGuildManager::Link(DWORD pid, CGuild * guild) {
+        ((void(*)(CGuildManager * const, DWORD, CGuild *))Addr::CGuildManager::Link__DWORD_CGuild_)(this, pid, guild);
+    }
 
-void CGuildManager::RequestWarOver(DWORD a0, DWORD a1, DWORD a2, long a3) {
-	((void(*)(CGuildManager *, DWORD, DWORD, DWORD, long))Addr::CGuildManager::RequestWarOver)(this, a0, a1, a2, a3);
-}
+    void CGuildManager::LoadGuild(DWORD guild_id) {
+        ((void(*)(CGuildManager * const, DWORD))Addr::CGuildManager::LoadGuild__DWORD)(this, guild_id);
+    }
 
-void CGuildManager::SkillRecharge() {
-	((void(*)(CGuildManager *))Addr::CGuildManager::SkillRecharge)(this);
-}
+    void CGuildManager::LoginMember(LPCHARACTER ch) {
+        ((void(*)(CGuildManager * const, LPCHARACTER))Addr::CGuildManager::LoginMember__LPCHARACTER)(this, ch);
+    }
 
-int CGuildManager::GetDisbandDelay() {
-	return ((int(*)(CGuildManager *))Addr::CGuildManager::GetDisbandDelay)(this);
-}
+    void CGuildManager::P2PLoginMember(DWORD pid) {
+        ((void(*)(CGuildManager * const, DWORD))Addr::CGuildManager::P2PLoginMember__DWORD)(this, pid);
+    }
 
-void CGuildManager::ReserveWarBet($_63 * a0) {
-	((void(*)(CGuildManager *, $_63 *))Addr::CGuildManager::ReserveWarBet)(this, a0);
-}
+    void CGuildManager::P2PLogoutMember(DWORD pid) {
+        ((void(*)(CGuildManager * const, DWORD))Addr::CGuildManager::P2PLogoutMember__DWORD)(this, pid);
+    }
 
-void CGuildManager::ReserveWar(DWORD a0, DWORD a1, BYTE a2) {
-	((void(*)(CGuildManager *, DWORD, DWORD, BYTE))Addr::CGuildManager::ReserveWar)(this, a0, a1, a2);
-}
+    void CGuildManager::RefuseWar(DWORD guild_id1, DWORD guild_id2) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD))Addr::CGuildManager::RefuseWar__DWORD_DWORD)(this, guild_id1, guild_id2);
+    }
 
-void CGuildManager::WarOver(DWORD a0, DWORD a1, bool a2) {
-	((void(*)(CGuildManager *, DWORD, DWORD, bool))Addr::CGuildManager::WarOver)(this, a0, a1, a2);
-}
+    void CGuildManager::RequestCancelWar(DWORD guild_id1, DWORD guild_id2) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD))Addr::CGuildManager::RequestCancelWar__DWORD_DWORD)(this, guild_id1, guild_id2);
+    }
 
-CGuild * CGuildManager::TouchGuild(DWORD a0) {
-	return ((CGuild *(*)(CGuildManager *, DWORD))Addr::CGuildManager::TouchGuild)(this, a0);
-}
+    void CGuildManager::RequestEndWar(DWORD guild_id1, DWORD guild_id2) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD))Addr::CGuildManager::RequestEndWar__DWORD_DWORD)(this, guild_id1, guild_id2);
+    }
 
-void CGuildManager::P2PLogoutMember(DWORD a0) {
-	((void(*)(CGuildManager *, DWORD))Addr::CGuildManager::P2PLogoutMember)(this, a0);
-}
+    void CGuildManager::RequestWarOver(DWORD dwGuild1, DWORD dwGuild2, DWORD dwGuildWinner, long lReward) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD, DWORD, long))Addr::CGuildManager::RequestWarOver__DWORD_DWORD_DWORD_long)(this, dwGuild1, dwGuild2, dwGuildWinner, lReward);
+    }
 
-void CGuildManager::LoadGuild(DWORD a0) {
-	((void(*)(CGuildManager *, DWORD))Addr::CGuildManager::LoadGuild)(this, a0);
-}
+    void CGuildManager::ReserveWar(DWORD dwGuild1, DWORD dwGuild2, BYTE bType) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD, BYTE))Addr::CGuildManager::ReserveWar__DWORD_DWORD_BYTE)(this, dwGuild1, dwGuild2, bType);
+    }
 
-CGuildManager::~CGuildManager() {
-	((void(*)(CGuildManager *))Addr::CGuildManager::__CGuildManager)(this);
-}
+    void CGuildManager::ReserveWarAdd(TGuildWarReserve * p) {
+        ((void(*)(CGuildManager * const, TGuildWarReserve *))Addr::CGuildManager::ReserveWarAdd__TGuildWarReserve_)(this, p);
+    }
 
-void CGuildManager::StartWar(DWORD a0, DWORD a1) {
-	((void(*)(CGuildManager *, DWORD, DWORD))Addr::CGuildManager::StartWar)(this, a0, a1);
-}
+    void CGuildManager::ReserveWarBet($_63 * a1) {
+        ((void(*)(CGuildManager * const, $_63 *))Addr::CGuildManager::ReserveWarBet____63_)(this, a1);
+    }
 
-CGuild * CGuildManager::FindGuildByName(std::string a0) {
-	return ((CGuild *(*)(CGuildManager *, std::string))Addr::CGuildManager::FindGuildByName)(this, a0);
-}
+    void CGuildManager::ReserveWarDelete(DWORD dwID) {
+        ((void(*)(CGuildManager * const, DWORD))Addr::CGuildManager::ReserveWarDelete__DWORD)(this, dwID);
+    }
 
-std::vector<CGuildWarReserveForGame*, std::allocator<CGuildWarReserveForGame*> > & CGuildManager::GetReserveWarRef() {
-	return ((std::vector<CGuildWarReserveForGame*, std::allocator<CGuildWarReserveForGame*> > &(*)(CGuildManager *))Addr::CGuildManager::GetReserveWarRef)(this);
-}
+    void CGuildManager::SendGuildWar(LPCHARACTER ch) {
+        ((void(*)(CGuildManager * const, LPCHARACTER))Addr::CGuildManager::SendGuildWar__LPCHARACTER)(this, ch);
+    }
 
-void CGuildManager::GetAroundRankString(DWORD a0, char * a1, size_t a2) {
-	((void(*)(CGuildManager *, DWORD, char *, size_t))Addr::CGuildManager::GetAroundRankString)(this, a0, a1, a2);
-}
+    void CGuildManager::ShowGuildWarList(LPCHARACTER ch) {
+        ((void(*)(CGuildManager * const, LPCHARACTER))Addr::CGuildManager::ShowGuildWarList__LPCHARACTER)(this, ch);
+    }
 
-void CGuildManager::SendGuildWar(LPCHARACTER a0) {
-	((void(*)(CGuildManager *, LPCHARACTER))Addr::CGuildManager::SendGuildWar)(this, a0);
-}
+    void CGuildManager::SkillRecharge() {
+        ((void(*)(CGuildManager * const))Addr::CGuildManager::SkillRecharge)(this);
+    }
 
-void CGuildManager::RequestEndWar(DWORD a0, DWORD a1) {
-	((void(*)(CGuildManager *, DWORD, DWORD))Addr::CGuildManager::RequestEndWar)(this, a0, a1);
-}
+    void CGuildManager::StartWar(DWORD guild_id1, DWORD guild_id2) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD))Addr::CGuildManager::StartWar__DWORD_DWORD)(this, guild_id1, guild_id2);
+    }
 
-void CGuildManager::Kill(LPCHARACTER a0, LPCHARACTER a1) {
-	((void(*)(CGuildManager *, LPCHARACTER, LPCHARACTER))Addr::CGuildManager::Kill)(this, a0, a1);
-}
+    void CGuildManager::StopAllGuildWar() {
+        ((void(*)(CGuildManager * const))Addr::CGuildManager::StopAllGuildWar)(this);
+    }
 
-DWORD CGuildManager::CreateGuild(TGuildCreateParameter & a0) {
-	return ((DWORD(*)(CGuildManager *, TGuildCreateParameter &))Addr::CGuildManager::CreateGuild)(this, a0);
-}
+    CGuild * CGuildManager::TouchGuild(DWORD guild_id) {
+        return ((CGuild * (*)(CGuildManager * const, DWORD))Addr::CGuildManager::TouchGuild__DWORD)(this, guild_id);
+    }
 
-CGuild * CGuildManager::GetLinkedGuild(DWORD a0) {
-	return ((CGuild *(*)(CGuildManager *, DWORD))Addr::CGuildManager::GetLinkedGuild)(this, a0);
-}
+    void CGuildManager::Unlink(DWORD pid) {
+        ((void(*)(CGuildManager * const, DWORD))Addr::CGuildManager::Unlink__DWORD)(this, pid);
+    }
 
-void CGuildManager::RequestCancelWar(DWORD a0, DWORD a1) {
-	((void(*)(CGuildManager *, DWORD, DWORD))Addr::CGuildManager::RequestCancelWar)(this, a0, a1);
-}
+    void CGuildManager::WaitStartWar(DWORD guild_id1, DWORD guild_id2) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD))Addr::CGuildManager::WaitStartWar__DWORD_DWORD)(this, guild_id1, guild_id2);
+    }
 
-void CGuildManager::ReserveWarAdd(TGuildWarReserve * a0) {
-	((void(*)(CGuildManager *, TGuildWarReserve *))Addr::CGuildManager::ReserveWarAdd)(this, a0);
-}
+    void CGuildManager::WarOver(DWORD guild_id1, DWORD guild_id2, bool bDraw) {
+        ((void(*)(CGuildManager * const, DWORD, DWORD, bool))Addr::CGuildManager::WarOver__DWORD_DWORD_bool)(this, guild_id1, guild_id2, bDraw);
+    }
+
+    CGuildManager::~CGuildManager() {
+        ((void(*)(CGuildManager * const))Addr::CGuildManager::__CGuildManager)(this);
+    }
 
 }

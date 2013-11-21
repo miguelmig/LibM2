@@ -4,170 +4,165 @@
  * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
  */
 #include "CHARACTER_MANAGER.hpp"
-namespace libm2{
-LPCHARACTER CHARACTER_MANAGER::Find(DWORD vid){
-    return ((LPCHARACTER(*)(CHARACTER_MANAGER*,DWORD))Addr::CHARACTER_MANAGER::Find__DWORD)(this, vid);
-}
-LPCHARACTER CHARACTER_MANAGER::CreateCharacter(const char * a0, DWORD a1) {
-	return ((LPCHARACTER(*)(CHARACTER_MANAGER *, const char *, DWORD))Addr::CHARACTER_MANAGER::CreateCharacter)(this, a0, a1);
-}
+namespace libm2 {
 
-DWORD CHARACTER_MANAGER::AllocVID() {
-	return ((DWORD(*)(CHARACTER_MANAGER *))Addr::CHARACTER_MANAGER::AllocVID)(this);
-}
+    bool CHARACTER_MANAGER::AddToStateList(LPCHARACTER ch) {
+        return ((bool(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::AddToStateList__LPCHARACTER)(this, ch);
+    }
 
-LPCHARACTER CHARACTER_MANAGER::SpawnMobRange(DWORD a0, long a1, int a2, int a3, int a4, int a5, bool a6, bool a7, bool a8) {
-	return ((LPCHARACTER(*)(CHARACTER_MANAGER *, DWORD, long, int, int, int, int, bool, bool, bool))Addr::CHARACTER_MANAGER::SpawnMobRange)(this, a0, a1, a2, a3, a4, a5, a6, a7, a8);
-}
+    DWORD CHARACTER_MANAGER::AllocVID() {
+        return ((DWORD(*)(CHARACTER_MANAGER * const))Addr::CHARACTER_MANAGER::AllocVID)(this);
+    }
 
-void CHARACTER_MANAGER::DestroyCharacter(LPCHARACTER a0) {
-	((void(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::DestroyCharacter)(this, a0);
-}
+    bool CHARACTER_MANAGER::BeginPendingDestroy() {
+        return ((bool(*)(CHARACTER_MANAGER * const))Addr::CHARACTER_MANAGER::BeginPendingDestroy)(this);
+    }
 
-void CHARACTER_MANAGER::KillLog(DWORD a0) {
-	((void(*)(CHARACTER_MANAGER *, DWORD))Addr::CHARACTER_MANAGER::KillLog)(this, a0);
-}
-void CHARACTER_MANAGER::Destroy() {
-	((void(*)(CHARACTER_MANAGER *))Addr::CHARACTER_MANAGER::Destroy)(this);
-}
+    LPCHARACTER CHARACTER_MANAGER::CreateCharacter(const char * name, DWORD dwPID) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, const char *, DWORD))Addr::CHARACTER_MANAGER::CreateCharacter__const_char__DWORD)(this, name, dwPID);
+    }
 
-LPCHARACTER CHARACTER_MANAGER::Find(const VID & a0) {
-	return ((LPCHARACTER(*)(CHARACTER_MANAGER *, const VID &))Addr::CHARACTER_MANAGER::Find__1268)(this, a0);
-}
+    void CHARACTER_MANAGER::DelayedSave(LPCHARACTER ch) {
+        ((void(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::DelayedSave__LPCHARACTER)(this, ch);
+    }
 
-bool CHARACTER_MANAGER::SpawnMoveGroup(DWORD a0, long a1, int a2, int a3, int a4, int a5, int a6, int a7, LPREGEN a8, bool a9) {
-	return ((bool(*)(CHARACTER_MANAGER *, DWORD, long, int, int, int, int, int, int, LPREGEN, bool))Addr::CHARACTER_MANAGER::SpawnMoveGroup)(this, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
-}
+    void CHARACTER_MANAGER::Destroy() {
+        ((void(*)(CHARACTER_MANAGER * const))Addr::CHARACTER_MANAGER::Destroy)(this);
+    }
 
-CHARACTER_MANAGER::~CHARACTER_MANAGER() {
-	((void(*)(CHARACTER_MANAGER *))Addr::CHARACTER_MANAGER::__CHARACTER_MANAGER)(this);
-}
+    void CHARACTER_MANAGER::DestroyCharacter(LPCHARACTER ch) {
+        ((void(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::DestroyCharacter__LPCHARACTER)(this, ch);
+    }
 
-void CHARACTER_MANAGER::Update(int a0) {
-	((void(*)(CHARACTER_MANAGER *, int))Addr::CHARACTER_MANAGER::Update)(this, a0);
-}
+    LPCHARACTER CHARACTER_MANAGER::Find(const VID & vid) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, const VID &))Addr::CHARACTER_MANAGER::Find__const_VID_)(this, vid);
+    }
 
-LPCHARACTER CHARACTER_MANAGER::SpawnMob(DWORD a0, long a1, long a2, long a3, long a4, bool a5, int a6, bool a7) {
-	return ((LPCHARACTER(*)(CHARACTER_MANAGER *, DWORD, long, long, long, long, bool, int, bool))Addr::CHARACTER_MANAGER::SpawnMob)(this, a0, a1, a2, a3, a4, a5, a6, a7);
-}
+    LPCHARACTER CHARACTER_MANAGER::Find(DWORD dwVID) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, DWORD))Addr::CHARACTER_MANAGER::Find__DWORD)(this, dwVID);
+    }
 
-void CHARACTER_MANAGER::RegisterRaceNum(DWORD a0) {
-	((void(*)(CHARACTER_MANAGER *, DWORD))Addr::CHARACTER_MANAGER::RegisterRaceNum)(this, a0);
-}
+    LPCHARACTER CHARACTER_MANAGER::FindByPID(DWORD dwPID) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, DWORD))Addr::CHARACTER_MANAGER::FindByPID__DWORD)(this, dwPID);
+    }
 
-int CHARACTER_MANAGER::GetMobItemRate(LPCHARACTER a0) {
-	return ((int(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobItemRate)(this, a0);
-}
+    LPCHARACTER CHARACTER_MANAGER::FindPC(const char * name) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, const char *))Addr::CHARACTER_MANAGER::FindPC__const_char_)(this, name);
+    }
 
-bool CHARACTER_MANAGER::BeginPendingDestroy() {
-	return ((bool(*)(CHARACTER_MANAGER *))Addr::CHARACTER_MANAGER::BeginPendingDestroy)(this);
-}
+    LPCHARACTER CHARACTER_MANAGER::FindSpecifyPC(unsigned int uiJobFlag, long lMapIndex, LPCHARACTER except, int iMinLevel, int iMaxLevel) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, unsigned int, long, LPCHARACTER, int, int))Addr::CHARACTER_MANAGER::FindSpecifyPC__unsigned_int_long_LPCHARACTER_int_int)(this, uiJobFlag, lMapIndex, except, iMinLevel, iMaxLevel);
+    }
 
-void CHARACTER_MANAGER::PacketMonsterLog(LPCHARACTER a0, const void * a1, int a2) {
-	((void(*)(CHARACTER_MANAGER *, LPCHARACTER, const void *, int))Addr::CHARACTER_MANAGER::PacketMonsterLog)(this, a0, a1, a2);
-}
+    bool CHARACTER_MANAGER::FlushDelayedSave(LPCHARACTER ch) {
+        return ((bool(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::FlushDelayedSave__LPCHARACTER)(this, ch);
+    }
 
-void CHARACTER_MANAGER::RegisterForMonsterLog(LPCHARACTER a0) {
-	((void(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::RegisterForMonsterLog)(this, a0);
-}
+    void CHARACTER_MANAGER::FlushPendingDestroy() {
+        ((void(*)(CHARACTER_MANAGER * const))Addr::CHARACTER_MANAGER::FlushPendingDestroy)(this);
+    }
 
-void CHARACTER_MANAGER::UnregisterRaceNumMap(LPCHARACTER a0) {
-	((void(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::UnregisterRaceNumMap)(this, a0);
-}
+    bool CHARACTER_MANAGER::GetCharactersByRaceNum(DWORD dwRaceNum, CharacterVectorInteractor & i) {
+        return ((bool(*)(CHARACTER_MANAGER * const, DWORD, CharacterVectorInteractor &))Addr::CHARACTER_MANAGER::GetCharactersByRaceNum__DWORD_CharacterVectorInteractor_)(this, dwRaceNum, i);
+    }
 
-void CHARACTER_MANAGER::SelectStone(LPCHARACTER a0) {
-	((void(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::SelectStone)(this, a0);
-}
+    int CHARACTER_MANAGER::GetMobDamageRate(LPCHARACTER ch) {
+        return ((int(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobDamageRate__LPCHARACTER)(this, ch);
+    }
 
-int CHARACTER_MANAGER::GetUserDamageRate(LPCHARACTER a0) {
-	return ((int(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::GetUserDamageRate)(this, a0);
-}
+    int CHARACTER_MANAGER::GetMobExpRate(LPCHARACTER ch) {
+        return ((int(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobExpRate__LPCHARACTER)(this, ch);
+    }
 
-LPCHARACTER CHARACTER_MANAGER::SpawnGroup(DWORD a0, long a1, int a2, int a3, int a4, int a5, LPREGEN a6, bool a7, LPDUNGEON a8) {
-	return ((LPCHARACTER(*)(CHARACTER_MANAGER *, DWORD, long, int, int, int, int, LPREGEN, bool, LPDUNGEON))Addr::CHARACTER_MANAGER::SpawnGroup)(this, a0, a1, a2, a3, a4, a5, a6, a7, a8);
-}
+    int CHARACTER_MANAGER::GetMobGoldAmountRate(LPCHARACTER ch) {
+        return ((int(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobGoldAmountRate__LPCHARACTER)(this, ch);
+    }
 
-LPCHARACTER CHARACTER_MANAGER::FindSpecifyPC(unsigned int a0, long a1, LPCHARACTER a2, int a3, int a4) {
-	return ((LPCHARACTER(*)(CHARACTER_MANAGER *, unsigned int, long, LPCHARACTER, int, int))Addr::CHARACTER_MANAGER::FindSpecifyPC)(this, a0, a1, a2, a3, a4);
-}
+    int CHARACTER_MANAGER::GetMobGoldDropRate(LPCHARACTER ch) {
+        return ((int(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobGoldDropRate__LPCHARACTER)(this, ch);
+    }
 
-LPCHARACTER CHARACTER_MANAGER::SpawnMobRandomPosition(DWORD a0, long a1) {
-	return ((LPCHARACTER(*)(CHARACTER_MANAGER *, DWORD, long))Addr::CHARACTER_MANAGER::SpawnMobRandomPosition)(this, a0, a1);
-}
+    int CHARACTER_MANAGER::GetMobItemRate(LPCHARACTER ch) {
+        return ((int(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobItemRate__LPCHARACTER)(this, ch);
+    }
 
-bool CHARACTER_MANAGER::FlushDelayedSave(LPCHARACTER a0) {
-	return ((bool(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::FlushDelayedSave)(this, a0);
-}
+    int CHARACTER_MANAGER::GetUserDamageRate(LPCHARACTER ch) {
+        return ((int(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::GetUserDamageRate__LPCHARACTER)(this, ch);
+    }
 
-int CHARACTER_MANAGER::GetMobExpRate(LPCHARACTER a0) {
-	return ((int(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobExpRate)(this, a0);
-}
+    void CHARACTER_MANAGER::GracefulShutdown() {
+        ((void(*)(CHARACTER_MANAGER * const))Addr::CHARACTER_MANAGER::GracefulShutdown)(this);
+    }
 
-CHARACTER_MANAGER::CHARACTER_MANAGER() {
-	((void(*)(CHARACTER_MANAGER *))Addr::CHARACTER_MANAGER::CHARACTER_MANAGER)(this);
-}
+    void CHARACTER_MANAGER::KillLog(DWORD dwVnum) {
+        ((void(*)(CHARACTER_MANAGER * const, DWORD))Addr::CHARACTER_MANAGER::KillLog__DWORD)(this, dwVnum);
+    }
 
-void CHARACTER_MANAGER::SendScriptToMap(long a0, const std::string & a1) {
-	((void(*)(CHARACTER_MANAGER *, long, const std::string &))Addr::CHARACTER_MANAGER::SendScriptToMap)(this, a0, a1);
-}
+    void CHARACTER_MANAGER::PacketMonsterLog(LPCHARACTER ch, const void * buf, int size) {
+        ((void(*)(CHARACTER_MANAGER * const, LPCHARACTER, const void *, int))Addr::CHARACTER_MANAGER::PacketMonsterLog__LPCHARACTER_const_void__int)(this, ch, buf, size);
+    }
 
-void CHARACTER_MANAGER::RemoveFromStateList(LPCHARACTER a0) {
-	((void(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::RemoveFromStateList)(this, a0);
-}
+    void CHARACTER_MANAGER::ProcessDelayedSave() {
+        ((void(*)(CHARACTER_MANAGER * const))Addr::CHARACTER_MANAGER::ProcessDelayedSave)(this);
+    }
 
-void CHARACTER_MANAGER::DelayedSave(LPCHARACTER a0) {
-	((void(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::DelayedSave)(this, a0);
-}
+    void CHARACTER_MANAGER::RegisterForMonsterLog(LPCHARACTER ch) {
+        ((void(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::RegisterForMonsterLog__LPCHARACTER)(this, ch);
+    }
 
-void CHARACTER_MANAGER::GracefulShutdown() {
-	((void(*)(CHARACTER_MANAGER *))Addr::CHARACTER_MANAGER::GracefulShutdown)(this);
-}
+    void CHARACTER_MANAGER::RegisterRaceNum(DWORD dwVnum) {
+        ((void(*)(CHARACTER_MANAGER * const, DWORD))Addr::CHARACTER_MANAGER::RegisterRaceNum__DWORD)(this, dwVnum);
+    }
 
-bool CHARACTER_MANAGER::GetCharactersByRaceNum(DWORD a0, CharacterVectorInteractor & a1) {
-	return ((bool(*)(CHARACTER_MANAGER *, DWORD, CharacterVectorInteractor &))Addr::CHARACTER_MANAGER::GetCharactersByRaceNum)(this, a0, a1);
-}
+    void CHARACTER_MANAGER::RegisterRaceNumMap(LPCHARACTER ch) {
+        ((void(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::RegisterRaceNumMap__LPCHARACTER)(this, ch);
+    }
 
-int CHARACTER_MANAGER::GetMobGoldDropRate(LPCHARACTER a0) {
-	return ((int(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobGoldDropRate)(this, a0);
-}
+    void CHARACTER_MANAGER::RemoveFromStateList(LPCHARACTER ch) {
+        ((void(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::RemoveFromStateList__LPCHARACTER)(this, ch);
+    }
 
-void CHARACTER_MANAGER::RegisterRaceNumMap(LPCHARACTER a0) {
-	((void(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::RegisterRaceNumMap)(this, a0);
-}
+    void CHARACTER_MANAGER::SelectStone(LPCHARACTER pkChr) {
+        ((void(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::SelectStone__LPCHARACTER)(this, pkChr);
+    }
 
-bool CHARACTER_MANAGER::AddToStateList(LPCHARACTER a0) {
-	return ((bool(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::AddToStateList)(this, a0);
-}
+    void CHARACTER_MANAGER::SendScriptToMap(long lMapIndex, const std::string & s) {
+        ((void(*)(CHARACTER_MANAGER * const, long, const std::string &))Addr::CHARACTER_MANAGER::SendScriptToMap__long_const_std_locale_string_)(this, lMapIndex, s);
+    }
 
-LPCHARACTER CHARACTER_MANAGER::FindByPID(DWORD a0) {
-	return ((LPCHARACTER(*)(CHARACTER_MANAGER *, DWORD))Addr::CHARACTER_MANAGER::FindByPID)(this, a0);
-}
+    LPCHARACTER CHARACTER_MANAGER::SpawnGroup(DWORD dwVnum, long lMapIndex, int sx, int sy, int ex, int ey, LPREGEN pkRegen, bool bAggressive_, LPDUNGEON pDungeon) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, DWORD, long, int, int, int, int, LPREGEN, bool, LPDUNGEON))Addr::CHARACTER_MANAGER::SpawnGroup__DWORD_long_int_int_int_int_LPREGEN_bool_LPDUNGEON)(this, dwVnum, lMapIndex, sx, sy, ex, ey, pkRegen, bAggressive_, pDungeon);
+    }
 
-void CHARACTER_MANAGER::UnregisterForMonsterLog(LPCHARACTER a0) {
-	((void(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::UnregisterForMonsterLog)(this, a0);
-}
+    bool CHARACTER_MANAGER::SpawnGroupGroup(DWORD dwVnum, long lMapIndex, int sx, int sy, int ex, int ey, LPREGEN pkRegen, bool bAggressive_, LPDUNGEON pDungeon) {
+        return ((bool(*)(CHARACTER_MANAGER * const, DWORD, long, int, int, int, int, LPREGEN, bool, LPDUNGEON))Addr::CHARACTER_MANAGER::SpawnGroupGroup__DWORD_long_int_int_int_int_LPREGEN_bool_LPDUNGEON)(this, dwVnum, lMapIndex, sx, sy, ex, ey, pkRegen, bAggressive_, pDungeon);
+    }
 
-LPCHARACTER CHARACTER_MANAGER::FindPC(const char * a0) {
-	return ((LPCHARACTER(*)(CHARACTER_MANAGER *, const char *))Addr::CHARACTER_MANAGER::FindPC)(this, a0);
-}
+    LPCHARACTER CHARACTER_MANAGER::SpawnMob(DWORD dwVnum, long lMapIndex, long x, long y, long z, bool bSpawnMotion, int iRot, bool bShow) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, DWORD, long, long, long, long, bool, int, bool))Addr::CHARACTER_MANAGER::SpawnMob__DWORD_long_long_long_long_bool_int_bool)(this, dwVnum, lMapIndex, x, y, z, bSpawnMotion, iRot, bShow);
+    }
 
-int CHARACTER_MANAGER::GetMobGoldAmountRate(LPCHARACTER a0) {
-	return ((int(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobGoldAmountRate)(this, a0);
-}
+    LPCHARACTER CHARACTER_MANAGER::SpawnMobRandomPosition(DWORD dwVnum, long lMapIndex) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, DWORD, long))Addr::CHARACTER_MANAGER::SpawnMobRandomPosition__DWORD_long)(this, dwVnum, lMapIndex);
+    }
 
-int CHARACTER_MANAGER::GetMobDamageRate(LPCHARACTER a0) {
-	return ((int(*)(CHARACTER_MANAGER *, LPCHARACTER))Addr::CHARACTER_MANAGER::GetMobDamageRate)(this, a0);
-}
+    LPCHARACTER CHARACTER_MANAGER::SpawnMobRange(DWORD dwVnum, long lMapIndex, int sx, int sy, int ex, int ey, bool bIsException, bool bSpawnMotion, bool bAggressive) {
+        return ((LPCHARACTER(*)(CHARACTER_MANAGER * const, DWORD, long, int, int, int, int, bool, bool, bool))Addr::CHARACTER_MANAGER::SpawnMobRange__DWORD_long_int_int_int_int_bool_bool_bool)(this, dwVnum, lMapIndex, sx, sy, ex, ey, bIsException, bSpawnMotion, bAggressive);
+    }
 
-void CHARACTER_MANAGER::FlushPendingDestroy() {
-	((void(*)(CHARACTER_MANAGER *))Addr::CHARACTER_MANAGER::FlushPendingDestroy)(this);
-}
+    bool CHARACTER_MANAGER::SpawnMoveGroup(DWORD dwVnum, long lMapIndex, int sx, int sy, int ex, int ey, int tx, int ty, LPREGEN pkRegen, bool bAggressive_) {
+        return ((bool(*)(CHARACTER_MANAGER * const, DWORD, long, int, int, int, int, int, int, LPREGEN, bool))Addr::CHARACTER_MANAGER::SpawnMoveGroup__DWORD_long_int_int_int_int_int_int_LPREGEN_bool)(this, dwVnum, lMapIndex, sx, sy, ex, ey, tx, ty, pkRegen, bAggressive_);
+    }
 
-bool CHARACTER_MANAGER::SpawnGroupGroup(DWORD a0, long a1, int a2, int a3, int a4, int a5, LPREGEN a6, bool a7, LPDUNGEON a8) {
-	return ((bool(*)(CHARACTER_MANAGER *, DWORD, long, int, int, int, int, LPREGEN, bool, LPDUNGEON))Addr::CHARACTER_MANAGER::SpawnGroupGroup)(this, a0, a1, a2, a3, a4, a5, a6, a7, a8);
-}
+    void CHARACTER_MANAGER::UnregisterForMonsterLog(LPCHARACTER ch) {
+        ((void(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::UnregisterForMonsterLog__LPCHARACTER)(this, ch);
+    }
 
-void CHARACTER_MANAGER::ProcessDelayedSave() {
-	((void(*)(CHARACTER_MANAGER *))Addr::CHARACTER_MANAGER::ProcessDelayedSave)(this);
-}
+    void CHARACTER_MANAGER::UnregisterRaceNumMap(LPCHARACTER ch) {
+        ((void(*)(CHARACTER_MANAGER * const, LPCHARACTER))Addr::CHARACTER_MANAGER::UnregisterRaceNumMap__LPCHARACTER)(this, ch);
+    }
+
+    void CHARACTER_MANAGER::Update(int iPulse) {
+        ((void(*)(CHARACTER_MANAGER * const, int))Addr::CHARACTER_MANAGER::Update__int)(this, iPulse);
+    }
 }

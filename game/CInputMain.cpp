@@ -1,187 +1,194 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CInputMain.hpp"
 #include "../addr.hpp"
-namespace libm2{
-BYTE CInputMain::GetType() {
-	return ((BYTE(*)(CInputMain *))Addr::CInputMain::GetType)(this);
-}
+namespace libm2 {
 
-void CInputMain::PartyInvite(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::PartyInvite)(this, a0, a1);
-}
+    int CInputMain::Analyze(LPDESC d, BYTE bHeader, const char * c_pData) {
+        return ((int(*)(CInputMain * const, LPDESC, BYTE, const char *))Addr::CInputMain::Analyze__LPDESC_BYTE_const_char_)(this, d, bHeader, c_pData);
+    }
 
-void CInputMain::ScriptButton(LPCHARACTER a0, const void * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const void *))Addr::CInputMain::ScriptButton)(this, a0, a1);
-}
+    void CInputMain::AnswerMakeGuild(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::AnswerMakeGuild__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::QuickslotSwap(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::QuickslotSwap)(this, a0, a1);
-}
+    void CInputMain::Attack(LPCHARACTER ch, const BYTE header, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const BYTE, const char *))Addr::CInputMain::Attack__LPCHARACTER_const_BYTE_const_char_)(this, ch, header, data);
+    }
 
-void CInputMain::ScriptAnswer(LPCHARACTER a0, const void * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const void *))Addr::CInputMain::ScriptAnswer)(this, a0, a1);
-}
+    int CInputMain::Chat(LPCHARACTER ch, const char * data, size_t uiBytes) {
+        return ((int(*)(CInputMain * const, LPCHARACTER, const char *, size_t))Addr::CInputMain::Chat__LPCHARACTER_const_char__size_t)(this, ch, data, uiBytes);
+    }
 
-void CInputMain::Attack(LPCHARACTER a0, const BYTE a1, const char * a2) {
-	((void(*)(CInputMain *, LPCHARACTER, const BYTE, const char *))Addr::CInputMain::Attack)(this, a0, a1, a2);
-}
+    void CInputMain::Exchange(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::Exchange__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-int CInputMain::MyShop(LPCHARACTER a0, const char * a1, size_t a2) {
-	return ((int(*)(CInputMain *, LPCHARACTER, const char *, size_t))Addr::CInputMain::MyShop)(this, a0, a1, a2);
-}
+    void CInputMain::Fishing(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::Fishing__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::PartyRemove(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::PartyRemove)(this, a0, a1);
-}
+    void CInputMain::FlyTarget(LPCHARACTER ch, const char * pcData, BYTE bHeader) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *, BYTE))Addr::CInputMain::FlyTarget__LPCHARACTER_const_char__BYTE)(this, ch, pcData, bHeader);
+    }
 
-void CInputMain::SafeboxCheckin(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::SafeboxCheckin)(this, a0, a1);
-}
+    BYTE CInputMain::GetType() {
+        return ((BYTE(*)(CInputMain * const))Addr::CInputMain::GetType)(this);
+    }
 
-int CInputMain::Analyze(LPDESC a0, BYTE a1, const char * a2) {
-	return ((int(*)(CInputMain *, LPDESC, BYTE, const char *))Addr::CInputMain::Analyze)(this, a0, a1, a2);
-}
+    int CInputMain::Guild(LPCHARACTER ch, const char * data, size_t uiBytes) {
+        return ((int(*)(CInputMain * const, LPCHARACTER, const char *, size_t))Addr::CInputMain::Guild__LPCHARACTER_const_char__size_t)(this, ch, data, uiBytes);
+    }
 
-void CInputMain::PartyInviteAnswer(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::PartyInviteAnswer)(this, a0, a1);
-}
+    void CInputMain::Hack(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::Hack__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::QuestInputString(LPCHARACTER a0, const void * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const void *))Addr::CInputMain::QuestInputString)(this, a0, a1);
-}
+    void CInputMain::ItemDrop(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::ItemDrop__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::ItemUse(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::ItemUse)(this, a0, a1);
-}
+    void CInputMain::ItemDrop2(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::ItemDrop2__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::PartySetState(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::PartySetState)(this, a0, a1);
-}
+    void CInputMain::ItemGive(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::ItemGive__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::Exchange(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::Exchange)(this, a0, a1);
-}
+    void CInputMain::ItemMove(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::ItemMove__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::UseSkill(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::UseSkill)(this, a0, a1);
-}
+    void CInputMain::ItemPickup(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::ItemPickup__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::Warp(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::Warp)(this, a0, a1);
-}
+    void CInputMain::ItemToItem(LPCHARACTER ch, const char * pcData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::ItemToItem__LPCHARACTER_const_char_)(this, ch, pcData);
+    }
 
-int CInputMain::Messenger(LPCHARACTER a0, const char * a1, size_t a2) {
-	return ((int(*)(CInputMain *, LPCHARACTER, const char *, size_t))Addr::CInputMain::Messenger)(this, a0, a1, a2);
-}
+    void CInputMain::ItemUse(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::ItemUse__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::ItemGive(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::ItemGive)(this, a0, a1);
-}
+    int CInputMain::Messenger(LPCHARACTER ch, const char * c_pData, size_t uiBytes) {
+        return ((int(*)(CInputMain * const, LPCHARACTER, const char *, size_t))Addr::CInputMain::Messenger__LPCHARACTER_const_char__size_t)(this, ch, c_pData, uiBytes);
+    }
 
-void CInputMain::ScriptSelectItem(LPCHARACTER a0, const void * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const void *))Addr::CInputMain::ScriptSelectItem)(this, a0, a1);
-}
+    void CInputMain::Move(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::Move__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::AnswerMakeGuild(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::AnswerMakeGuild)(this, a0, a1);
-}
+    int CInputMain::MyShop(LPCHARACTER ch, const char * c_pData, size_t uiBytes) {
+        return ((int(*)(CInputMain * const, LPCHARACTER, const char *, size_t))Addr::CInputMain::MyShop__LPCHARACTER_const_char__size_t)(this, ch, c_pData, uiBytes);
+    }
 
-void CInputMain::Refine(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::Refine)(this, a0, a1);
-}
+    void CInputMain::OnClick(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::OnClick__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::PartyUseSkill(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::PartyUseSkill)(this, a0, a1);
-}
+    void CInputMain::PartyInvite(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::PartyInvite__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-int CInputMain::Guild(LPCHARACTER a0, const char * a1, size_t a2) {
-	return ((int(*)(CInputMain *, LPCHARACTER, const char *, size_t))Addr::CInputMain::Guild)(this, a0, a1, a2);
-}
+    void CInputMain::PartyInviteAnswer(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::PartyInviteAnswer__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::Target(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::Target)(this, a0, a1);
-}
+    void CInputMain::PartyParameter(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::PartyParameter__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::ItemDrop(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::ItemDrop)(this, a0, a1);
-}
+    void CInputMain::PartyRemove(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::PartyRemove__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::PartyParameter(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::PartyParameter)(this, a0, a1);
-}
+    void CInputMain::PartySetState(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::PartySetState__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::ItemPickup(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::ItemPickup)(this, a0, a1);
-}
+    void CInputMain::PartyUseSkill(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::PartyUseSkill__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::ItemToItem(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::ItemToItem)(this, a0, a1);
-}
+    void CInputMain::Position(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::Position__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::QuickslotDelete(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::QuickslotDelete)(this, a0, a1);
-}
+    void CInputMain::QuestConfirm(LPCHARACTER ch, const void * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const void *))Addr::CInputMain::QuestConfirm__LPCHARACTER_const_void_)(this, ch, c_pData);
+    }
 
-void CInputMain::Position(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::Position)(this, a0, a1);
-}
+    void CInputMain::QuestInputString(LPCHARACTER ch, const void * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const void *))Addr::CInputMain::QuestInputString__LPCHARACTER_const_void_)(this, ch, c_pData);
+    }
 
-void CInputMain::FlyTarget(LPCHARACTER a0, const char * a1, BYTE a2) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *, BYTE))Addr::CInputMain::FlyTarget)(this, a0, a1, a2);
-}
+    void CInputMain::QuickslotAdd(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::QuickslotAdd__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-int CInputMain::Shop(LPCHARACTER a0, const char * a1, size_t a2) {
-	return ((int(*)(CInputMain *, LPCHARACTER, const char *, size_t))Addr::CInputMain::Shop)(this, a0, a1, a2);
-}
+    void CInputMain::QuickslotDelete(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::QuickslotDelete__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::SafeboxCheckout(LPCHARACTER a0, const char * a1, bool a2) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *, bool))Addr::CInputMain::SafeboxCheckout)(this, a0, a1, a2);
-}
+    void CInputMain::QuickslotSwap(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::QuickslotSwap__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-void CInputMain::QuickslotAdd(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::QuickslotAdd)(this, a0, a1);
-}
+    void CInputMain::Refine(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::Refine__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-int CInputMain::Whisper(LPCHARACTER a0, const char * a1, size_t a2) {
-	return ((int(*)(CInputMain *, LPCHARACTER, const char *, size_t))Addr::CInputMain::Whisper)(this, a0, a1, a2);
-}
+    void CInputMain::SafeboxCheckin(LPCHARACTER ch, const char * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::SafeboxCheckin__LPCHARACTER_const_char_)(this, ch, c_pData);
+    }
 
-void CInputMain::Move(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::Move)(this, a0, a1);
-}
+    void CInputMain::SafeboxCheckout(LPCHARACTER ch, const char * c_pData, bool bMall) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *, bool))Addr::CInputMain::SafeboxCheckout__LPCHARACTER_const_char__bool)(this, ch, c_pData, bMall);
+    }
 
-void CInputMain::SafeboxItemMove(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::SafeboxItemMove)(this, a0, a1);
-}
+    void CInputMain::SafeboxItemMove(LPCHARACTER ch, const char * data) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::SafeboxItemMove__LPCHARACTER_const_char_)(this, ch, data);
+    }
 
-int CInputMain::Chat(LPCHARACTER a0, const char * a1, size_t a2) {
-	return ((int(*)(CInputMain *, LPCHARACTER, const char *, size_t))Addr::CInputMain::Chat)(this, a0, a1, a2);
-}
+    void CInputMain::ScriptAnswer(LPCHARACTER ch, const void * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const void *))Addr::CInputMain::ScriptAnswer__LPCHARACTER_const_void_)(this, ch, c_pData);
+    }
 
-void CInputMain::QuestConfirm(LPCHARACTER a0, const void * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const void *))Addr::CInputMain::QuestConfirm)(this, a0, a1);
-}
+    void CInputMain::ScriptButton(LPCHARACTER ch, const void * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const void *))Addr::CInputMain::ScriptButton__LPCHARACTER_const_void_)(this, ch, c_pData);
+    }
 
-void CInputMain::Fishing(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::Fishing)(this, a0, a1);
-}
+    void CInputMain::ScriptSelectItem(LPCHARACTER ch, const void * c_pData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const void *))Addr::CInputMain::ScriptSelectItem__LPCHARACTER_const_void_)(this, ch, c_pData);
+    }
 
-void CInputMain::OnClick(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::OnClick)(this, a0, a1);
-}
+    int CInputMain::Shop(LPCHARACTER ch, const char * data, size_t uiBytes) {
+        return ((int(*)(CInputMain * const, LPCHARACTER, const char *, size_t))Addr::CInputMain::Shop__LPCHARACTER_const_char__size_t)(this, ch, data, uiBytes);
+    }
 
-void CInputMain::Hack(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::Hack)(this, a0, a1);
-}
+    int CInputMain::SyncPosition(LPCHARACTER ch, const char * c_pcData, size_t uiBytes) {
+        return ((int(*)(CInputMain * const, LPCHARACTER, const char *, size_t))Addr::CInputMain::SyncPosition__LPCHARACTER_const_char__size_t)(this, ch, c_pcData, uiBytes);
+    }
 
-int CInputMain::SyncPosition(LPCHARACTER a0, const char * a1, size_t a2) {
-	return ((int(*)(CInputMain *, LPCHARACTER, const char *, size_t))Addr::CInputMain::SyncPosition)(this, a0, a1, a2);
-}
+    void CInputMain::Target(LPCHARACTER ch, const char * pcData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::Target__LPCHARACTER_const_char_)(this, ch, pcData);
+    }
 
-void CInputMain::ItemMove(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::ItemMove)(this, a0, a1);
-}
+    void CInputMain::UseSkill(LPCHARACTER ch, const char * pcData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::UseSkill__LPCHARACTER_const_char_)(this, ch, pcData);
+    }
 
-void CInputMain::ItemDrop2(LPCHARACTER a0, const char * a1) {
-	((void(*)(CInputMain *, LPCHARACTER, const char *))Addr::CInputMain::ItemDrop2)(this, a0, a1);
-}
+    void CInputMain::Warp(LPCHARACTER ch, const char * pcData) {
+        ((void(*)(CInputMain * const, LPCHARACTER, const char *))Addr::CInputMain::Warp__LPCHARACTER_const_char_)(this, ch, pcData);
+    }
+
+    int CInputMain::Whisper(LPCHARACTER ch, const char * data, size_t uiBytes) {
+        return ((int(*)(CInputMain * const, LPCHARACTER, const char *, size_t))Addr::CInputMain::Whisper__LPCHARACTER_const_char__size_t)(this, ch, data, uiBytes);
+    }
+
 }

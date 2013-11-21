@@ -5,28 +5,28 @@
  */
 // Forward declarations
 #include <tr1/unordered_set>
-namespace libm2{
-class CEntity;
-typedef CEntity ENTITY;
-typedef CEntity* LPENTITY;
-class CHARACTER;
-typedef CHARACTER* LPCHARACTER;
-class DESC;
-typedef DESC* LPDESC;
-class CItem;
-typedef CItem* LPITEM;
-class CParty;
-typedef CParty* LPPARTY;
-class CDungeon;
-typedef CDungeon* LPDUNGEON;
-class SECTREE;
-typedef SECTREE* LPSECTREE;
-class CInputProcessor;
-class CInputClose;
-class CInputHandshake;
-class CInputLogin;
-class CInputMain;
-class CInputDead;
-class CInputAuth;
-typedef  std::tr1::unordered_set<CHARACTER*, std::tr1::hash<CHARACTER*>, std::equal_to<CHARACTER*>, std::allocator<CHARACTER*>> CHARACTER_SET;
+namespace libm2 {
+    class CEntity;
+    typedef CEntity ENTITY;
+    typedef CEntity* LPENTITY;
+    class CHARACTER;
+    typedef CHARACTER* LPCHARACTER;
+    class DESC;
+    typedef DESC* LPDESC;
+    class CItem;
+    typedef CItem* LPITEM;
+    class CParty;
+    typedef CParty* LPPARTY;
+    class CDungeon;
+    typedef CDungeon* LPDUNGEON;
+    class SECTREE;
+    typedef SECTREE* LPSECTREE;
+    class CInputProcessor;
+    class CInputClose;
+    class CInputHandshake;
+    class CInputLogin;
+    class CInputMain;
+    class CInputDead;
+    class CInputAuth;
+    typedef std::tr1::unordered_set<CHARACTER*, std::tr1::hash<CHARACTER*>, std::equal_to<CHARACTER*>, std::allocator<CHARACTER* >> CHARACTER_SET;
 }

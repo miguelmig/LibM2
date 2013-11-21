@@ -1,70 +1,80 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CManager.hpp"
-namespace libm2{
-building::CManager::CManager() {
-	((void(*)(building::CManager *))Addr::building::CManager::CManager)(this);
-}
+namespace libm2 {
 
-void building::CManager::SendLandList(LPDESC a0, long a1) {
-	((void(*)(building::CManager *, LPDESC, long))Addr::building::CManager::SendLandList)(this, a0, a1);
-}
+    building::CManager::CManager() {
+        ((void(*)(building::CManager * const))Addr::building::CManager::CManager)(this);
+    }
 
-building::LPOBJECT building::CManager::FindObjectByVID(DWORD a0) {
-	return ((building::LPOBJECT(*)(building::CManager *, DWORD))Addr::building::CManager::FindObjectByVID)(this, a0);
-}
+    void building::CManager::ClearLand(DWORD dwLandID) {
+        ((void(*)(building::CManager * const, DWORD))Addr::building::CManager::ClearLand__DWORD)(this, dwLandID);
+    }
 
-bool building::CManager::LoadObject(building::TObject * a0, bool a1) {
-	return ((bool(*)(building::CManager *, building::TObject *, bool))Addr::building::CManager::LoadObject)(this, a0, a1);
-}
+    void building::CManager::ClearLandByGuildID(DWORD dwGuildID) {
+        ((void(*)(building::CManager * const, DWORD))Addr::building::CManager::ClearLandByGuildID__DWORD)(this, dwGuildID);
+    }
 
-void building::CManager::FinalizeBoot() {
-	((void(*)(building::CManager *))Addr::building::CManager::FinalizeBoot)(this);
-}
+    void building::CManager::DeleteObject(DWORD dwID) {
+        ((void(*)(building::CManager * const, DWORD))Addr::building::CManager::DeleteObject__DWORD)(this, dwID);
+    }
 
-building::CLand * building::CManager::FindLand(long a0, long a1, long a2) {
-	return ((building::CLand *(*)(building::CManager *, long, long, long))Addr::building::CManager::FindLand__4462)(this, a0, a1, a2);
-}
+    void building::CManager::Destroy() {
+        ((void(*)(building::CManager * const))Addr::building::CManager::Destroy)(this);
+    }
 
-void building::CManager::Destroy() {
-	((void(*)(building::CManager *))Addr::building::CManager::Destroy)(this);
-}
+    void building::CManager::FinalizeBoot() {
+        ((void(*)(building::CManager * const))Addr::building::CManager::FinalizeBoot)(this);
+    }
 
-bool building::CManager::LoadLand(building::TLand * a0) {
-	return ((bool(*)(building::CManager *, building::TLand *))Addr::building::CManager::LoadLand)(this, a0);
-}
+    building::CLand * building::CManager::FindLand(long lMapIndex, long x, long y) {
+        return ((building::CLand * (*)(building::CManager * const, long, long, long))Addr::building::CManager::FindLand__long_long_long)(this, lMapIndex, x, y);
+    }
 
-bool building::CManager::LoadObjectProto(const building::TObjectProto * a0, int a1) {
-	return ((bool(*)(building::CManager *, const building::TObjectProto *, int))Addr::building::CManager::LoadObjectProto)(this, a0, a1);
-}
+    building::CLand * building::CManager::FindLand(DWORD dwID) {
+        return ((building::CLand * (*)(building::CManager * const, DWORD))Addr::building::CManager::FindLand__DWORD)(this, dwID);
+    }
 
-building::TObjectProto * building::CManager::GetObjectProto(DWORD a0) {
-	return ((building::TObjectProto *(*)(building::CManager *, DWORD))Addr::building::CManager::GetObjectProto)(this, a0);
-}
+    building::CLand * building::CManager::FindLandByGuild(DWORD GID) {
+        return ((building::CLand * (*)(building::CManager * const, DWORD))Addr::building::CManager::FindLandByGuild__DWORD)(this, GID);
+    }
 
-void building::CManager::ClearLand(DWORD a0) {
-	((void(*)(building::CManager *, DWORD))Addr::building::CManager::ClearLand)(this, a0);
-}
+    building::LPOBJECT building::CManager::FindObjectByVID(DWORD dwVID) {
+        return ((building::LPOBJECT(*)(building::CManager * const, DWORD))Addr::building::CManager::FindObjectByVID__DWORD)(this, dwVID);
+    }
 
-void building::CManager::UnregisterObject(building::LPOBJECT a0) {
-	((void(*)(building::CManager *, building::LPOBJECT))Addr::building::CManager::UnregisterObject)(this, a0);
-}
+    building::TObjectProto * building::CManager::GetObjectProto(DWORD dwVnum) {
+        return ((building::TObjectProto * (*)(building::CManager * const, DWORD))Addr::building::CManager::GetObjectProto__DWORD)(this, dwVnum);
+    }
 
-building::CLand * building::CManager::FindLandByGuild(DWORD a0) {
-	return ((building::CLand *(*)(building::CManager *, DWORD))Addr::building::CManager::FindLandByGuild)(this, a0);
-}
+    bool building::CManager::LoadLand(building::TLand * pTable) {
+        return ((bool(*)(building::CManager * const, building::TLand *))Addr::building::CManager::LoadLand__building_CLand_TLand_)(this, pTable);
+    }
 
-building::CLand * building::CManager::FindLand(DWORD a0) {
-	return ((building::CLand *(*)(building::CManager *, DWORD))Addr::building::CManager::FindLand)(this, a0);
-}
+    bool building::CManager::LoadObject(building::TObject * pTable, bool isBoot) {
+        return ((bool(*)(building::CManager * const, building::TObject *, bool))Addr::building::CManager::LoadObject__building_CObject_TObject__bool)(this, pTable, isBoot);
+    }
 
-void building::CManager::DeleteObject(DWORD a0) {
-	((void(*)(building::CManager *, DWORD))Addr::building::CManager::DeleteObject)(this, a0);
-}
+    bool building::CManager::LoadObjectProto(const building::TObjectProto * pProto, int size) {
+        return ((bool(*)(building::CManager * const, const building::TObjectProto *, int))Addr::building::CManager::LoadObjectProto__const_building_CObject_TObjectProto__int)(this, pProto, size);
+    }
 
-void building::CManager::UpdateLand(building::TLand * a0) {
-	((void(*)(building::CManager *, building::TLand *))Addr::building::CManager::UpdateLand)(this, a0);
-}
+    void building::CManager::SendLandList(LPDESC d, long lMapIndex) {
+        ((void(*)(building::CManager * const, LPDESC, long))Addr::building::CManager::SendLandList__LPDESC_long)(this, d, lMapIndex);
+    }
 
-void building::CManager::ClearLandByGuildID(DWORD a0) {
-	((void(*)(building::CManager *, DWORD))Addr::building::CManager::ClearLandByGuildID)(this, a0);
-}
+    void building::CManager::UnregisterObject(building::LPOBJECT pkObj) {
+        ((void(*)(building::CManager * const, building::LPOBJECT))Addr::building::CManager::UnregisterObject__building_CLand_LPOBJECT)(this, pkObj);
+    }
+
+    void building::CManager::UpdateLand(building::TLand * pTable) {
+        ((void(*)(building::CManager * const, building::TLand *))Addr::building::CManager::UpdateLand__building_CLand_TLand_)(this, pTable);
+    }
+
+    building::CManager::~CManager() {
+        ((void(*)(building::CManager * const))Addr::building::CManager::__CManager)(this);
+    }
 }

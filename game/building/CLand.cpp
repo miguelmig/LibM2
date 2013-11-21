@@ -1,91 +1,97 @@
+/* This file belongs to the LibM2 library (http://github.com/imermcmaps/LibM2)
+ * Copyright (c) 2013, iMer (www.imer.cc)
+ * All rights reserved.
+ * Licensed under the BSD 3-clause license (http://opensource.org/licenses/BSD-3-Clause)
+ */
 #include "CLand.hpp"
 #include "../../addr.hpp"
-namespace libm2{
-bool building::CLand::RequestCreateWall(long a0, float a1) {
-	return ((bool(*)(building::CLand *, long, float))Addr::building::CLand::RequestCreateWall)(this, a0, a1);
-}
+namespace libm2 {
 
-building::LPOBJECT building::CLand::FindObjectByVID(DWORD a0) {
-	return ((building::LPOBJECT(*)(building::CLand *, DWORD))Addr::building::CLand::FindObjectByVID)(this, a0);
-}
+    void building::CLand::ClearLand() {
+        ((void(*)(building::CLand * const))Addr::building::CLand::ClearLand)(this);
+    }
 
-building::LPOBJECT building::CLand::FindObjectByNPC(LPCHARACTER a0) {
-	return ((building::LPOBJECT(*)(building::CLand *, LPCHARACTER))Addr::building::CLand::FindObjectByNPC)(this, a0);
-}
+    void building::CLand::DeleteObject(DWORD dwID) {
+        ((void(*)(building::CLand * const, DWORD))Addr::building::CLand::DeleteObject__DWORD)(this, dwID);
+    }
 
-void building::CLand::PutData(const building::TLand * a0) {
-	((void(*)(building::CLand *, const building::TLand *))Addr::building::CLand::PutData)(this, a0);
-}
+    void building::CLand::Destroy() {
+        ((void(*)(building::CLand * const))Addr::building::CLand::Destroy)(this);
+    }
 
-building::CLand::CLand(building::TLand * a0) {
-	((void(*)(building::CLand *, building::TLand *))Addr::building::CLand::CLand)(this, a0);
-}
+    void building::CLand::DrawWall(DWORD dwVnum, long nMapIndex, long & x, long & y, char length, float zRot) {
+        ((void(*)(building::CLand * const, DWORD, long, long &, long &, char, float))Addr::building::CLand::DrawWall__DWORD_long_long__long__char_float)(this, dwVnum, nMapIndex, x, y, length, zRot);
+    }
 
-void building::CLand::RequestDeleteWall() {
-	((void(*)(building::CLand *))Addr::building::CLand::RequestDeleteWall)(this);
-}
+    building::LPOBJECT building::CLand::FindObject(DWORD dwID) {
+        return ((building::LPOBJECT(*)(building::CLand * const, DWORD))Addr::building::CLand::FindObject__DWORD)(this, dwID);
+    }
 
-void building::CLand::SetOwner(DWORD a0) {
-	((void(*)(building::CLand *, DWORD))Addr::building::CLand::SetOwner)(this, a0);
-}
+    building::LPOBJECT building::CLand::FindObjectByGroup(DWORD dwGroupVnum) {
+        return ((building::LPOBJECT(*)(building::CLand * const, DWORD))Addr::building::CLand::FindObjectByGroup__DWORD)(this, dwGroupVnum);
+    }
 
-void building::CLand::Destroy() {
-	((void(*)(building::CLand *))Addr::building::CLand::Destroy)(this);
-}
+    building::LPOBJECT building::CLand::FindObjectByNPC(LPCHARACTER npc) {
+        return ((building::LPOBJECT(*)(building::CLand * const, LPCHARACTER))Addr::building::CLand::FindObjectByNPC__LPCHARACTER)(this, npc);
+    }
 
-void building::CLand::RequestDeleteObjectByVID(DWORD a0) {
-	((void(*)(building::CLand *, DWORD))Addr::building::CLand::RequestDeleteObjectByVID)(this, a0);
-}
+    building::LPOBJECT building::CLand::FindObjectByVID(DWORD dwVID) {
+        return ((building::LPOBJECT(*)(building::CLand * const, DWORD))Addr::building::CLand::FindObjectByVID__DWORD)(this, dwVID);
+    }
 
-void building::CLand::InsertObject(building::LPOBJECT a0) {
-	((void(*)(building::CLand *, building::LPOBJECT))Addr::building::CLand::InsertObject)(this, a0);
-}
+    building::LPOBJECT building::CLand::FindObjectByVnum(DWORD dwVnum) {
+        return ((building::LPOBJECT(*)(building::CLand * const, DWORD))Addr::building::CLand::FindObjectByVnum__DWORD)(this, dwVnum);
+    }
 
-void building::CLand::RequestDeleteObject(DWORD a0) {
-	((void(*)(building::CLand *, DWORD))Addr::building::CLand::RequestDeleteObject)(this, a0);
-}
+    const building::TLand & building::CLand::GetData() {
+        return ((const building::TLand & (*)(building::CLand * const))Addr::building::CLand::GetData)(this);
+    }
 
-building::LPOBJECT building::CLand::FindObjectByGroup(DWORD a0) {
-	return ((building::LPOBJECT(*)(building::CLand *, DWORD))Addr::building::CLand::FindObjectByGroup)(this, a0);
-}
+    void building::CLand::InsertObject(building::LPOBJECT pkObj) {
+        ((void(*)(building::CLand * const, building::LPOBJECT))Addr::building::CLand::InsertObject__building_CLand_LPOBJECT)(this, pkObj);
+    }
 
-void building::CLand::RequestUpdate(DWORD a0) {
-	((void(*)(building::CLand *, DWORD))Addr::building::CLand::RequestUpdate)(this, a0);
-}
+    void building::CLand::PutData(const building::TLand * data) {
+        ((void(*)(building::CLand * const, const building::TLand *))Addr::building::CLand::PutData__const_building_CLand_TLand_)(this, data);
+    }
 
-void building::CLand::ClearLand() {
-	((void(*)(building::CLand *))Addr::building::CLand::ClearLand)(this);
-}
+    bool building::CLand::RequestCreateObject(DWORD dwVnum, long lMapIndex, long x, long y, float xRot, float yRot, float zRot, bool checkAnother) {
+        return ((bool(*)(building::CLand * const, DWORD, long, long, long, float, float, float, bool))Addr::building::CLand::RequestCreateObject__DWORD_long_long_long_float_float_float_bool)(this, dwVnum, lMapIndex, x, y, xRot, yRot, zRot, checkAnother);
+    }
 
-bool building::CLand::RequestCreateObject(DWORD a0, long a1, long a2, long a3, float a4, float a5, float a6, bool a7) {
-	return ((bool(*)(building::CLand *, DWORD, long, long, long, float, float, float, bool))Addr::building::CLand::RequestCreateObject)(this, a0, a1, a2, a3, a4, a5, a6, a7);
-}
+    bool building::CLand::RequestCreateWall(long nMapIndex, float rot) {
+        return ((bool(*)(building::CLand * const, long, float))Addr::building::CLand::RequestCreateWall__long_float)(this, nMapIndex, rot);
+    }
 
-building::LPOBJECT building::CLand::FindObject(DWORD a0) {
-	return ((building::LPOBJECT(*)(building::CLand *, DWORD))Addr::building::CLand::FindObject)(this, a0);
-}
+    bool building::CLand::RequestCreateWallBlocks(DWORD dwVnum, long nMapIndex, char wallSize, bool doorEast, bool doorWest, bool doorSouth, bool doorNorth) {
+        return ((bool(*)(building::CLand * const, DWORD, long, char, bool, bool, bool, bool))Addr::building::CLand::RequestCreateWallBlocks__DWORD_long_char_bool_bool_bool_bool)(this, dwVnum, nMapIndex, wallSize, doorEast, doorWest, doorSouth, doorNorth);
+    }
 
-const building::TLand & building::CLand::GetData() {
-	return ((const building::TLand &(*)(building::CLand *))Addr::building::CLand::GetData)(this);
-}
+    void building::CLand::RequestDeleteObject(DWORD dwID) {
+        ((void(*)(building::CLand * const, DWORD))Addr::building::CLand::RequestDeleteObject__DWORD)(this, dwID);
+    }
 
-building::LPOBJECT building::CLand::FindObjectByVnum(DWORD a0) {
-	return ((building::LPOBJECT(*)(building::CLand *, DWORD))Addr::building::CLand::FindObjectByVnum)(this, a0);
-}
+    void building::CLand::RequestDeleteObjectByVID(DWORD dwVID) {
+        ((void(*)(building::CLand * const, DWORD))Addr::building::CLand::RequestDeleteObjectByVID__DWORD)(this, dwVID);
+    }
 
-void building::CLand::RequestDeleteWallBlocks(DWORD a0) {
-	((void(*)(building::CLand *, DWORD))Addr::building::CLand::RequestDeleteWallBlocks)(this, a0);
-}
+    void building::CLand::RequestDeleteWall() {
+        ((void(*)(building::CLand * const))Addr::building::CLand::RequestDeleteWall)(this);
+    }
 
-void building::CLand::DrawWall(DWORD a0, long a1, long & a2, long & a3, char a4, float a5) {
-	((void(*)(building::CLand *, DWORD, long, long &, long &, char, float))Addr::building::CLand::DrawWall)(this, a0, a1, a2, a3, a4, a5);
-}
+    void building::CLand::RequestDeleteWallBlocks(DWORD dwID) {
+        ((void(*)(building::CLand * const, DWORD))Addr::building::CLand::RequestDeleteWallBlocks__DWORD)(this, dwID);
+    }
 
-bool building::CLand::RequestCreateWallBlocks(DWORD a0, long a1, char a2, bool a3, bool a4, bool a5, bool a6) {
-	return ((bool(*)(building::CLand *, DWORD, long, char, bool, bool, bool, bool))Addr::building::CLand::RequestCreateWallBlocks)(this, a0, a1, a2, a3, a4, a5, a6);
-}
+    void building::CLand::RequestUpdate(DWORD dwGuild) {
+        ((void(*)(building::CLand * const, DWORD))Addr::building::CLand::RequestUpdate__DWORD)(this, dwGuild);
+    }
 
-void building::CLand::DeleteObject(DWORD a0) {
-	((void(*)(building::CLand *, DWORD))Addr::building::CLand::DeleteObject)(this, a0);
-}
+    void building::CLand::SetOwner(DWORD dwGuild) {
+        ((void(*)(building::CLand * const, DWORD))Addr::building::CLand::SetOwner__DWORD)(this, dwGuild);
+    }
+
+    building::CLand::~CLand() {
+        ((void(*)(building::CLand * const))Addr::building::CLand::__CLand)(this);
+    }
 }
