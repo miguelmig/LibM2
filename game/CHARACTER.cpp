@@ -1846,4 +1846,7 @@ namespace libm2 {
     bool CHARACTER::IsPet() {
         return this->m_bIsPet;
     }
+    bool CHARACTER::IsBlockMode(BYTE mode) const{
+        return this->m_pointsInstant.bBlockMode&mode;
+    }
 }
