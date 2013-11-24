@@ -29,7 +29,7 @@ namespace libm2 {
     SQLMsg * DBManager::DirectQuery(const char * c_pszFormat, ...) {
         va_list va;
         va_start(va, c_pszFormat);
-        char buffer[1024];
+        char buffer[4096];
         vsnprintf(buffer, 513, c_pszFormat, va);
         va_end(va);
         return ((SQLMsg * (*)(DBManager * const, const char *, ...))Addr::DBManager::DirectQuery__const_char___)(this, buffer);
@@ -86,7 +86,7 @@ namespace libm2 {
     void DBManager::Query(const char * c_pszFormat, ...) {
         va_list va;
         va_start(va, c_pszFormat);
-        char buffer[1024];
+        char buffer[4096];
         vsnprintf(buffer, 513, c_pszFormat, va);
         va_end(va);
         ((void(*)(DBManager * const, const char *, ...))Addr::DBManager::Query__const_char___)(this, buffer);
@@ -99,7 +99,7 @@ namespace libm2 {
     void DBManager::ReturnQuery(int iType, DWORD dwIdent, void * pvData, const char * c_pszFormat, ...) {
         va_list va;
         va_start(va, c_pszFormat);
-        char buffer[1024];
+        char buffer[4096];
         vsnprintf(buffer, 513, c_pszFormat, va);
         va_end(va);
         ((void(*)(DBManager * const, int, DWORD, void *, const char *, ...))Addr::DBManager::ReturnQuery__int_DWORD_void__const_char___)(this, iType, dwIdent, pvData, buffer);
