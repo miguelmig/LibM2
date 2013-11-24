@@ -428,6 +428,10 @@ namespace libm2 {
     BYTE CItem::GetType() const {
         return this->m_pProto->bType;
     }
+    
+    BYTE CItem::GetSubType() const {
+        return this->m_pProto->bSubType;
+    }
 
     BYTE CItem::GetSize() {
         return this->m_pProto->bSize;
